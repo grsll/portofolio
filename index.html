@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Website Portfolio - Siswa, Developer, dan Tech Enthusiast. Jelajahi proyek dan keahlian saya.">
+  <meta name="keywords" content="portfolio, developer, siswa, web development, teknologi, Yoga Setyawan Purwanto">
+  <title>Beranda — Yoga Setyawan Purwanto | Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Page Loader -->
+  <div class="page-loader">
+    <div class="loader-spinner"></div>
+  </div>
+
+  <!-- Page Transition -->
+  <div class="page-transition"></div>
+
+  <!-- Mobile Overlay -->
+  <div class="mobile-overlay"></div>
+
+  <!-- ============================================
+       NAVBAR
+       ============================================ -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        YP<span class="dot"></span>
+      </a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Beranda</a>
+        <a href="about.html">Tentang</a>
+        <a href="skills.html">Keahlian</a>
+        <a href="projects.html">Proyek</a>
+        <a href="contact.html">Kontak</a>
+      </div>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Ganti mode gelap">
+          <i data-lucide="sun" class="icon-sun"></i>
+          <i data-lucide="moon" class="icon-moon"></i>
+        </button>
+        <button class="nav-toggle" id="navToggle" aria-label="Buka menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================
+       HERO SECTION
+       ============================================ -->
+  <section class="hero" id="hero">
+    <!-- Animated Background Orbs -->
+    <div class="hero-bg">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="status-dot"></span>
+          Tersedia untuk kolaborasi
+        </div>
+
+        <h1 class="hero-name">
+          Halo, Saya<br>
+          <span class="text-gradient">Yoga Setyawan Purwanto</span>
+        </h1>
+
+        <p class="hero-tagline">
+          <span class="typing-text" data-phrases='["Siswa", "Developer", "Tech Enthusiast", "Pemecah Masalah"]'></span><span style="border-right: 2px solid var(--primary); margin-left: 2px; animation: blink 1s step-end infinite;">&#8203;</span>
+          <br>
+          Bersemangat dalam membangun pengalaman web modern dan menjelajahi dunia teknologi. Sedang belajar dan berkembang setiap hari.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="about.html" class="btn btn-primary">
+            <i data-lucide="user" style="width:18px;height:18px;"></i>
+            Tentang Saya
+          </a>
+          <a href="projects.html" class="btn btn-secondary">
+            <i data-lucide="folder-open" style="width:18px;height:18px;"></i>
+            Lihat Proyek
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <h3 data-count="5" data-suffix="+">0</h3>
+            <p>Proyek</p>
+          </div>
+          <div class="hero-stat">
+            <h3 data-count="3" data-suffix="+">0</h3>
+            <p>Teknologi</p>
+          </div>
+          <div class="hero-stat">
+            <h3 data-count="2" data-suffix="+">0</h3>
+            <p>Tahun Belajar</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <div class="hero-image-wrapper">
+          <div class="hero-image-decoration"></div>
+          <img src="images/profile.png" alt="Yoga Setyawan Purwanto - Foto Profil" loading="eager">
+          <div class="hero-image-dots"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            YP<span class="dot"></span>
+          </a>
+          <p>Seorang siswa dan developer yang antusias menjelajahi dunia teknologi. Membangun pengalaman digital yang bermakna satu per satu.</p>
+        </div>
+        <div class="footer-column">
+          <h4>Navigasi</h4>
+          <ul>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="about.html">Tentang</a></li>
+            <li><a href="skills.html">Keahlian</a></li>
+            <li><a href="projects.html">Proyek</a></li>
+            <li><a href="contact.html">Kontak</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Hubungi</h4>
+          <ul>
+            <li><a href="#" target="_blank">GitHub</a></li>
+            <li><a href="#" target="_blank">Instagram</a></li>
+            <li><a href="#" target="_blank">LinkedIn</a></li>
+            <li><a href="mailto:yoga@example.com">Email</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Yoga Setyawan Purwanto. Seluruh hak cipta dilindungi.</p>
+        <div class="footer-bottom-links">
+          <a href="#" target="_blank" class="footer-social-link" aria-label="GitHub">
+            <i data-lucide="github"></i>
+          </a>
+          <a href="#" target="_blank" class="footer-social-link" aria-label="Instagram">
+            <i data-lucide="instagram"></i>
+          </a>
+          <a href="#" target="_blank" class="footer-social-link" aria-label="LinkedIn">
+            <i data-lucide="linkedin"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top -->
+  <button class="scroll-top" id="scrollTop" aria-label="Kembali ke atas">
+    <i data-lucide="arrow-up"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script src="js/script.js"></script>
+  <script>lucide.createIcons();</script>
+
+  <style>
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+  </style>
+</body>
+</html>

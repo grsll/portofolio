@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lihat kumpulan proyek Yoga Setyawan Purwanto — aplikasi web, aplikasi mobile, dan lainnya.">
+  <title>Proyek — Yoga Setyawan Purwanto | Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Page Loader -->
+  <div class="page-loader">
+    <div class="loader-spinner"></div>
+  </div>
+
+  <!-- Page Transition -->
+  <div class="page-transition"></div>
+
+  <!-- Mobile Overlay -->
+  <div class="mobile-overlay"></div>
+
+  <!-- ============================================
+       NAVBAR
+       ============================================ -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        YP<span class="dot"></span>
+      </a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Beranda</a>
+        <a href="about.html">Tentang</a>
+        <a href="skills.html">Keahlian</a>
+        <a href="projects.html">Proyek</a>
+        <a href="contact.html">Kontak</a>
+      </div>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Ganti mode gelap">
+          <i data-lucide="sun" class="icon-sun"></i>
+          <i data-lucide="moon" class="icon-moon"></i>
+        </button>
+        <button class="nav-toggle" id="navToggle" aria-label="Buka menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================
+       PROJECTS SECTION
+       ============================================ -->
+  <section class="projects-section section" id="projects">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">
+          <i data-lucide="folder-open" style="width:14px;height:14px;"></i>
+          Proyek Saya
+        </span>
+        <h1 class="section-title">Karya <span class="text-gradient">Unggulan</span></h1>
+        <p class="section-subtitle">Kumpulan proyek yang telah saya bangun selama belajar dan bereksperimen dengan berbagai teknologi.</p>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- Project 1: Portfolio Website -->
+        <div class="project-card reveal delay-1">
+          <div class="project-image" style="background: linear-gradient(135deg, #7c3aed20, #a78bfa20); display:flex; align-items:center; justify-content:center;">
+            <div style="text-align:center; padding:20px;">
+              <i data-lucide="globe" style="width:64px;height:64px;color:var(--primary);opacity:0.6;"></i>
+              <p style="margin-top:12px;font-weight:600;color:var(--text-secondary);">Website Portfolio</p>
+            </div>
+            <div class="project-image-overlay">
+              <a href="#" target="_blank" aria-label="Lihat Kode">
+                <i data-lucide="github" style="width:18px;height:18px;"></i>
+              </a>
+              <a href="#" aria-label="Demo Langsung">
+                <i data-lucide="external-link" style="width:18px;height:18px;"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-category">Pengembangan Web</span>
+            <h3>Website Portfolio Pribadi</h3>
+            <p>Website portfolio pribadi yang modern dan responsif dibangun dengan HTML, CSS, dan JavaScript murni. Memiliki mode gelap, animasi halus, dan navigasi multi-halaman.</p>
+            <div class="project-tech">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: Task Manager -->
+        <div class="project-card reveal delay-2">
+          <div class="project-image" style="background: linear-gradient(135deg, #06b6d420, #22d3ee20); display:flex; align-items:center; justify-content:center;">
+            <div style="text-align:center; padding:20px;">
+              <i data-lucide="check-square" style="width:64px;height:64px;color:#06b6d4;opacity:0.6;"></i>
+              <p style="margin-top:12px;font-weight:600;color:var(--text-secondary);">Manajer Tugas</p>
+            </div>
+            <div class="project-image-overlay">
+              <a href="#" target="_blank" aria-label="Lihat Kode">
+                <i data-lucide="github" style="width:18px;height:18px;"></i>
+              </a>
+              <a href="#" aria-label="Demo Langsung">
+                <i data-lucide="external-link" style="width:18px;height:18px;"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-category">Aplikasi Web</span>
+            <h3>Aplikasi Manajer Tugas</h3>
+            <p>Aplikasi web manajemen tugas yang sederhana dan intuitif dengan fitur seperti menambah, mengedit, menghapus, dan menandai tugas sebagai selesai. Menggunakan localStorage untuk penyimpanan.</p>
+            <div class="project-tech">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: Weather App -->
+        <div class="project-card reveal delay-3">
+          <div class="project-image" style="background: linear-gradient(135deg, #f59e0b20, #fbbf2420); display:flex; align-items:center; justify-content:center;">
+            <div style="text-align:center; padding:20px;">
+              <i data-lucide="cloud-sun" style="width:64px;height:64px;color:#f59e0b;opacity:0.6;"></i>
+              <p style="margin-top:12px;font-weight:600;color:var(--text-secondary);">Aplikasi Cuaca</p>
+            </div>
+            <div class="project-image-overlay">
+              <a href="#" target="_blank" aria-label="Lihat Kode">
+                <i data-lucide="github" style="width:18px;height:18px;"></i>
+              </a>
+              <a href="#" aria-label="Demo Langsung">
+                <i data-lucide="external-link" style="width:18px;height:18px;"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-category">Integrasi API</span>
+            <h3>Aplikasi Perkiraan Cuaca</h3>
+            <p>Aplikasi cuaca yang mengambil data waktu nyata dari API publik. Menampilkan suhu, kondisi, dan prakiraan dengan antarmuka modern yang bersih.</p>
+            <div class="project-tech">
+              <span>JavaScript</span>
+              <span>REST API</span>
+              <span>CSS</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: Calculator -->
+        <div class="project-card reveal delay-4">
+          <div class="project-image" style="background: linear-gradient(135deg, #10b98120, #34d39920); display:flex; align-items:center; justify-content:center;">
+            <div style="text-align:center; padding:20px;">
+              <i data-lucide="calculator" style="width:64px;height:64px;color:#10b981;opacity:0.6;"></i>
+              <p style="margin-top:12px;font-weight:600;color:var(--text-secondary);">Kalkulator</p>
+            </div>
+            <div class="project-image-overlay">
+              <a href="#" target="_blank" aria-label="Lihat Kode">
+                <i data-lucide="github" style="width:18px;height:18px;"></i>
+              </a>
+              <a href="#" aria-label="Demo Langsung">
+                <i data-lucide="external-link" style="width:18px;height:18px;"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-category">Aplikasi Web</span>
+            <h3>Kalkulator Modern</h3>
+            <p>Kalkulator dengan desain indah yang mendukung input keyboard, fitur riwayat, dan animasi halus. Dibangun sebagai proyek praktik dasar-dasar JavaScript.</p>
+            <div class="project-tech">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            YP<span class="dot"></span>
+          </a>
+          <p>Seorang siswa dan developer yang antusias menjelajahi dunia teknologi. Membangun pengalaman digital yang bermakna satu per satu.</p>
+        </div>
+        <div class="footer-column">
+          <h4>Navigasi</h4>
+          <ul>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="about.html">Tentang</a></li>
+            <li><a href="skills.html">Keahlian</a></li>
+            <li><a href="projects.html">Proyek</a></li>
+            <li><a href="contact.html">Kontak</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Hubungi</h4>
+          <ul>
+            <li><a href="#" target="_blank">GitHub</a></li>
+            <li><a href="#" target="_blank">Instagram</a></li>
+            <li><a href="#" target="_blank">LinkedIn</a></li>
+            <li><a href="mailto:yoga@example.com">Email</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Yoga Setyawan Purwanto. Seluruh hak cipta dilindungi.</p>
+        <div class="footer-bottom-links">
+          <a href="#" target="_blank" class="footer-social-link" aria-label="GitHub">
+            <i data-lucide="github"></i>
+          </a>
+          <a href="#" target="_blank" class="footer-social-link" aria-label="Instagram">
+            <i data-lucide="instagram"></i>
+          </a>
+          <a href="#" target="_blank" class="footer-social-link" aria-label="LinkedIn">
+            <i data-lucide="linkedin"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top -->
+  <button class="scroll-top" id="scrollTop" aria-label="Kembali ke atas">
+    <i data-lucide="arrow-up"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script src="js/script.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

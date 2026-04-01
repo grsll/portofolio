@@ -116,10 +116,20 @@
             </div>
           </div>
 
-          <a href="contact.html" class="btn btn-primary">
-            <i data-lucide="mail" style="width:18px;height:18px;"></i>
-            Hubungi Saya
-          </a>
+          <div class="about-buttons">
+            <a href="contact.html" class="btn btn-primary">
+              <i data-lucide="mail" style="width:18px;height:18px;"></i>
+              Hubungi Saya
+            </a>
+            <button class="btn btn-secondary" id="btnCV" onclick="openPdfModal('pdf/yoga_setyawan_cv.pdf', 'Curriculum Vitae')">
+              <i data-lucide="file-text" style="width:18px;height:18px;"></i>
+              Lihat CV
+            </button>
+            <!-- <button class="btn btn-outline" id="btnRiwayatHidup" onclick="openPdfModal('pdf/yoga_setyawan_cv.pdf', 'Riwayat Hidup')">
+              <i data-lucide="scroll-text" style="width:18px;height:18px;"></i>
+              Riwayat Hidup
+            </button> -->
+          </div>
         </div>
       </div>
 
@@ -154,6 +164,32 @@
       </div>
     </div>
   </section>
+
+  <!-- ============================================
+       PDF MODAL VIEWER
+       ============================================ -->
+  <div class="pdf-modal-overlay" id="pdfModalOverlay">
+    <div class="pdf-modal" id="pdfModal">
+      <div class="pdf-modal-header">
+        <div class="pdf-modal-title">
+          <i data-lucide="file-text" style="width:20px;height:20px;color:var(--primary);"></i>
+          <h3 id="pdfModalTitle">Dokumen</h3>
+        </div>
+        <div class="pdf-modal-actions">
+          <a href="#" id="pdfDownloadBtn" class="btn btn-secondary btn-sm" download>
+            <i data-lucide="download" style="width:16px;height:16px;"></i>
+            Unduh
+          </a>
+          <button class="pdf-modal-close" id="pdfModalClose" aria-label="Tutup">
+            <i data-lucide="x" style="width:20px;height:20px;"></i>
+          </button>
+        </div>
+      </div>
+      <div class="pdf-modal-body">
+        <iframe id="pdfIframe" src="" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
 
   <!-- ============================================
        FOOTER
@@ -211,6 +247,55 @@
 
   <!-- Scripts -->
   <script src="js/script.js"></script>
-  <script>lucide.createIcons();</script>
+  <script>
+    lucide.createIcons();
+
+    // ============================================
+    // PDF Modal Viewer
+    // ============================================
+    function openPdfModal(pdfUrl, title) {
+      const overlay = document.getElementById('pdfModalOverlay');
+      const iframe = document.getElementById('pdfIframe');
+      const modalTitle = document.getElementById('pdfModalTitle');
+      const downloadBtn = document.getElementById('pdfDownloadBtn');
+
+      modalTitle.textContent = title || 'Dokumen';
+      iframe.src = pdfUrl;
+      downloadBtn.href = pdfUrl;
+
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closePdfModal() {
+      const overlay = document.getElementById('pdfModalOverlay');
+      const iframe = document.getElementById('pdfIframe');
+
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+
+      // Delay clearing src so animation finishes
+      setTimeout(() => {
+        iframe.src = '';
+      }, 400);
+    }
+
+    // Close on overlay click
+    document.getElementById('pdfModalOverlay').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closePdfModal();
+      }
+    });
+
+    // Close button
+    document.getElementById('pdfModalClose').addEventListener('click', closePdfModal);
+
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closePdfModal();
+      }
+    });
+  </script>
 </body>
 </html>

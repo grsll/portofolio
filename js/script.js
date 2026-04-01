@@ -5,9 +5,31 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // ============================================
+  // Scroll Progress Bar
+  // ============================================
+  const progressBar = document.createElement('div');
+  progressBar.className = 'scroll-progress';
+  document.body.prepend(progressBar);
+
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    progressBar.style.width = progress + '%';
+  }, { passive: true });
+
+  // ============================================
+  // Glassy Navbar on Inner Pages
+  // ============================================
+  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+  if (currentPath !== 'index.html' && currentPath !== '') {
+    document.querySelector('.navbar')?.classList.add('navbar-inner', 'scrolled');
+  }
+  // ============================================
   // Page Loader
   // ============================================
   const loader = document.querySelector('.page-loader');
+
   if (loader) {
     window.addEventListener('load', () => {
       setTimeout(() => {

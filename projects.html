@@ -3,42 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Lihat kumpulan proyek Yoga Setyawan Purwanto — aplikasi web, aplikasi mobile, dan lainnya.">
+  <meta name="description" content="Proyek-proyek Yoga Setyawan Purwanto — FlowNotes, Aplikasi Klinik, dan SIMRS berbasis Flutter & Odoo.">
   <title>Proyek — Yoga Setyawan Purwanto | Portfolio</title>
-
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Lucide Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
-
-  <!-- Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-  <!-- Page Loader -->
   <div class="page-loader">
+    <div class="loader-logo">YP</div>
     <div class="loader-spinner"></div>
   </div>
-
-  <!-- Page Transition -->
   <div class="page-transition"></div>
-
-  <!-- Mobile Overlay -->
   <div class="mobile-overlay"></div>
 
-  <!-- ============================================
-       NAVBAR
-       ============================================ -->
   <nav class="navbar" id="navbar">
     <div class="container">
-      <a href="index.html" class="nav-logo">
-        YP<span class="dot"></span>
-      </a>
-
+      <a href="index.html" class="nav-logo">YP<span class="dot"></span></a>
       <div class="nav-links" id="navLinks">
         <a href="index.html">Beranda</a>
         <a href="about.html">Tentang</a>
@@ -46,51 +29,44 @@
         <a href="projects.html">Proyek</a>
         <a href="contact.html">Kontak</a>
       </div>
-
       <div class="nav-actions">
-        <button class="theme-toggle" id="themeToggle" aria-label="Ganti mode gelap">
-          <i data-lucide="sun" class="icon-sun"></i>
-          <i data-lucide="moon" class="icon-moon"></i>
+        <button class="theme-toggle" id="themeToggle" aria-label="Ganti tema">
+          <i data-lucide="sun" class="icon-sun" style="width:18px;height:18px;"></i>
+          <i data-lucide="moon" class="icon-moon" style="width:18px;height:18px;"></i>
         </button>
         <button class="nav-toggle" id="navToggle" aria-label="Buka menu">
-          <span></span>
-          <span></span>
-          <span></span>
+          <span></span><span></span><span></span>
         </button>
       </div>
     </div>
   </nav>
 
-  <!-- ============================================
-       PROJECTS SECTION
-       ============================================ -->
   <section class="projects-section section" id="projects">
     <div class="container">
       <div class="section-header reveal">
         <span class="section-label">
-          <i data-lucide="folder-open" style="width:14px;height:14px;"></i>
+          <i data-lucide="folder-open" style="width:13px;height:13px;"></i>
           Proyek Saya
         </span>
         <h1 class="section-title">Karya <span class="text-gradient">Unggulan</span></h1>
-        <p class="section-subtitle">Kumpulan proyek yang telah saya bangun selama belajar dan bereksperimen dengan berbagai teknologi.</p>
+        <p class="section-subtitle">Kumpulan proyek nyata yang saya bangun — dari aplikasi mobile hingga sistem enterprise berbasis Odoo.</p>
       </div>
 
       <div class="projects-grid">
 
-        <!-- Project 1: FlowNotes App -->
         <div class="project-card reveal delay-1">
           <div class="project-image">
-            <img src="images/projects/project-1.png" alt="FlowNotes App Screenshot" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
+            <img src="images/projects/project-1.png" alt="FlowNotes App" loading="lazy">
             <div class="project-image-overlay">
               <a href="https://github.com/grsll/flownote_app.git" target="_blank" aria-label="Lihat Kode">
-                <i data-lucide="code-2" style="width:18px;height:18px;"></i>
+                <i data-lucide="github" style="width:18px;height:18px;"></i>
               </a>
             </div>
           </div>
           <div class="project-info">
-            <span class="project-category">Pengembangan Aplikasi</span>
-            <h3>Aplikasi FlowNotes</h3>
-            <p>Banyak orang kesulitan mencatat keuangan harian dan membuat notes secara terorganisir. FlowNotes hadir sebagai solusi — aplikasi mobile modern yang dibangun dengan Flutter, menggabungkan pencatat keuangan dan notes dengan animasi halus, mode gelap, dan navigasi multi-halaman yang intuitif.</p>
+            <span class="project-category">Aplikasi Mobile</span>
+            <h3>FlowNotes App</h3>
+            <p>Aplikasi mobile modern yang menggabungkan pencatat keuangan harian dan notes terorganisir. Dibangun dengan Flutter, dilengkapi animasi halus, dark mode, dan navigasi multi-halaman yang intuitif.</p>
             <div class="project-tech">
               <span>Flutter</span>
               <span>Dart</span>
@@ -99,20 +75,19 @@
           </div>
         </div>
 
-        <!-- Project 2: Aplikasi Klinik -->
         <div class="project-card reveal delay-2">
           <div class="project-image">
-            <img src="images/projects/project-2.png" alt="Klinik App Screenshot" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
+            <img src="images/projects/project-2.png" alt="Aplikasi Klinik" loading="lazy">
             <div class="project-image-overlay">
               <a href="https://github.com/grsll/klinik_app.git" target="_blank" aria-label="Lihat Kode">
-                <i data-lucide="code-2" style="width:18px;height:18px;"></i>
+                <i data-lucide="github" style="width:18px;height:18px;"></i>
               </a>
             </div>
           </div>
           <div class="project-info">
-            <span class="project-category">Aplikasi Mobile</span>
+            <span class="project-category">Sistem Klinik</span>
             <h3>Aplikasi Klinik</h3>
-            <p>Pengelolaan data klinik yang manual rentan terhadap kesalahan dan lambat. Aplikasi Klinik berbasis Flutter ini hadir untuk mempercepat alur kerja — mulai dari pencatatan pasien, riwayat kunjungan, hingga antarmuka yang bersih dan responsif yang mudah digunakan staf medis.</p>
+            <p>Sistem manajemen klinik berbasis Flutter untuk mempercepat alur kerja medis — pencatatan data pasien, riwayat kunjungan, dan antarmuka bersih yang mudah digunakan staf medis.</p>
             <div class="project-tech">
               <span>Flutter</span>
               <span>Dart</span>
@@ -121,25 +96,24 @@
           </div>
         </div>
 
-        <!-- Project 3: SIMRS -->
         <div class="project-card reveal delay-3">
           <div class="project-image">
-            <img src="images/projects/project-3.png" alt="SIMRS Dashboard Screenshot" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
+            <img src="images/projects/project-3.png" alt="SIMRS Dashboard" loading="lazy">
             <div class="project-image-overlay">
               <a href="https://github.com/zunstudent/test_frontend.git" target="_blank" aria-label="Lihat Kode">
-                <i data-lucide="code-2" style="width:18px;height:18px;"></i>
+                <i data-lucide="github" style="width:18px;height:18px;"></i>
               </a>
             </div>
           </div>
           <div class="project-info">
-            <span class="project-category">Sistem Informasi</span>
-            <h3>Aplikasi SIMRS</h3>
-            <p>Rumah sakit membutuhkan sistem yang terintegrasi untuk mengelola ratusan pasien setiap harinya. SIMRS ini dibangun dengan Flutter dan didukung Odoo sebagai backend — mengintegrasikan pengelolaan data pasien, rekam medis elektronik, jadwal rawat inap, dan layanan kesehatan dalam satu platform yang efisien.</p>
+            <span class="project-category">Sistem Informasi Rumah Sakit</span>
+            <h3>SIMRS — Odoo Backend</h3>
+            <p>Sistem informasi rumah sakit terintegrasi dengan Odoo sebagai backend enterprise. Mencakup modul rekam medis, persetujuan layanan, QR signature, jadwal rawat inap, dan CRM pasien dalam satu platform.</p>
             <div class="project-tech">
-              <span>Flutter</span>
-              <span>Dart</span>
               <span>Odoo</span>
+              <span>Python</span>
               <span>PostgreSQL</span>
+              <span>Flutter</span>
             </div>
           </div>
         </div>
@@ -148,17 +122,12 @@
     </div>
   </section>
 
-  <!-- ============================================
-       FOOTER
-       ============================================ -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="nav-logo">
-            YP<span class="dot"></span>
-          </a>
-          <p>Seorang siswa dan developer yang antusias menjelajahi dunia teknologi. Membangun pengalaman digital yang bermakna satu per satu.</p>
+          <a href="index.html" class="nav-logo">YP<span class="dot"></span></a>
+          <p>Odoo Developer & Tech Enthusiast yang bersemangat membangun sistem ERP dan solusi digital yang berdampak nyata bagi bisnis.</p>
         </div>
         <div class="footer-column">
           <h4>Navigasi</h4>
@@ -171,7 +140,7 @@
           </ul>
         </div>
         <div class="footer-column">
-          <h4>Hubungi</h4>
+          <h4>Terhubung</h4>
           <ul>
             <li><a href="https://github.com/grsll" target="_blank">GitHub</a></li>
             <li><a href="https://www.instagram.com/yog_aaa4/" target="_blank">Instagram</a></li>
@@ -183,26 +152,18 @@
       <div class="footer-bottom">
         <p>&copy; 2026 Yoga Setyawan Purwanto. Seluruh hak cipta dilindungi.</p>
         <div class="footer-bottom-links">
-          <a href="https://github.com/grsll" target="_blank" class="footer-social-link" aria-label="GitHub">
-            <i data-lucide="github"></i>
-          </a>
-          <a href="https://www.instagram.com/yog_aaa4/" target="_blank" class="footer-social-link" aria-label="Instagram">
-            <i data-lucide="instagram"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/yoga-setyawan-work/" target="_blank" class="footer-social-link" aria-label="LinkedIn">
-            <i data-lucide="linkedin"></i>
-          </a>
+          <a href="https://github.com/grsll" target="_blank" class="footer-social-link" aria-label="GitHub"><i data-lucide="github" style="width:16px;height:16px;"></i></a>
+          <a href="https://www.instagram.com/yog_aaa4/" target="_blank" class="footer-social-link" aria-label="Instagram"><i data-lucide="instagram" style="width:16px;height:16px;"></i></a>
+          <a href="https://www.linkedin.com/in/yoga-setyawan-work/" target="_blank" class="footer-social-link" aria-label="LinkedIn"><i data-lucide="linkedin" style="width:16px;height:16px;"></i></a>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- Scroll to Top -->
   <button class="scroll-top" id="scrollTop" aria-label="Kembali ke atas">
-    <i data-lucide="arrow-up"></i>
+    <i data-lucide="arrow-up" style="width:20px;height:20px;"></i>
   </button>
 
-  <!-- Scripts -->
   <script src="js/script.js"></script>
   <script>lucide.createIcons();</script>
 </body>

@@ -3,42 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Jelajahi keahlian teknis Yoga Setyawan Purwanto — HTML, CSS, JavaScript, Git, Linux, dan lainnya.">
+  <meta name="description" content="Keahlian teknis Yoga Setyawan Purwanto — Odoo, Python, XML, PostgreSQL, Docker, Figma, dan Linux Ubuntu.">
   <title>Keahlian — Yoga Setyawan Purwanto | Portfolio</title>
-
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Lucide Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
-
-  <!-- Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-  <!-- Page Loader -->
   <div class="page-loader">
+    <div class="loader-logo">YP</div>
     <div class="loader-spinner"></div>
   </div>
-
-  <!-- Page Transition -->
   <div class="page-transition"></div>
-
-  <!-- Mobile Overlay -->
   <div class="mobile-overlay"></div>
 
-  <!-- ============================================
-       NAVBAR
-       ============================================ -->
   <nav class="navbar" id="navbar">
     <div class="container">
-      <a href="index.html" class="nav-logo">
-        YP<span class="dot"></span>
-      </a>
-
+      <a href="index.html" class="nav-logo">YP<span class="dot"></span></a>
       <div class="nav-links" id="navLinks">
         <a href="index.html">Beranda</a>
         <a href="about.html">Tentang</a>
@@ -46,90 +29,63 @@
         <a href="projects.html">Proyek</a>
         <a href="contact.html">Kontak</a>
       </div>
-
       <div class="nav-actions">
-        <button class="theme-toggle" id="themeToggle" aria-label="Ganti mode gelap">
-          <i data-lucide="sun" class="icon-sun"></i>
-          <i data-lucide="moon" class="icon-moon"></i>
+        <button class="theme-toggle" id="themeToggle" aria-label="Ganti tema">
+          <i data-lucide="sun" class="icon-sun" style="width:18px;height:18px;"></i>
+          <i data-lucide="moon" class="icon-moon" style="width:18px;height:18px;"></i>
         </button>
         <button class="nav-toggle" id="navToggle" aria-label="Buka menu">
-          <span></span>
-          <span></span>
-          <span></span>
+          <span></span><span></span><span></span>
         </button>
       </div>
     </div>
   </nav>
 
-  <!-- ============================================
-       SKILLS SECTION
-       ============================================ -->
   <section class="skills-section section" id="skills">
     <div class="container">
       <div class="section-header reveal">
         <span class="section-label">
-          <i data-lucide="zap" style="width:14px;height:14px;"></i>
+          <i data-lucide="zap" style="width:13px;height:13px;"></i>
           Keahlian Saya
         </span>
-        <h1 class="section-title">Teknologi yang Saya <span class="text-gradient">Gunakan</span></h1>
-        <p class="section-subtitle">Berikut adalah teknologi dan alat yang telah saya pelajari dan gunakan dalam perjalanan pengembangan saya.</p>
+        <h1 class="section-title">Teknologi yang Saya <span class="text-gradient">Kuasai</span></h1>
+        <p class="section-subtitle">Stack teknologi yang saya gunakan untuk membangun sistem ERP, aplikasi mobile, dan infrastruktur server yang andal.</p>
       </div>
 
       <div class="skills-grid">
 
-        <!-- Skill Card: Odoo -->
         <div class="skill-card reveal delay-1">
-          <div class="skill-icon">
-            <i data-lucide="package"></i>
-          </div>
+          <div class="skill-icon"><i data-lucide="package" style="width:26px;height:26px;"></i></div>
           <h3>Odoo Development</h3>
-          <p>Pengembangan modul kustom Odoo, integrasi bisnis, dan optimasi sistem SIMRS/CRM.</p>
-          <div class="skill-level">
-            <span>Kemahiran</span>
-            <span>90%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-bar-fill" data-width="90"></div>
-          </div>
+          <p>Pengembangan modul kustom Odoo — dari model Python, view XML, hingga workflow bisnis kompleks untuk SIMRS dan CRM enterprise.</p>
+          <div class="skill-level"><span>Kemahiran</span><span>90%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="90"></div></div>
           <div class="skill-tags">
-            <span class="skill-tag">Odoo 16 & Odoo 18
+            <span class="skill-tag">Odoo 16</span>
+            <span class="skill-tag">Odoo 18</span>
+            <span class="skill-tag">ORM</span>
           </div>
         </div>
 
-        <!-- Skill Card: Python -->
         <div class="skill-card reveal delay-2">
-          <div class="skill-icon">
-            <i data-lucide="terminal"></i>
-          </div>
-          <h3>Python (Py)</h3>
-          <p>Bahasa utama untuk logika backend Odoo, skrip otomatisasi, dan pengolahan data.</p>
-          <div class="skill-level">
-            <span>Kemahiran</span>
-            <span>85%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-bar-fill" data-width="85"></div>
-          </div>
+          <div class="skill-icon"><i data-lucide="terminal" style="width:26px;height:26px;"></i></div>
+          <h3>Python Backend</h3>
+          <p>Bahasa utama untuk logika bisnis Odoo — model data, wizard, compute fields, constrains, dan skrip otomatisasi sistem.</p>
+          <div class="skill-level"><span>Kemahiran</span><span>85%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="85"></div></div>
           <div class="skill-tags">
             <span class="skill-tag">Python 3</span>
+            <span class="skill-tag">OOP</span>
             <span class="skill-tag">Automation</span>
           </div>
         </div>
 
-        <!-- Skill Card: PostgreSQL / XML -->
         <div class="skill-card reveal delay-3">
-          <div class="skill-icon">
-            <i data-lucide="file-code"></i>
-          </div>
+          <div class="skill-icon"><i data-lucide="file-code" style="width:26px;height:26px;"></i></div>
           <h3>XML & PostgreSQL</h3>
-          <p>Membangun struktur view Odoo dengan XML dan manajemen database relasional PostgreSQL.</p>
-          <div class="skill-level">
-            <span>Kemahiran</span>
-            <span>80%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-bar-fill" data-width="80"></div>
-          </div>
+          <p>Membangun struktur view Odoo (form, tree, kanban, QWeb report) dengan XML dan manajemen database relasional PostgreSQL.</p>
+          <div class="skill-level"><span>Kemahiran</span><span>82%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="82"></div></div>
           <div class="skill-tags">
             <span class="skill-tag">View Inheritance</span>
             <span class="skill-tag">QWeb</span>
@@ -137,20 +93,12 @@
           </div>
         </div>
 
-        <!-- Skill Card: Docker -->
         <div class="skill-card reveal delay-1">
-          <div class="skill-icon">
-            <i data-lucide="container"></i>
-          </div>
+          <div class="skill-icon"><i data-lucide="box" style="width:26px;height:26px;"></i></div>
           <h3>Docker</h3>
-          <p>Penerapan konteinerisasi untuk environment Odoo yang terisolasi dan skalabel.</p>
-          <div class="skill-level">
-            <span>Kemahiran</span>
-            <span>75%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-bar-fill" data-width="75"></div>
-          </div>
+          <p>Containerisasi environment Odoo yang terisolasi dan scalable menggunakan Docker Compose untuk development dan deployment.</p>
+          <div class="skill-level"><span>Kemahiran</span><span>76%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="76"></div></div>
           <div class="skill-tags">
             <span class="skill-tag">Docker Compose</span>
             <span class="skill-tag">Container</span>
@@ -158,20 +106,12 @@
           </div>
         </div>
 
-        <!-- Skill Card: Figma -->
         <div class="skill-card reveal delay-2">
-          <div class="skill-icon">
-            <i data-lucide="layout"></i>
-          </div>
+          <div class="skill-icon"><i data-lucide="pen-tool" style="width:26px;height:26px;"></i></div>
           <h3>Figma</h3>
-          <p>Merancang UI/UX modern untuk aplikasi web sebelum tahap pengembangan.</p>
-          <div class="skill-level">
-            <span>Kemahiran</span>
-            <span>70%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-bar-fill" data-width="70"></div>
-          </div>
+          <p>Merancang UI/UX modern dan prototipe interaktif untuk aplikasi web dan mobile sebelum masuk tahap pengembangan.</p>
+          <div class="skill-level"><span>Kemahiran</span><span>70%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="70"></div></div>
           <div class="skill-tags">
             <span class="skill-tag">UI/UX</span>
             <span class="skill-tag">Prototyping</span>
@@ -179,24 +119,16 @@
           </div>
         </div>
 
-        <!-- Skill Card: Linux / Ubuntu -->
         <div class="skill-card reveal delay-3">
-          <div class="skill-icon">
-            <i data-lucide="terminal"></i>
-          </div>
-          <h3>Linux / Ubuntu</h3>
-          <p>Manajemen server Ubuntu untuk deployment Odoo dan administrasi sistem.</p>
-          <div class="skill-level">
-            <span>Kemahiran</span>
-            <span>80%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-bar-fill" data-width="80"></div>
-          </div>
+          <div class="skill-icon"><i data-lucide="monitor" style="width:26px;height:26px;"></i></div>
+          <h3>Linux Ubuntu</h3>
+          <p>Manajemen server Ubuntu untuk deployment Odoo — konfigurasi Nginx, systemd service, backup otomatis, dan administrasi CLI.</p>
+          <div class="skill-level"><span>Kemahiran</span><span>80%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="80"></div></div>
           <div class="skill-tags">
             <span class="skill-tag">Bash</span>
-            <span class="skill-tag">Server</span>
-            <span class="skill-tag">CLI</span>
+            <span class="skill-tag">Nginx</span>
+            <span class="skill-tag">Server Admin</span>
           </div>
         </div>
 
@@ -204,17 +136,12 @@
     </div>
   </section>
 
-  <!-- ============================================
-       FOOTER
-       ============================================ -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="nav-logo">
-            YP<span class="dot"></span>
-          </a>
-          <p>Seorang siswa dan developer yang antusias menjelajahi dunia teknologi. Membangun pengalaman digital yang bermakna satu per satu.</p>
+          <a href="index.html" class="nav-logo">YP<span class="dot"></span></a>
+          <p>Odoo Developer & Tech Enthusiast yang bersemangat membangun sistem ERP dan solusi digital yang berdampak nyata bagi bisnis.</p>
         </div>
         <div class="footer-column">
           <h4>Navigasi</h4>
@@ -227,7 +154,7 @@
           </ul>
         </div>
         <div class="footer-column">
-          <h4>Hubungi</h4>
+          <h4>Terhubung</h4>
           <ul>
             <li><a href="https://github.com/grsll" target="_blank">GitHub</a></li>
             <li><a href="https://www.instagram.com/yog_aaa4/" target="_blank">Instagram</a></li>
@@ -239,26 +166,18 @@
       <div class="footer-bottom">
         <p>&copy; 2026 Yoga Setyawan Purwanto. Seluruh hak cipta dilindungi.</p>
         <div class="footer-bottom-links">
-          <a href="https://github.com/grsll" target="_blank" class="footer-social-link" aria-label="GitHub">
-            <i data-lucide="github"></i>
-          </a>
-          <a href="https://www.instagram.com/yog_aaa4/" target="_blank" class="footer-social-link" aria-label="Instagram">
-            <i data-lucide="instagram"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/yoga-setyawan-work/" target="_blank" class="footer-social-link" aria-label="LinkedIn">
-            <i data-lucide="linkedin"></i>
-          </a>
+          <a href="https://github.com/grsll" target="_blank" class="footer-social-link" aria-label="GitHub"><i data-lucide="github" style="width:16px;height:16px;"></i></a>
+          <a href="https://www.instagram.com/yog_aaa4/" target="_blank" class="footer-social-link" aria-label="Instagram"><i data-lucide="instagram" style="width:16px;height:16px;"></i></a>
+          <a href="https://www.linkedin.com/in/yoga-setyawan-work/" target="_blank" class="footer-social-link" aria-label="LinkedIn"><i data-lucide="linkedin" style="width:16px;height:16px;"></i></a>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- Scroll to Top -->
   <button class="scroll-top" id="scrollTop" aria-label="Kembali ke atas">
-    <i data-lucide="arrow-up"></i>
+    <i data-lucide="arrow-up" style="width:20px;height:20px;"></i>
   </button>
 
-  <!-- Scripts -->
   <script src="js/script.js"></script>
   <script>lucide.createIcons();</script>
 </body>

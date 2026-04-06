@@ -3,42 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Pelajari lebih lanjut tentang Yoga Setyawan Purwanto — seorang siswa, developer, dan tech enthusiast yang bersemangat dalam membangun pengalaman web modern.">
+  <meta name="description" content="Tentang Yoga Setyawan Purwanto — Odoo Developer berpengalaman membangun SIMRS dan sistem CRM enterprise berbasis Python dan XML.">
   <title>Tentang — Yoga Setyawan Purwanto | Portfolio</title>
-
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Lucide Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
-
-  <!-- Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-  <!-- Page Loader -->
   <div class="page-loader">
+    <div class="loader-logo">YP</div>
     <div class="loader-spinner"></div>
   </div>
-
-  <!-- Page Transition -->
   <div class="page-transition"></div>
-
-  <!-- Mobile Overlay -->
   <div class="mobile-overlay"></div>
 
-  <!-- ============================================
-       NAVBAR
-       ============================================ -->
   <nav class="navbar" id="navbar">
     <div class="container">
-      <a href="index.html" class="nav-logo">
-        YP<span class="dot"></span>
-      </a>
-
+      <a href="index.html" class="nav-logo">YP<span class="dot"></span></a>
       <div class="nav-links" id="navLinks">
         <a href="index.html">Beranda</a>
         <a href="about.html">Tentang</a>
@@ -46,89 +29,74 @@
         <a href="projects.html">Proyek</a>
         <a href="contact.html">Kontak</a>
       </div>
-
       <div class="nav-actions">
-        <button class="theme-toggle" id="themeToggle" aria-label="Ganti mode gelap">
-          <i data-lucide="sun" class="icon-sun"></i>
-          <i data-lucide="moon" class="icon-moon"></i>
+        <button class="theme-toggle" id="themeToggle" aria-label="Ganti tema">
+          <i data-lucide="sun" class="icon-sun" style="width:18px;height:18px;"></i>
+          <i data-lucide="moon" class="icon-moon" style="width:18px;height:18px;"></i>
         </button>
         <button class="nav-toggle" id="navToggle" aria-label="Buka menu">
-          <span></span>
-          <span></span>
-          <span></span>
+          <span></span><span></span><span></span>
         </button>
       </div>
     </div>
   </nav>
 
-  <!-- ============================================
-       ABOUT SECTION
-       ============================================ -->
   <section class="about-section section" id="about">
     <div class="container">
       <div class="about-grid">
-        <!-- Left: Image -->
+        <!-- Image -->
         <div class="about-image reveal-left">
           <div class="about-image-wrapper">
+            <div class="about-image-overlay"></div>
             <img src="images/profile.png" alt="Yoga Setyawan Purwanto" loading="lazy">
           </div>
           <div class="about-floating-card">
-            <div class="icon">
-              <i data-lucide="code-2"></i>
-            </div>
+            <div class="icon"><i data-lucide="code-2" style="width:22px;height:22px;"></i></div>
             <div class="info">
-              <h4>2+ Tahun</h4>
+              <h4>3+ Tahun</h4>
               <p>Belajar & Coding</p>
             </div>
           </div>
         </div>
 
-        <!-- Right: Content -->
+        <!-- Content -->
         <div class="about-content reveal-right">
           <span class="section-label">
-            <i data-lucide="user" style="width:14px;height:14px;"></i>
+            <i data-lucide="user" style="width:13px;height:13px;"></i>
             Tentang Saya
           </span>
-          <h2 class="section-title">Siswa Bersemangat &<br><span class="text-gradient">Tech Enthusiast</span></h2>
+          <h1 class="section-title">Odoo Developer &<br><span class="text-gradient">Tech Enthusiast</span></h1>
           <p class="about-text">
-            Halo! Saya <strong>Yoga Setyawan Purwanto</strong>, seorang siswa dengan rasa ingin tahu yang mendalam terhadap teknologi dan pengembangan perangkat lunak. Saya percaya bahwa pemrograman bukan hanya tentang menulis kode — tetapi tentang memecahkan masalah dan menciptakan pengalaman yang bermakna.
+            Halo! Saya <strong>Yoga Setyawan Purwanto</strong>, seorang developer yang fokus pada pengembangan sistem ERP berbasis <strong>Odoo</strong>. Saya membangun modul kustom untuk SIMRS (Sistem Informasi Manajemen Rumah Sakit) dan CRM enterprise yang melayani kebutuhan bisnis nyata.
           </p>
           <p class="about-text">
-            Perjalanan saya di dunia teknologi dimulai dengan halaman HTML sederhana, dan sejak saat itu, saya telah menjelajahi berbagai bidang termasuk pengembangan web, aplikasi berbasis android, dan sistem Linux. Saya adalah pembelajar mandiri yang suka mengambil tantangan dan berkembang melaluinya.
+            Perjalanan saya dimulai dari rasa ingin tahu terhadap teknologi — dari halaman HTML pertama, hingga mengeksplorasi Docker, Python, Linux, dan akhirnya jatuh cinta dengan ekosistem Odoo. Saya percaya bahwa kode yang baik bukan hanya yang berjalan, tetapi yang memecahkan masalah nyata.
           </p>
 
           <div class="about-highlights">
             <div class="about-highlight-item reveal delay-1">
-              <span class="check">✓</span>
-              Pekerja Keras & Berdedikasi
+              <span class="check">✓</span> Odoo Module Development
             </div>
             <div class="about-highlight-item reveal delay-2">
-              <span class="check">✓</span>
-              Ingin Tahu & Selalu Belajar
+              <span class="check">✓</span> Python & XML Backend
             </div>
             <div class="about-highlight-item reveal delay-3">
-              <span class="check">✓</span>
-              Kerja TIm & Komunikasi
+              <span class="check">✓</span> SIMRS & CRM Systems
             </div>
             <div class="about-highlight-item reveal delay-4">
-              <span class="check">✓</span>
-              Pemecah Masalah & Kreatif
+              <span class="check">✓</span> Docker & Linux DevOps
             </div>
           </div>
 
           <div class="about-buttons">
             <a href="contact.html" class="btn btn-primary">
-              <i data-lucide="mail" style="width:18px;height:18px;"></i>
+              <i data-lucide="mail" style="width:17px;height:17px;"></i>
               Hubungi Saya
             </a>
             <button class="btn btn-secondary" id="btnCV" onclick="openPdfModal('pdf/yoga_setyawan_cv.pdf', 'Curriculum Vitae')">
-              <i data-lucide="file-text" style="width:18px;height:18px;"></i>
+              <i data-lucide="file-text" style="width:17px;height:17px;"></i>
               Lihat CV
             </button>
-            <!-- <button class="btn btn-outline" id="btnRiwayatHidup" onclick="openPdfModal('pdf/yoga_setyawan_cv.pdf', 'Riwayat Hidup')">
-              <i data-lucide="scroll-text" style="width:18px;height:18px;"></i>
-              Riwayat Hidup
-            </button> -->
           </div>
         </div>
       </div>
@@ -136,49 +104,46 @@
       <!-- Timeline -->
       <div class="timeline reveal">
         <h3 class="timeline-title">
-          <i data-lucide="clock" style="width:22px;height:22px;display:inline;vertical-align:middle;margin-right:8px;color:var(--primary);"></i>
+          <i data-lucide="git-branch" style="width:24px;height:24px;color:var(--primary-light);"></i>
           Perjalanan Saya
         </h3>
         <div class="timeline-items">
           <div class="timeline-item reveal delay-1">
             <span class="year">2024 — Sekarang</span>
-            <h4>Eksplorasi Pengembangan Odoo dan Android</h4>
-            <p>Memperdalam pengetahuan tentang Odoo, Flutter dan mulai membangun proyek dunia nyata.</p>
+            <h4>Odoo Developer — SIMRS & CRM Enterprise</h4>
+            <p>Membangun modul Odoo kustom untuk sistem rumah sakit (SIMRS) dan CRM. Implementasi fitur QR signature, wizard TTD, workflow approval, dan integrasi sistem kompleks berbasis Python & XML.</p>
           </div>
           <div class="timeline-item reveal delay-2">
             <span class="year">2023</span>
-            <h4>Mulai Belajar Git & GitHub</h4>
-            <p>Menguasai kontrol versi untuk berkolaborasi dan mengelola kode dengan lebih efisien.</p>
+            <h4>Eksplorasi Docker & Linux Server</h4>
+            <p>Mendalami containerisasi dengan Docker Compose untuk deployment Odoo yang terisolasi dan scalable. Ubuntu sebagai OS utama untuk pengembangan sehari-hari.</p>
           </div>
           <div class="timeline-item reveal delay-3">
             <span class="year">2023</span>
-            <h4>Menemukan Linux (Ubuntu)</h4>
-            <p>Mulai menggunakan Linux sebagai sistem operasi utama saya, mempelajari perintah baris dan administrasi sistem.</p>
+            <h4>Mulai Belajar Git, Flutter & Firebase</h4>
+            <p>Mengembangkan aplikasi mobile dengan Flutter — termasuk FlowNotes dan Aplikasi Klinik. Menguasai version control Git untuk kolaborasi tim.</p>
           </div>
           <div class="timeline-item reveal delay-4">
             <span class="year">2022</span>
             <h4>Baris Kode Pertama</h4>
-            <p>Menulis "Hello World" pertama saya dan jatuh cinta dengan pemrograman. Awal dari perjalanan yang mengasyikkan!</p>
+            <p>Menulis "Hello World" pertama dan jatuh cinta dengan pemrograman. Awal perjalanan yang mengubah segalanya.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============================================
-       PDF MODAL VIEWER
-       ============================================ -->
+  <!-- PDF Modal -->
   <div class="pdf-modal-overlay" id="pdfModalOverlay">
     <div class="pdf-modal" id="pdfModal">
       <div class="pdf-modal-header">
         <div class="pdf-modal-title">
-          <i data-lucide="file-text" style="width:20px;height:20px;color:var(--primary);"></i>
+          <i data-lucide="file-text" style="width:20px;height:20px;color:var(--primary-light);"></i>
           <h3 id="pdfModalTitle">Dokumen</h3>
         </div>
         <div class="pdf-modal-actions">
           <a href="#" id="pdfDownloadBtn" class="btn btn-secondary btn-sm" download>
-            <i data-lucide="download" style="width:16px;height:16px;"></i>
-            Unduh
+            <i data-lucide="download" style="width:15px;height:15px;"></i> Unduh
           </a>
           <button class="pdf-modal-close" id="pdfModalClose" aria-label="Tutup">
             <i data-lucide="x" style="width:20px;height:20px;"></i>
@@ -191,17 +156,13 @@
     </div>
   </div>
 
-  <!-- ============================================
-       FOOTER
-       ============================================ -->
+  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="nav-logo">
-            YP<span class="dot"></span>
-          </a>
-          <p>Seorang siswa dan developer yang antusias menjelajahi dunia teknologi. Membangun pengalaman digital yang bermakna satu per satu.</p>
+          <a href="index.html" class="nav-logo">YP<span class="dot"></span></a>
+          <p>Odoo Developer & Tech Enthusiast yang bersemangat membangun sistem ERP dan solusi digital yang berdampak nyata bagi bisnis.</p>
         </div>
         <div class="footer-column">
           <h4>Navigasi</h4>
@@ -214,7 +175,7 @@
           </ul>
         </div>
         <div class="footer-column">
-          <h4>Hubungi</h4>
+          <h4>Terhubung</h4>
           <ul>
             <li><a href="https://github.com/grsll" target="_blank">GitHub</a></li>
             <li><a href="https://www.instagram.com/yog_aaa4/" target="_blank">Instagram</a></li>
@@ -226,76 +187,38 @@
       <div class="footer-bottom">
         <p>&copy; 2026 Yoga Setyawan Purwanto. Seluruh hak cipta dilindungi.</p>
         <div class="footer-bottom-links">
-          <a href="https://github.com/grsll" target="_blank" class="footer-social-link" aria-label="GitHub">
-            <i data-lucide="github"></i>
-          </a>
-          <a href="https://www.instagram.com/yog_aaa4/" target="_blank" class="footer-social-link" aria-label="Instagram">
-            <i data-lucide="instagram"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/yoga-setyawan-work/" target="_blank" class="footer-social-link" aria-label="LinkedIn">
-            <i data-lucide="linkedin"></i>
-          </a>
+          <a href="https://github.com/grsll" target="_blank" class="footer-social-link" aria-label="GitHub"><i data-lucide="github" style="width:16px;height:16px;"></i></a>
+          <a href="https://www.instagram.com/yog_aaa4/" target="_blank" class="footer-social-link" aria-label="Instagram"><i data-lucide="instagram" style="width:16px;height:16px;"></i></a>
+          <a href="https://www.linkedin.com/in/yoga-setyawan-work/" target="_blank" class="footer-social-link" aria-label="LinkedIn"><i data-lucide="linkedin" style="width:16px;height:16px;"></i></a>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- Scroll to Top -->
   <button class="scroll-top" id="scrollTop" aria-label="Kembali ke atas">
-    <i data-lucide="arrow-up"></i>
+    <i data-lucide="arrow-up" style="width:20px;height:20px;"></i>
   </button>
 
-  <!-- Scripts -->
   <script src="js/script.js"></script>
   <script>
     lucide.createIcons();
-
-    // ============================================
-    // PDF Modal Viewer
-    // ============================================
     function openPdfModal(pdfUrl, title) {
       const overlay = document.getElementById('pdfModalOverlay');
-      const iframe = document.getElementById('pdfIframe');
-      const modalTitle = document.getElementById('pdfModalTitle');
-      const downloadBtn = document.getElementById('pdfDownloadBtn');
-
-      modalTitle.textContent = title || 'Dokumen';
-      iframe.src = pdfUrl;
-      downloadBtn.href = pdfUrl;
-
+      document.getElementById('pdfModalTitle').textContent = title || 'Dokumen';
+      document.getElementById('pdfIframe').src = pdfUrl;
+      document.getElementById('pdfDownloadBtn').href = pdfUrl;
       overlay.classList.add('active');
       document.body.style.overflow = 'hidden';
     }
-
     function closePdfModal() {
       const overlay = document.getElementById('pdfModalOverlay');
-      const iframe = document.getElementById('pdfIframe');
-
       overlay.classList.remove('active');
       document.body.style.overflow = '';
-
-      // Delay clearing src so animation finishes
-      setTimeout(() => {
-        iframe.src = '';
-      }, 400);
+      setTimeout(() => { document.getElementById('pdfIframe').src = ''; }, 400);
     }
-
-    // Close on overlay click
-    document.getElementById('pdfModalOverlay').addEventListener('click', function(e) {
-      if (e.target === this) {
-        closePdfModal();
-      }
-    });
-
-    // Close button
+    document.getElementById('pdfModalOverlay').addEventListener('click', function(e) { if (e.target === this) closePdfModal(); });
     document.getElementById('pdfModalClose').addEventListener('click', closePdfModal);
-
-    // Close on Escape key
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        closePdfModal();
-      }
-    });
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closePdfModal(); });
   </script>
 </body>
 </html>

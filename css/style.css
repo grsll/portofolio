@@ -819,24 +819,36 @@ button { cursor:pointer; border:none; outline:none; font-family:inherit; backgro
 .project-card:hover .project-image img { transform:scale(1.1); }
 .project-image-overlay {
   position:absolute;inset:0;
-  background:linear-gradient(to top, rgba(6,0,20,0.8) 0%, rgba(6,0,20,0.2) 50%, transparent 100%);
+  background:rgba(6,0,20,0.4);
+  backdrop-filter: blur(4px);
   opacity:0;
-  display:flex;align-items:flex-end;justify-content:flex-end;
+  display:flex;align-items:center;justify-content:center;
   padding:20px;gap:10px;
-  transition:opacity var(--transition-base);
+  transition:all var(--transition-base);
 }
 .project-card:hover .project-image-overlay { opacity:1; }
 .project-image-overlay a {
-  width:44px;height:44px;
-  background:rgba(255,255,255,0.95);
-  border-radius:var(--radius-sm);
-  display:flex;align-items:center;justify-content:center;
-  color:var(--primary);
-  transition:all var(--transition-spring);
-  transform:translateY(12px);
+  padding: 12px 22px;
+  background: var(--bg-primary);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 13px;
+  transition: all var(--transition-spring);
+  transform: translateY(20px);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-glass);
 }
-.project-card:hover .project-image-overlay a { transform:translateY(0); }
-.project-image-overlay a:hover { background:var(--primary-gradient);color:#fff; }
+.project-card:hover .project-image-overlay a { transform: translateY(0); }
+.project-image-overlay a:hover { 
+  background: var(--primary-gradient);
+  color: #fff; 
+  border-color: transparent;
+  transform: translateY(-5px) scale(1.05);
+}
 
 .project-info { padding:28px; }
 .project-category {
@@ -1306,4 +1318,204 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible 
 @media print {
   .navbar,.scroll-top,.page-loader,.scroll-progress { display:none; }
   body { color:#000;background:#fff; }
+}
+
+/* ============================================
+   SERVICES SECTION
+   ============================================ */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+.service-card {
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass);
+  backdrop-filter: blur(16px);
+  padding: 40px;
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-base);
+  text-align: center;
+}
+.service-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--primary-light);
+  box-shadow: var(--shadow-xl);
+}
+.service-icon {
+  width: 70px;
+  height: 70px;
+  background: var(--primary-gradient);
+  color: #fff;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 25px;
+  box-shadow: 0 10px 25px rgba(109, 40, 217, 0.2);
+}
+.service-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+.service-card p {
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* ============================================
+   TESTIMONIALS SECTION
+   ============================================ */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+.testimonial-card {
+  background: var(--bg-card);
+  padding: 40px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  transition: all var(--transition-base);
+}
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-light);
+}
+.testimonial-quote {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  font-style: italic;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.author-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--bg-tertiary);
+  overflow: hidden;
+}
+.author-info h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0;
+}
+.author-info p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+.quote-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  opacity: 0.1;
+  color: var(--primary);
+}
+
+/* ============================================
+   CTA SECTION
+   ============================================ */
+.cta-section {
+  padding: 100px 0;
+  background: var(--primary-gradient);
+  color: #fff;
+  text-align: center;
+  border-radius: var(--radius-xl);
+  margin: 80px auto;
+  max-width: var(--container-width);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+}
+.cta-section .section-title { color: #fff; margin-bottom: 20px; }
+.cta-section p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  opacity: 0.9;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  width: 200px;
+  height: 200px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 50%;
+}
+.cta-section::after {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  right: -100px;
+  width: 300px;
+  height: 300px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  .cta-section { margin: 60px 15px; padding: 60px 20px; }
+}
+
+/* ============================================
+   FLOATING WHATSAPP BUTTON
+   ============================================ */
+.floating-wa {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+  z-index: 999;
+  transition: all var(--transition-base);
+  animation: pulse-wa 2s infinite;
+}
+.floating-wa:hover {
+  transform: scale(1.1) translateY(-5px);
+  box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4);
+}
+.floating-wa svg {
+  width: 30px;
+  height: 30px;
+}
+@keyframes pulse-wa {
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
+  70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+@media (max-width: 768px) {
+  .floating-wa {
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+  }
+  .floating-wa svg {
+    width: 24px;
+    height: 24px;
+  }
 }

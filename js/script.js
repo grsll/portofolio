@@ -280,7 +280,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function typeEffect() {
       const currentPhrase = phrases[phraseIndex];
-      
+
       if (isDeleting) {
         typingEl.textContent = currentPhrase.substring(0, charIndex - 1);
         charIndex--;

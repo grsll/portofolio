@@ -61,6 +61,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // ============================================
   // Navbar Scroll Effect
   // ============================================
+
+
+
+  // ============================================
+  // Navbar Scroll Effect
+  // ============================================
   const navbar = document.querySelector('.navbar');
   const scrollTopBtn = document.querySelector('.scroll-top');
 

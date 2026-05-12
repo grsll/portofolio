@@ -245,6 +245,7 @@ button { cursor:pointer; border:none; outline:none; font-family:inherit; backgro
 [data-theme="dark"] .theme-toggle .icon-sun { opacity:1;transform:rotate(0) scale(1); }
 [data-theme="dark"] .theme-toggle .icon-moon { opacity:0;transform:rotate(90deg) scale(0); }
 
+
 .nav-toggle {
   display:none;flex-direction:column;gap:5px;
   width:40px;height:40px;align-items:center;justify-content:center;
@@ -875,6 +876,44 @@ button { cursor:pointer; border:none; outline:none; font-family:inherit; backgro
   border:1px solid rgba(139,92,246,0.15);
   border-radius:var(--radius-full);
   color:var(--primary-light);
+}
+
+.project-actions {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-color);
+}
+
+.project-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 24px;
+  background: var(--primary-gradient);
+  color: #fff !important;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 600;
+  transition: all var(--transition-spring);
+  box-shadow: 0 4px 15px var(--primary-glow);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+  text-decoration: none;
+}
+
+.project-btn:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 30px var(--primary-glow);
+  filter: brightness(1.1);
+}
+
+.project-btn i {
+  transition: transform 0.3s ease;
+}
+
+.project-btn:hover i {
+  transform: rotate(12deg) scale(1.1);
 }
 
 /* ============================================

@@ -216,63 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   skillBars.forEach(bar => skillObserver.observe(bar));
 
-  // ============================================
-  // Contact Form Validation
-  // ============================================
-  const contactForm = document.getElementById('contactForm');
 
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      let isValid = true;
-
-      // Clear previous errors
-      contactForm.querySelectorAll('.form-group').forEach(group => {
-        group.classList.remove('error');
-      });
-
-      // Validate Name
-      const nameInput = document.getElementById('name');
-      if (nameInput && nameInput.value.trim().length < 2) {
-        nameInput.closest('.form-group').classList.add('error');
-        isValid = false;
-      }
-
-      // Validate Email
-      const emailInput = document.getElementById('email');
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (emailInput && !emailRegex.test(emailInput.value.trim())) {
-        emailInput.closest('.form-group').classList.add('error');
-        isValid = false;
-      }
-
-      // Validate Message
-      const messageInput = document.getElementById('message');
-      if (messageInput && messageInput.value.trim().length < 10) {
-        messageInput.closest('.form-group').classList.add('error');
-        isValid = false;
-      }
-
-      if (isValid) {
-        // Show success message
-        const successMsg = document.querySelector('.form-success');
-        if (successMsg) {
-          successMsg.classList.add('show');
-          contactForm.reset();
-          setTimeout(() => {
-            successMsg.classList.remove('show');
-          }, 5000);
-        }
-      }
-    });
-
-    // Real-time validation: remove error on input
-    contactForm.querySelectorAll('input, textarea').forEach(input => {
-      input.addEventListener('input', () => {
-        input.closest('.form-group').classList.remove('error');
-      });
-    });
-  }
 
   // ============================================
   // Typing Effect (Hero Section)

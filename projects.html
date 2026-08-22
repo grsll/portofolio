@@ -6,17 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="images/favicon.png">
   <meta name="description"
-    content="Proyek-proyek yang pernah dikerjakan oleh Yoga Setyawan Purwanto — Modul Odoo, SIMRS, dan aplikasi Flutter.">
+    content="Proyek-proyek yang pernah dikerjakan oleh Yoga Setyawan Purwanto — Modul Odoo, SIMRS, Finora Personal Finance, dan aplikasi Flutter.">
   <meta name="keywords"
-    content="Proyek Odoo, Flutter App, SIMRS, GudangIN, FlowNotes, Yoga Setyawan Purwanto">
+    content="Proyek Odoo, Flutter App, Finora, SIMRS, GudangIN, FlowNotes, Yoga Setyawan Purwanto">
 
   <title>Proyek — Yoga Setyawan Purwanto</title>
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts: IBM Plex Sans + JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
     rel="stylesheet">
 
   <!-- Lucide Icons -->
@@ -40,8 +40,8 @@
   <nav class="navbar navbar-inner" id="navbar">
     <div class="container">
       <a href="index.html" class="nav-logo">
-        <span class="logo-badge">YP</span>
-        <span>Yoga Setyawan<span class="dot"></span></span>
+        <span class="logo-badge">&lt;YP /&gt;</span>
+        <span>Yoga Setyawan<span class="dot">.</span></span>
       </a>
 
       <div class="nav-links" id="navLinks">
@@ -54,8 +54,8 @@
 
       <div class="nav-actions">
         <button class="theme-toggle" id="themeToggle" aria-label="Ganti Tema">
-          <i data-lucide="sun" class="icon-sun" style="width:17px;height:17px;"></i>
-          <i data-lucide="moon" class="icon-moon" style="width:17px;height:17px;"></i>
+          <i data-lucide="sun" class="icon-sun" style="width:16px;height:16px;"></i>
+          <i data-lucide="moon" class="icon-moon" style="width:16px;height:16px;"></i>
         </button>
         <button class="nav-toggle" id="navToggle" aria-label="Buka Menu Navigasi">
           <span></span><span></span><span></span>
@@ -64,28 +64,28 @@
     </div>
   </nav>
 
-  <!-- PROJECTS SECTION (CLEAN MINIMALIST CARDS WITHOUT IMAGES) -->
+  <!-- PROJECTS SECTION -->
   <section class="section" style="padding-top:calc(var(--nav-height) + 32px);">
     <div class="container">
       <!-- Section Header -->
       <div class="section-header centered reveal">
         <div class="section-tag">
           <i data-lucide="folder-git-2"></i>
-          <span>Daftar Portofolio</span>
+          <span>Daftar Portofolio & Studi Kasus</span>
         </div>
-        <h1 class="section-title">Beberapa <span class="text-gradient">Proyek</span></h1>
+        <h1 class="section-title">Galeri Proyek</h1>
         <p class="section-subtitle">
-          Proyek-proyek yang pernah saya kerjakan, mulai dari aplikasi mobile sampai modul kustom Odoo.
+          Kumpulan proyek yang pernah saya kembangkan — mulai dari modul kustom Odoo ERP enterprise, sistem manajemen rumah sakit, hingga aplikasi mobile terintegrasi.
         </p>
       </div>
 
       <!-- Filter & Search Bar -->
       <div class="project-filter-bar reveal delay-1">
         <div class="filter-pills">
-          <button class="filter-pill active" data-category="all">Semua (10)</button>
+          <button class="filter-pill active" data-category="all">Semua Proyek (11)</button>
           <button class="filter-pill" data-category="odoo">Odoo ERP</button>
           <button class="filter-pill" data-category="flutter">Mobile (Flutter)</button>
-          <button class="filter-pill" data-category="enterprise">Enterprise & Tools</button>
+          <button class="filter-pill" data-category="enterprise">Enterprise & DevOps</button>
         </div>
 
         <div class="project-search-box">
@@ -94,14 +94,39 @@
         </div>
       </div>
 
-      <!-- Projects Grid (All 10 Real Projects - Typographic Cards) -->
+      <!-- Projects Grid (All 11 Real Projects - Clean Typographic Cards) -->
       <div class="projects-grid">
 
-        <!-- 1. FlowNotes App -->
+        <!-- 1. Finora App (Smart Personal Finance Tracker) -->
         <div class="project-card reveal delay-1" data-category="flutter">
           <div class="project-card-header">
+            <div class="project-icon-box" style="color:var(--primary);background:var(--primary-light);">
+              <i data-lucide="wallet" style="width:16px;height:16px;"></i>
+            </div>
+            <span class="project-category-badge">Personal Finance</span>
+          </div>
+          <h3 class="project-title">Finora — Finance Tracker</h3>
+          <p class="project-description">
+            Aplikasi smart personal finance tracker berbasis Flutter dengan fitur Smart Dashboard, multi-account management, alokasi budget, target tabungan (Financial Goals), dan analisis laporan keuangan komprehensif.
+          </p>
+          <div class="project-tech-stack">
+            <span class="tech-tag">Flutter</span>
+            <span class="tech-tag">Dart</span>
+            <span class="tech-tag">Clean Architecture</span>
+            <span class="tech-tag">SQLite</span>
+          </div>
+          <div class="project-footer-actions">
+            <a href="https://github.com/grsll/finora" target="_blank" class="project-link">
+              <i data-lucide="github" style="width:14px;height:14px;"></i> Lihat Kode
+            </a>
+          </div>
+        </div>
+
+        <!-- 2. FlowNotes App -->
+        <div class="project-card reveal delay-2" data-category="flutter">
+          <div class="project-card-header">
             <div class="project-icon-box">
-              <i data-lucide="smartphone" style="width:18px;height:18px;"></i>
+              <i data-lucide="smartphone" style="width:16px;height:16px;"></i>
             </div>
             <span class="project-category-badge">Aplikasi Mobile</span>
           </div>
@@ -116,16 +141,16 @@
           </div>
           <div class="project-footer-actions">
             <a href="https://github.com/grsll/flownote_app.git" target="_blank" class="project-link">
-              <i data-lucide="github" style="width:15px;height:15px;"></i> Lihat Kode
+              <i data-lucide="github" style="width:14px;height:14px;"></i> Lihat Kode
             </a>
           </div>
         </div>
 
-        <!-- 2. Aplikasi Klinik -->
-        <div class="project-card reveal delay-2" data-category="flutter">
+        <!-- 3. Aplikasi Klinik -->
+        <div class="project-card reveal delay-3" data-category="flutter">
           <div class="project-card-header">
-            <div class="project-icon-box" style="background:rgba(16,185,129,0.12);color:var(--accent-emerald);">
-              <i data-lucide="activity" style="width:18px;height:18px;"></i>
+            <div class="project-icon-box" style="color:var(--primary);background:var(--primary-light);">
+              <i data-lucide="activity" style="width:16px;height:16px;"></i>
             </div>
             <span class="project-category-badge">Sistem Klinik</span>
           </div>
@@ -140,20 +165,20 @@
           </div>
           <div class="project-footer-actions">
             <a href="https://github.com/grsll/klinik_app.git" target="_blank" class="project-link">
-              <i data-lucide="github" style="width:15px;height:15px;"></i> Lihat Kode
+              <i data-lucide="github" style="width:14px;height:14px;"></i> Lihat Kode
             </a>
           </div>
         </div>
 
-        <!-- 3. SIMRS Hospital Odoo -->
-        <div class="project-card reveal delay-3" data-category="odoo enterprise">
+        <!-- 4. SIMRS Hospital Odoo -->
+        <div class="project-card reveal delay-1" data-category="odoo enterprise">
           <div class="project-card-header">
-            <div class="project-icon-box" style="background:rgba(14,165,233,0.12);color:var(--accent-cyan);">
-              <i data-lucide="hospital" style="width:18px;height:18px;"></i>
+            <div class="project-icon-box" style="color:var(--secondary);background:var(--secondary-light);">
+              <i data-lucide="hospital" style="width:16px;height:16px;"></i>
             </div>
             <span class="project-category-badge">Sistem Informasi RS</span>
           </div>
-          <h3 class="project-title">SIMRS</h3>
+          <h3 class="project-title">SIMRS Hospital ERP</h3>
           <p class="project-description">
             Sistem informasi rumah sakit menggunakan Odoo sebagai backend. Mencakup modul rekam medis, QR signature, jadwal rawat inap, dan CRM pasien.
           </p>
@@ -165,16 +190,16 @@
           </div>
           <div class="project-footer-actions">
             <a href="https://github.com/zunstudent/test_frontend.git" target="_blank" class="project-link">
-              <i data-lucide="github" style="width:15px;height:15px;"></i> Lihat Kode
+              <i data-lucide="github" style="width:14px;height:14px;"></i> Lihat Kode
             </a>
           </div>
         </div>
 
-        <!-- 4. Odoo AJG -->
-        <div class="project-card reveal delay-1" data-category="odoo enterprise">
+        <!-- 5. Odoo AJG -->
+        <div class="project-card reveal delay-2" data-category="odoo enterprise">
           <div class="project-card-header">
             <div class="project-icon-box">
-              <i data-lucide="layers" style="width:18px;height:18px;"></i>
+              <i data-lucide="layers" style="width:16px;height:16px;"></i>
             </div>
             <span class="project-category-badge">Enterprise ERP</span>
           </div>
@@ -190,16 +215,16 @@
           </div>
           <div class="project-footer-actions">
             <a href="https://github.com/grsll" target="_blank" class="project-link">
-              <i data-lucide="github" style="width:15px;height:15px;"></i> Lihat Kode
+              <i data-lucide="github" style="width:14px;height:14px;"></i> Lihat Kode
             </a>
           </div>
         </div>
 
-        <!-- 5. Alhamra Apps -->
-        <div class="project-card reveal delay-2" data-category="flutter">
+        <!-- 6. Alhamra Apps -->
+        <div class="project-card reveal delay-3" data-category="flutter">
           <div class="project-card-header">
-            <div class="project-icon-box" style="background:rgba(245,158,11,0.12);color:#f59e0b;">
-              <i data-lucide="book-open" style="width:18px;height:18px;"></i>
+            <div class="project-icon-box" style="color:var(--accent-amber);background:rgba(245,158,11,0.08);">
+              <i data-lucide="book-open" style="width:16px;height:16px;"></i>
             </div>
             <span class="project-category-badge">Manajemen Siswa</span>
           </div>
@@ -214,16 +239,16 @@
           </div>
           <div class="project-footer-actions">
             <a href="https://github.com/grsll" target="_blank" class="project-link">
-              <i data-lucide="github" style="width:15px;height:15px;"></i> Lihat Kode
+              <i data-lucide="github" style="width:14px;height:14px;"></i> Lihat Kode
             </a>
           </div>
         </div>
 
-        <!-- 6. GudangIN -->
-        <div class="project-card reveal delay-3" data-category="odoo enterprise">
+        <!-- 7. GudangIN -->
+        <div class="project-card reveal delay-1" data-category="odoo enterprise">
           <div class="project-card-header">
-            <div class="project-icon-box" style="background:rgba(139,92,246,0.12);color:var(--secondary);">
-              <i data-lucide="box" style="width:18px;height:18px;"></i>
+            <div class="project-icon-box" style="color:var(--accent-purple);background:rgba(168,85,247,0.08);">
+              <i data-lucide="box" style="width:16px;height:16px;"></i>
             </div>
             <span class="project-category-badge">Manajemen Gudang</span>
           </div>
@@ -238,16 +263,16 @@
           </div>
           <div class="project-footer-actions">
             <a href="https://github.com/grsll" target="_blank" class="project-link">
-              <i data-lucide="github" style="width:15px;height:15px;"></i> Lihat Kode
+              <i data-lucide="github" style="width:14px;height:14px;"></i> Lihat Kode
             </a>
           </div>
         </div>
 
-        <!-- 7. E-Procurement Tender System -->
-        <div class="project-card reveal delay-1" data-category="odoo enterprise">
+        <!-- 8. E-Procurement Tender System -->
+        <div class="project-card reveal delay-2" data-category="odoo enterprise">
           <div class="project-card-header">
             <div class="project-icon-box">
-              <i data-lucide="file-check" style="width:18px;height:18px;"></i>
+              <i data-lucide="file-check" style="width:16px;height:16px;"></i>
             </div>
             <span class="project-category-badge">Pengadaan Barang</span>
           </div>
@@ -262,16 +287,16 @@
           </div>
           <div class="project-footer-actions">
             <a href="https://github.com/grsll" target="_blank" class="project-link">
-              <i data-lucide="github" style="width:15px;height:15px;"></i> Lihat Kode
+              <i data-lucide="github" style="width:14px;height:14px;"></i> Lihat Kode
             </a>
           </div>
         </div>
 
-        <!-- 8. HR & Payroll Custom Odoo -->
-        <div class="project-card reveal delay-2" data-category="odoo enterprise">
+        <!-- 9. HR & Payroll Custom Odoo -->
+        <div class="project-card reveal delay-3" data-category="odoo enterprise">
           <div class="project-card-header">
-            <div class="project-icon-box" style="background:rgba(16,185,129,0.12);color:var(--accent-emerald);">
-              <i data-lucide="users" style="width:18px;height:18px;"></i>
+            <div class="project-icon-box" style="color:var(--primary);background:var(--primary-light);">
+              <i data-lucide="users" style="width:16px;height:16px;"></i>
             </div>
             <span class="project-category-badge">HR & Payroll</span>
           </div>
@@ -286,16 +311,16 @@
           </div>
           <div class="project-footer-actions">
             <a href="https://github.com/grsll" target="_blank" class="project-link">
-              <i data-lucide="github" style="width:15px;height:15px;"></i> Lihat Kode
+              <i data-lucide="github" style="width:14px;height:14px;"></i> Lihat Kode
             </a>
           </div>
         </div>
 
-        <!-- 9. POS & Retail Sync App -->
-        <div class="project-card reveal delay-3" data-category="flutter odoo">
+        <!-- 10. POS & Retail Sync App -->
+        <div class="project-card reveal delay-1" data-category="flutter odoo">
           <div class="project-card-header">
-            <div class="project-icon-box" style="background:rgba(14,165,233,0.12);color:var(--accent-cyan);">
-              <i data-lucide="shopping-cart" style="width:18px;height:18px;"></i>
+            <div class="project-icon-box" style="color:var(--secondary);background:var(--secondary-light);">
+              <i data-lucide="shopping-cart" style="width:16px;height:16px;"></i>
             </div>
             <span class="project-category-badge">Point of Sale</span>
           </div>
@@ -310,16 +335,16 @@
           </div>
           <div class="project-footer-actions">
             <a href="https://github.com/grsll" target="_blank" class="project-link">
-              <i data-lucide="github" style="width:15px;height:15px;"></i> Lihat Kode
+              <i data-lucide="github" style="width:14px;height:14px;"></i> Lihat Kode
             </a>
           </div>
         </div>
 
-        <!-- 10. Dockerized Odoo Deployment -->
-        <div class="project-card reveal delay-1" data-category="enterprise">
+        <!-- 11. Dockerized Odoo Deployment -->
+        <div class="project-card reveal delay-2" data-category="enterprise">
           <div class="project-card-header">
-            <div class="project-icon-box" style="background:rgba(99,102,241,0.12);color:var(--primary);">
-              <i data-lucide="server" style="width:18px;height:18px;"></i>
+            <div class="project-icon-box">
+              <i data-lucide="server" style="width:16px;height:16px;"></i>
             </div>
             <span class="project-category-badge">DevOps & Server</span>
           </div>
@@ -334,7 +359,7 @@
           </div>
           <div class="project-footer-actions">
             <a href="https://github.com/grsll" target="_blank" class="project-link">
-              <i data-lucide="github" style="width:15px;height:15px;"></i> Lihat Kode
+              <i data-lucide="github" style="width:14px;height:14px;"></i> Lihat Kode
             </a>
           </div>
         </div>
@@ -351,12 +376,12 @@
         <p>
           Silakan kirim pesan atau hubungi saya langsung untuk berdiskusi seputar kebutuhan modul Odoo dan aplikasi mobile.
         </p>
-        <div style="display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;">
+        <div style="display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;">
           <a href="contact.html" class="btn btn-primary">
-            <i data-lucide="mail" style="width:16px;height:16px;"></i> Kirim Pesan
+            <i data-lucide="mail" style="width:15px;height:15px;"></i> Kirim Pesan
           </a>
           <a href="https://wa.me/6282233457234" target="_blank" class="btn btn-secondary">
-            <i data-lucide="message-circle" style="width:16px;height:16px;color:#25d366;"></i> Chat WhatsApp
+            <i data-lucide="message-circle" style="width:15px;height:15px;color:#25d366;"></i> Chat WhatsApp
           </a>
         </div>
       </div>
@@ -369,11 +394,11 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="index.html" class="nav-logo">
-            <span class="logo-badge">YP</span>
-            <span>Yoga Setyawan<span class="dot"></span></span>
+            <span class="logo-badge">&lt;YP /&gt;</span>
+            <span>Yoga Setyawan<span class="dot">.</span></span>
           </a>
           <p>
-            Odoo Developer di PT Karyatama Solusindo, Jakarta. Fokus pada pengembangan modul, integrasi sistem, dan aplikasi mobile.
+            Odoo Developer di PT Karyatama Solusindo. Berfokus pada modul kustom, database PostgreSQL, dan aplikasi mobile Flutter.
           </p>
         </div>
 
@@ -389,17 +414,17 @@
         </div>
 
         <div>
-          <h4 class="footer-col-title">Terhubung</h4>
+          <h4 class="footer-col-title">Hubungi</h4>
           <ul class="footer-links-list">
-            <li><a href="mailto:astdnn48@gmail.com"><i data-lucide="mail" style="width:13px;height:13px;vertical-align:middle;margin-right:4px;"></i> astdnn48@gmail.com</a></li>
-            <li><a href="https://wa.me/6282233457234" target="_blank"><i data-lucide="phone" style="width:13px;height:13px;vertical-align:middle;margin-right:4px;"></i> +62-822-3345-7234</a></li>
-            <li><span style="font-size:13.5px;color:var(--text-muted);"><i data-lucide="map-pin" style="width:13px;height:13px;vertical-align:middle;margin-right:4px;"></i> Jakarta, Indonesia</span></li>
+            <li><a href="mailto:astdnn48@gmail.com"><i data-lucide="mail" style="width:13px;height:13px;vertical-align:middle;margin-right:8px;"></i> astdnn48@gmail.com</a></li>
+            <li><a href="https://wa.me/6282233457234" target="_blank"><i data-lucide="phone" style="width:13px;height:13px;vertical-align:middle;margin-right:8px;"></i> +62 822 3345 7234</a></li>
+            <li><span style="font-size:13.5px;color:var(--text-muted);"><i data-lucide="map-pin" style="width:13px;height:13px;vertical-align:middle;margin-right:8px;"></i> Jakarta, Indonesia</span></li>
           </ul>
         </div>
       </div>
 
       <div class="footer-bottom-bar">
-        <p>&copy; 2026 Yoga Setyawan Purwanto. Seluruh hak cipta dilindungi.</p>
+        <p>&copy; 2026 Yoga Setyawan Purwanto. All rights reserved.</p>
         <div class="footer-social-icons">
           <a href="https://github.com/grsll" target="_blank" class="footer-social-btn" aria-label="GitHub">
             <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
@@ -414,16 +439,6 @@
       </div>
     </div>
   </footer>
-
-  <!-- Floating Dock -->
-  <div class="floating-actions-dock">
-    <a href="https://wa.me/6282233457234" target="_blank" class="floating-btn floating-wa-btn" aria-label="WhatsApp">
-      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
-    </a>
-    <button class="floating-btn scroll-top-btn" id="scrollTop" aria-label="Kembali ke Atas">
-      <i data-lucide="arrow-up" style="width:18px;height:18px;"></i>
-    </button>
-  </div>
 
   <!-- Scripts -->
   <script src="js/script.js"></script>

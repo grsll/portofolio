@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // --------------------------------------------------------------------------
   const typingEl = document.querySelector('.typing-text');
   if (typingEl) {
-    const phrases = JSON.parse(typingEl.getAttribute('data-phrases') || '["Odoo Developer", "Python Backend", "Flutter Mobile Developer"]');
+    const phrases = JSON.parse(typingEl.getAttribute('data-phrases') || '["Odoo Developer", "Python Backend", "Flutter Dev", "Problem Solver"]');
     let phraseIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
@@ -367,7 +367,77 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // --------------------------------------------------------------------------
-  // 14. INITIALIZE ICONS
+  // 14. CONTACT FORM SUBMISSION & VALIDATION
+  // --------------------------------------------------------------------------
+  const contactForm = document.getElementById('contactForm');
+  const formSuccess = document.getElementById('formSuccess');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      let isValid = true;
+      const nameInput = document.getElementById('name');
+      const emailInput = document.getElementById('email');
+      const messageInput = document.getElementById('message');
+
+      // Reset error states
+      contactForm.querySelectorAll('.form-group').forEach(group => group.classList.remove('invalid'));
+
+      if (!nameInput || nameInput.value.trim().length < 2) {
+        isValid = false;
+        nameInput?.closest('.form-group')?.classList.add('invalid');
+      }
+
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailInput || !emailPattern.test(emailInput.value.trim())) {
+        isValid = false;
+        emailInput?.closest('.form-group')?.classList.add('invalid');
+      }
+
+      if (!messageInput || messageInput.value.trim().length < 10) {
+        isValid = false;
+        messageInput?.closest('.form-group')?.classList.add('invalid');
+      }
+
+      if (!isValid) return;
+
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
+      const originalText = submitBtn ? submitBtn.innerHTML : '';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span>Mengirim Pesan...</span>';
+      }
+
+      try {
+        const formData = new FormData(contactForm);
+        const response = await fetch(contactForm.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          if (formSuccess) formSuccess.classList.add('show');
+          contactForm.reset();
+          if (window.lucide) window.lucide.createIcons();
+        } else {
+          window.showToast('Gagal mengirim pesan, silakan hubungi via WhatsApp.');
+        }
+      } catch (error) {
+        window.showToast('Terjadi kesalahan jaringan.');
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalText;
+          if (window.lucide) window.lucide.createIcons();
+        }
+      }
+    });
+  }
+
+  // --------------------------------------------------------------------------
+  // 15. INITIALIZE ICONS
   // --------------------------------------------------------------------------
   if (window.lucide) {
     window.lucide.createIcons();

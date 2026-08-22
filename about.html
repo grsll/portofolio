@@ -1,193 +1,255 @@
 <!DOCTYPE html>
-<html lang="id" data-theme="light">
+<html lang="id" data-theme="dark">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="images/favicon.png">
-  <meta name="description" content="Tentang Yoga Setyawan Purwanto — Odoo Developer berpengalaman membangun SIMRS dan sistem CRM enterprise berbasis Python dan XML.">
-  <title>Tentang — Yoga Setyawan Purwanto | Portfolio</title>
+  <meta name="description"
+    content="Tentang Yoga Setyawan Purwanto — Odoo Developer di PT Karyatama Solusindo dengan pengalaman membangun modul ERP, SIMRS, dan Flutter.">
+  <meta name="keywords"
+    content="Tentang Yoga Setyawan Purwanto, Profil Odoo Developer, PT Karyatama Solusindo">
+
+  <title>Tentang — Yoga Setyawan Purwanto</title>
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-  <div class="page-loader">
-    <div class="loader-logo">YP</div>
-    <div class="loader-spinner"></div>
+  <!-- Ambient Mesh Background -->
+  <div class="ambient-mesh">
+    <div class="mesh-orb orb-primary"></div>
+    <div class="mesh-orb orb-secondary"></div>
+    <div class="grid-overlay"></div>
   </div>
-  <div class="page-transition"></div>
+
   <div class="mobile-overlay"></div>
 
-  <nav class="navbar" id="navbar">
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-inner" id="navbar">
     <div class="container">
-      <a href="index.html" class="nav-logo">YP<span class="dot"></span></a>
+      <a href="index.html" class="nav-logo">
+        <span class="logo-badge">YP</span>
+        <span>Yoga Setyawan<span class="dot"></span></span>
+      </a>
+
       <div class="nav-links" id="navLinks">
-        <a href="index.html">Beranda</a>
-        <a href="about.html">Tentang</a>
-        <a href="skills.html">Keahlian</a>
-        <a href="projects.html">Proyek</a>
-        <a href="contact.html">Kontak</a>
+        <a href="index.html"><i data-lucide="home" style="width:14px;height:14px;"></i> Beranda</a>
+        <a href="about.html" class="active"><i data-lucide="user" style="width:14px;height:14px;"></i> Tentang</a>
+        <a href="skills.html"><i data-lucide="cpu" style="width:14px;height:14px;"></i> Keahlian</a>
+        <a href="projects.html"><i data-lucide="folder-git-2" style="width:14px;height:14px;"></i> Proyek</a>
+        <a href="contact.html"><i data-lucide="mail" style="width:14px;height:14px;"></i> Kontak</a>
       </div>
+
       <div class="nav-actions">
-        <button class="theme-toggle" id="themeToggle" aria-label="Ganti tema">
-          <i data-lucide="sun" class="icon-sun" style="width:18px;height:18px;"></i>
-          <i data-lucide="moon" class="icon-moon" style="width:18px;height:18px;"></i>
+        <button class="theme-toggle" id="themeToggle" aria-label="Ganti Tema">
+          <i data-lucide="sun" class="icon-sun" style="width:17px;height:17px;"></i>
+          <i data-lucide="moon" class="icon-moon" style="width:17px;height:17px;"></i>
         </button>
-        <button class="nav-toggle" id="navToggle" aria-label="Buka menu">
+        <button class="nav-toggle" id="navToggle" aria-label="Buka Menu Navigasi">
           <span></span><span></span><span></span>
         </button>
       </div>
     </div>
   </nav>
 
-  <section class="about-section section" id="about">
+  <!-- ABOUT SECTION -->
+  <section class="section" style="padding-top:calc(var(--nav-height) + 32px);">
     <div class="container">
-      <div class="about-grid">
-        <!-- Image -->
-        <div class="about-image reveal-left">
-          <div class="about-image-wrapper">
-            <div class="about-image-overlay"></div>
-            <img src="images/profile.png" alt="Yoga Setyawan Purwanto" loading="lazy">
-          </div>
-          <div class="about-floating-card">
-            <div class="icon"><i data-lucide="code-2" style="width:22px;height:22px;"></i></div>
-            <div class="info">
-              <h4>3+ Tahun</h4>
+      
+      <!-- Top Hero Grid -->
+      <div class="about-hero-grid">
+        <!-- Photo with Experience Badge -->
+        <div class="about-photo-card reveal-left">
+          <img src="images/profile.png" alt="Yoga Setyawan Purwanto">
+          <div class="about-experience-badge">
+            <div class="badge-number">3+</div>
+            <div class="badge-desc">
+              <h4>Tahun</h4>
               <p>Belajar & Coding</p>
             </div>
           </div>
         </div>
 
-        <!-- Content -->
-        <div class="about-content reveal-right">
-          <span class="section-label">
-            <i data-lucide="user" style="width:13px;height:13px;"></i>
-            Tentang
-          </span>
-          <h1 class="section-title">Odoo Developer &<br><span class="text-gradient">Lifelong Learner</span></h1>
-          <p class="about-text">
+        <!-- Story & Identity -->
+        <div class="about-story reveal-right">
+          <div class="section-tag">
+            <i data-lucide="user"></i>
+            <span>Tentang Saya</span>
+          </div>
+          <h2>Odoo Developer & <br><span class="text-gradient">Lifelong Learner</span></h2>
+          <p>
             Nama saya <strong>Yoga Setyawan Purwanto</strong>. Saat ini saya bekerja sebagai Odoo Developer di <strong>PT Karyatama Solusindo</strong>, berfokus pada pengembangan modul kustom, integrasi sistem, dan konfigurasi ERP sesuai kebutuhan klien.
           </p>
-          <p class="about-text">
+          <p>
             Perjalanan saya dimulai dari belajar mandiri — dari HTML, lalu Python, Docker, hingga akhirnya fokus di ekosistem Odoo. Saya senang ketika kode yang saya tulis bisa menyelesaikan masalah nyata di lapangan.
           </p>
 
-          <div class="about-highlights">
-            <div class="about-highlight-item reveal delay-1">
-              <span class="check">✓</span> Odoo Module Development
+          <div class="about-pillars">
+            <div class="pillar-item">
+              <i data-lucide="check"></i>
+              <span>Odoo Module Development</span>
             </div>
-            <div class="about-highlight-item reveal delay-2">
-              <span class="check">✓</span> Python & XML Backend
+            <div class="pillar-item">
+              <i data-lucide="check"></i>
+              <span>Python & XML Backend</span>
             </div>
-            <div class="about-highlight-item reveal delay-3">
-              <span class="check">✓</span> SIMRS & CRM Enterprise
+            <div class="pillar-item">
+              <i data-lucide="check"></i>
+              <span>SIMRS & CRM Enterprise</span>
             </div>
-            <div class="about-highlight-item reveal delay-4">
-              <span class="check">✓</span> Flutter Mobile Apps
+            <div class="pillar-item">
+              <i data-lucide="check"></i>
+              <span>Flutter Mobile Apps</span>
             </div>
           </div>
 
-          <div class="about-buttons">
+          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
             <a href="contact.html" class="btn btn-primary">
-              <i data-lucide="mail" style="width:17px;height:17px;"></i>
-              Hubungi Saya
+              <i data-lucide="mail" style="width:16px;height:16px;"></i> Hubungi Saya
             </a>
-            <button class="btn btn-secondary" id="btnCV" onclick="openPdfModal('pdf/yoga_setyawan_cv.pdf', 'Curriculum Vitae')">
-              <i data-lucide="file-text" style="width:17px;height:17px;"></i>
-              Lihat CV
+            <button class="btn btn-secondary" onclick="openPdfModal('pdf/yoga_setyawan_cv.pdf', 'Curriculum Vitae — Yoga Setyawan')">
+              <i data-lucide="file-text" style="width:16px;height:16px;"></i> Lihat CV
             </button>
           </div>
         </div>
       </div>
 
-      <!-- Timeline -->
-      <div class="timeline reveal">
-        <h3 class="timeline-title">
-          <i data-lucide="git-branch" style="width:24px;height:24px;color:var(--primary-light);"></i>
-          Perjalanan Saya
-        </h3>
-        <div class="timeline-items">
+      <!-- Work Experience Timeline -->
+      <div style="margin-top:64px;" class="reveal">
+        <div class="section-header">
+          <div class="section-tag">
+            <i data-lucide="git-branch"></i>
+            <span>Perjalanan Saya</span>
+          </div>
+          <h2 class="section-title">Pengalaman <span class="text-gradient">Kerja</span></h2>
+        </div>
+
+        <div class="timeline-block">
+          <!-- Timeline 1: Current Job -->
           <div class="timeline-item reveal delay-1">
-            <span class="year">2025 — Sekarang</span>
-            <h4>Odoo Developer — PT Karyatama Solusindo</h4>
-            <p>Mengembangkan modul Odoo untuk berbagai klien, termasuk sistem rumah sakit (SIMRS), CRM, manajemen gudang, dan ERP enterprise. Menggunakan Python, XML, PostgreSQL, dan sesekali Flutter untuk kebutuhan mobile.</p>
+            <div class="timeline-dot"></div>
+            <div class="timeline-header">
+              <span class="timeline-period">2025 — Sekarang</span>
+              <h3 class="timeline-role">Odoo Developer</h3>
+            </div>
+            <div class="timeline-company">PT Karyatama Solusindo &bull; Jakarta</div>
+            <p class="timeline-desc">
+              Mengembangkan modul Odoo untuk berbagai klien, termasuk sistem rumah sakit (SIMRS), CRM, manajemen gudang, dan ERP enterprise. Menggunakan Python, XML, PostgreSQL, dan sesekali Flutter untuk kebutuhan mobile.
+            </p>
           </div>
+
+          <!-- Timeline 2: Deep Dive Odoo -->
           <div class="timeline-item reveal delay-2">
-            <span class="year">2024 — 2025</span>
-            <h4>Belajar Odoo & Python Secara Mandiri</h4>
-            <p>Mulai mendalami ekosistem Odoo dari dokumentasi resmi dan praktik langsung. Bereksperimen dengan modul kustom, ORM Python, dan struktur view XML.</p>
+            <div class="timeline-dot"></div>
+            <div class="timeline-header">
+              <span class="timeline-period">2024 — 2025</span>
+              <h3 class="timeline-role">Belajar Odoo & Python Secara Mandiri</h3>
+            </div>
+            <div class="timeline-company">Eksplorasi & Proyek Mandiri</div>
+            <p class="timeline-desc">
+              Mulai mendalami ekosistem Odoo dari dokumentasi resmi dan praktik langsung. Bereksperimen dengan modul kustom, ORM Python, dan struktur view XML.
+            </p>
           </div>
+
+          <!-- Timeline 3: Flutter -->
           <div class="timeline-item reveal delay-3">
-            <span class="year">2023</span>
-            <h4>Flutter & Firebase</h4>
-            <p>Mencoba membangun aplikasi mobile menggunakan Flutter. Mulai memahami version control dengan Git dan cara kerja kolaborasi dalam tim.</p>
+            <div class="timeline-dot"></div>
+            <div class="timeline-header">
+              <span class="timeline-period">2023</span>
+              <h3 class="timeline-role">Flutter & Firebase</h3>
+            </div>
+            <div class="timeline-company">Aplikasi Mobile</div>
+            <p class="timeline-desc">
+              Mencoba membangun aplikasi mobile menggunakan Flutter. Mulai memahami version control dengan Git dan cara kerja kolaborasi dalam tim.
+            </p>
           </div>
+
+          <!-- Timeline 4: First Code -->
           <div class="timeline-item reveal delay-4">
-            <span class="year">2022</span>
-            <h4>Baris kode pertama</h4>
-            <p>Menulis kode untuk pertama kalinya. Dari situ, ketertarikan pada pemrograman terus berkembang.</p>
+            <div class="timeline-dot"></div>
+            <div class="timeline-header">
+              <span class="timeline-period">2022</span>
+              <h3 class="timeline-role">Baris Kode Pertama</h3>
+            </div>
+            <div class="timeline-company">Awal Mula Belajar</div>
+            <p class="timeline-desc">
+              Menulis kode untuk pertama kalinya. Dari situ, ketertarikan pada pemrograman terus berkembang.
+            </p>
           </div>
         </div>
       </div>
 
-      <!-- Education Section -->
-      <div class="timeline reveal" style="margin-top: 80px;">
-        <h3 class="timeline-title">
-          <i data-lucide="graduation-cap" style="width:24px;height:24px;color:var(--primary-light);"></i>
-          Riwayat Pendidikan
-        </h3>
-        <div class="timeline-items">
-          <div class="timeline-item reveal delay-1">
-            <span class="year">2023 — 2026</span>
-            <h4>SMKN 12 Malang</h4>
-            <p>Jurusan Pengembangan Perangkat Lunak dan GIM (PPLG). Mempelajari dasar-dasar pemrograman, struktur data, dan pengembangan aplikasi web serta Android.</p>
+      <!-- Education Timeline -->
+      <div style="margin-top:64px;" class="reveal">
+        <div class="section-header">
+          <div class="section-tag">
+            <i data-lucide="graduation-cap"></i>
+            <span>Pendidikan</span>
           </div>
+          <h2 class="section-title">Riwayat <span class="text-gradient">Pendidikan</span></h2>
+        </div>
+
+        <div class="timeline-block">
+          <!-- Education 1 -->
+          <div class="timeline-item reveal delay-1">
+            <div class="timeline-dot"></div>
+            <div class="timeline-header">
+              <span class="timeline-period">2023 — 2026</span>
+              <h3 class="timeline-role">SMKN 12 Malang</h3>
+            </div>
+            <div class="timeline-company">Jurusan Pengembangan Perangkat Lunak dan GIM (PPLG)</div>
+            <p class="timeline-desc">
+              Mempelajari dasar-dasar pemrograman, struktur data, dan pengembangan aplikasi web serta Android.
+            </p>
+          </div>
+
+          <!-- Education 2 -->
           <div class="timeline-item reveal delay-2">
-            <span class="year">2020 — 2023</span>
-            <h4>SMP Kartika IV-9 Malang</h4>
-            <p>Awal pengenalan dunia komputer dan logika dasar.</p>
+            <div class="timeline-dot"></div>
+            <div class="timeline-header">
+              <span class="timeline-period">2020 — 2023</span>
+              <h3 class="timeline-role">SMP Kartika IV-9 Malang</h3>
+            </div>
+            <div class="timeline-company">Pendidikan Menengah Pertama</div>
+            <p class="timeline-desc">
+              Awal pengenalan dunia komputer dan logika dasar.
+            </p>
           </div>
         </div>
       </div>
+
     </div>
   </section>
 
-  <!-- PDF Modal -->
-  <div class="pdf-modal-overlay" id="pdfModalOverlay">
-    <div class="pdf-modal" id="pdfModal">
-      <div class="pdf-modal-header">
-        <div class="pdf-modal-title">
-          <i data-lucide="file-text" style="width:20px;height:20px;color:var(--primary-light);"></i>
-          <h3 id="pdfModalTitle">Dokumen</h3>
-        </div>
-        <div class="pdf-modal-actions">
-          <a href="#" id="pdfDownloadBtn" class="btn btn-secondary btn-sm" download>
-            <i data-lucide="download" style="width:15px;height:15px;"></i> Unduh
-          </a>
-          <button class="pdf-modal-close" id="pdfModalClose" aria-label="Tutup">
-            <i data-lucide="x" style="width:20px;height:20px;"></i>
-          </button>
-        </div>
-      </div>
-      <div class="pdf-modal-body">
-        <iframe id="pdfIframe" src="" frameborder="0" allowfullscreen></iframe>
-      </div>
-    </div>
-  </div>
-
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="nav-logo">YP<span class="dot"></span></a>
-          <p>Odoo Developer di PT Karyatama Solusindo, Jakarta. Fokus pada pengembangan modul, integrasi sistem, dan aplikasi mobile.</p>
+          <a href="index.html" class="nav-logo">
+            <span class="logo-badge">YP</span>
+            <span>Yoga Setyawan<span class="dot"></span></span>
+          </a>
+          <p>
+            Odoo Developer di PT Karyatama Solusindo, Jakarta. Fokus pada pengembangan modul, integrasi sistem, dan aplikasi mobile.
+          </p>
         </div>
-        <div class="footer-column">
-          <h4>Navigasi</h4>
-          <ul>
+
+        <div>
+          <h4 class="footer-col-title">Navigasi</h4>
+          <ul class="footer-links-list">
             <li><a href="index.html">Beranda</a></li>
             <li><a href="about.html">Tentang</a></li>
             <li><a href="skills.html">Keahlian</a></li>
@@ -195,51 +257,74 @@
             <li><a href="contact.html">Kontak</a></li>
           </ul>
         </div>
-        <div class="footer-column">
-          <h4>Terhubung</h4>
-          <ul>
-            <li><a href="https://github.com/grsll" target="_blank">GitHub</a></li>
-            <li><a href="https://www.instagram.com/yog_aaa4/" target="_blank">Instagram</a></li>
-            <li><a href="https://www.linkedin.com/in/yoga-setyawan-work/" target="_blank">LinkedIn</a></li>
-            <li><a href="mailto:astdnn48@gmail.com">Email</a></li>
+
+        <div>
+          <h4 class="footer-col-title">Terhubung</h4>
+          <ul class="footer-links-list">
+            <li><a href="mailto:astdnn48@gmail.com"><i data-lucide="mail" style="width:13px;height:13px;vertical-align:middle;margin-right:4px;"></i> astdnn48@gmail.com</a></li>
+            <li><a href="https://wa.me/6282233457234" target="_blank"><i data-lucide="phone" style="width:13px;height:13px;vertical-align:middle;margin-right:4px;"></i> +62-822-3345-7234</a></li>
+            <li><span style="font-size:13.5px;color:var(--text-muted);"><i data-lucide="map-pin" style="width:13px;height:13px;vertical-align:middle;margin-right:4px;"></i> Jakarta, Indonesia</span></li>
           </ul>
         </div>
       </div>
-      <div class="footer-bottom">
+
+      <div class="footer-bottom-bar">
         <p>&copy; 2026 Yoga Setyawan Purwanto. Seluruh hak cipta dilindungi.</p>
-        <div class="footer-bottom-links">
-          <a href="https://github.com/grsll" target="_blank" class="footer-social-link" aria-label="GitHub"><i data-lucide="github" style="width:16px;height:16px;"></i></a>
-          <a href="https://www.instagram.com/yog_aaa4/" target="_blank" class="footer-social-link" aria-label="Instagram"><i data-lucide="instagram" style="width:16px;height:16px;"></i></a>
-          <a href="https://www.linkedin.com/in/yoga-setyawan-work/" target="_blank" class="footer-social-link" aria-label="LinkedIn"><i data-lucide="linkedin" style="width:16px;height:16px;"></i></a>
+        <div class="footer-social-icons">
+          <a href="https://github.com/grsll" target="_blank" class="footer-social-btn" aria-label="GitHub">
+            <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/yoga-setyawan-work/" target="_blank" class="footer-social-btn" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/yog_aaa4/" target="_blank" class="footer-social-btn" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+          </a>
         </div>
       </div>
     </div>
   </footer>
 
-  <button class="scroll-top" id="scrollTop" aria-label="Kembali ke atas">
-    <i data-lucide="arrow-up" style="width:20px;height:20px;"></i>
-  </button>
+  <!-- PDF CV Modal -->
+  <div class="modal-overlay" id="pdfModalOverlay">
+    <div class="modal-window">
+      <div class="modal-header">
+        <div class="modal-title">
+          <i data-lucide="file-text" style="width:18px;height:18px;color:var(--primary);"></i>
+          <h3 id="pdfModalTitle">Curriculum Vitae</h3>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <a href="pdf/yoga_setyawan_cv.pdf" id="pdfDownloadBtn" class="btn btn-primary btn-sm" download>
+            <i data-lucide="download" style="width:14px;height:14px;"></i> Unduh PDF
+          </a>
+          <button class="modal-close-btn" id="pdfModalClose" aria-label="Tutup">
+            <i data-lucide="x" style="width:18px;height:18px;"></i>
+          </button>
+        </div>
+      </div>
+      <div class="modal-body">
+        <iframe id="pdfIframe" src="" title="Curriculum Vitae"></iframe>
+      </div>
+    </div>
+  </div>
 
+  <!-- Floating Dock -->
+  <div class="floating-actions-dock">
+    <a href="https://wa.me/6282233457234" target="_blank" class="floating-btn floating-wa-btn" aria-label="WhatsApp">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+    </a>
+    <button class="floating-btn scroll-top-btn" id="scrollTop" aria-label="Kembali ke Atas">
+      <i data-lucide="arrow-up" style="width:18px;height:18px;"></i>
+    </button>
+  </div>
+
+  <!-- Scripts -->
   <script src="js/script.js"></script>
   <script>
-    lucide.createIcons();
-    function openPdfModal(pdfUrl, title) {
-      const overlay = document.getElementById('pdfModalOverlay');
-      document.getElementById('pdfModalTitle').textContent = title || 'Dokumen';
-      document.getElementById('pdfIframe').src = pdfUrl;
-      document.getElementById('pdfDownloadBtn').href = pdfUrl;
-      overlay.classList.add('active');
-      document.body.style.overflow = 'hidden';
+    if (window.lucide) {
+      lucide.createIcons();
     }
-    function closePdfModal() {
-      const overlay = document.getElementById('pdfModalOverlay');
-      overlay.classList.remove('active');
-      document.body.style.overflow = '';
-      setTimeout(() => { document.getElementById('pdfIframe').src = ''; }, 400);
-    }
-    document.getElementById('pdfModalOverlay').addEventListener('click', function(e) { if (e.target === this) closePdfModal(); });
-    document.getElementById('pdfModalClose').addEventListener('click', closePdfModal);
-    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closePdfModal(); });
   </script>
 </body>
+
 </html>

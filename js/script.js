@@ -1,12 +1,12 @@
-/* ============================================
-   PORTFOLIO WEBSITE - MAIN JAVASCRIPT
-   ============================================ */
+/* ==========================================================================
+   YOGA SETYAWAN PURWANTO — JAVASCRIPT (SMOOTH & CLEAN)
+   ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // ============================================
-  // Scroll Progress Bar
-  // ============================================
+  // --------------------------------------------------------------------------
+  // 1. SCROLL PROGRESS BAR
+  // --------------------------------------------------------------------------
   const progressBar = document.createElement('div');
   progressBar.className = 'scroll-progress';
   document.body.prepend(progressBar);
@@ -18,35 +18,11 @@ document.addEventListener('DOMContentLoaded', () => {
     progressBar.style.width = progress + '%';
   }, { passive: true });
 
-  // ============================================
-  // Glassy Navbar on Inner Pages
-  // ============================================
-  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-  if (currentPath !== 'index.html' && currentPath !== '') {
-    document.querySelector('.navbar')?.classList.add('navbar-inner', 'scrolled');
-  }
-  // ============================================
-  // Page Loader
-  // ============================================
-  const loader = document.querySelector('.page-loader');
-
-  if (loader) {
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        loader.classList.add('hidden');
-      }, 400);
-    });
-    // Fallback: hide loader after 2s no matter what
-    setTimeout(() => {
-      loader.classList.add('hidden');
-    }, 2000);
-  }
-
-  // ============================================
-  // Theme Toggle (Dark Mode)
-  // ============================================
+  // --------------------------------------------------------------------------
+  // 2. THEME TOGGLE (DARK / LIGHT MODE)
+  // --------------------------------------------------------------------------
   const themeToggle = document.getElementById('themeToggle');
-  const savedTheme = localStorage.getItem('theme') || 'light';
+  const savedTheme = localStorage.getItem('theme') || 'dark';
   document.documentElement.setAttribute('data-theme', savedTheme);
 
   if (themeToggle) {
@@ -55,36 +31,30 @@ document.addEventListener('DOMContentLoaded', () => {
       const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
       document.documentElement.setAttribute('data-theme', newTheme);
       localStorage.setItem('theme', newTheme);
+      if (window.lucide) {
+        window.lucide.createIcons();
+      }
     });
   }
 
-  // ============================================
-  // Navbar Scroll Effect
-  // ============================================
-
-
-
-  // ============================================
-  // Navbar Scroll Effect
-  // ============================================
-  const navbar = document.querySelector('.navbar');
-  const scrollTopBtn = document.querySelector('.scroll-top');
+  // --------------------------------------------------------------------------
+  // 3. NAVBAR SCROLL & SCROLL TO TOP
+  // --------------------------------------------------------------------------
+  const navbar = document.getElementById('navbar') || document.querySelector('.navbar');
+  const scrollTopBtn = document.getElementById('scrollTop') || document.querySelector('.scroll-top-btn');
 
   function handleScroll() {
     const scrollY = window.scrollY;
-
-    // Navbar background on scroll
     if (navbar) {
-      if (scrollY > 50) {
+      if (scrollY > 30) {
         navbar.classList.add('scrolled');
       } else {
         navbar.classList.remove('scrolled');
       }
     }
 
-    // Scroll-to-top button visibility
     if (scrollTopBtn) {
-      if (scrollY > 400) {
+      if (scrollY > 300) {
         scrollTopBtn.classList.add('visible');
       } else {
         scrollTopBtn.classList.remove('visible');
@@ -93,39 +63,38 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   window.addEventListener('scroll', handleScroll, { passive: true });
-  handleScroll(); // Initial check
+  handleScroll();
 
-  // Scroll to top click
   if (scrollTopBtn) {
     scrollTopBtn.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
 
-  // ============================================
-  // Mobile Navigation Toggle
-  // ============================================
-  const navToggle = document.querySelector('.nav-toggle');
-  const navLinks = document.querySelector('.nav-links');
+  // --------------------------------------------------------------------------
+  // 4. MOBILE DRAWER MENU
+  // --------------------------------------------------------------------------
+  const navToggle = document.getElementById('navToggle') || document.querySelector('.nav-toggle');
+  const navLinks = document.getElementById('navLinks') || document.querySelector('.nav-links');
   const mobileOverlay = document.querySelector('.mobile-overlay');
 
   function openMenu() {
-    navToggle.classList.add('active');
-    navLinks.classList.add('open');
+    if (navToggle) navToggle.classList.add('active');
+    if (navLinks) navLinks.classList.add('open');
     if (mobileOverlay) mobileOverlay.classList.add('active');
     document.body.style.overflow = 'hidden';
   }
 
   function closeMenu() {
-    navToggle.classList.remove('active');
-    navLinks.classList.remove('open');
+    if (navToggle) navToggle.classList.remove('active');
+    if (navLinks) navLinks.classList.remove('open');
     if (mobileOverlay) mobileOverlay.classList.remove('active');
     document.body.style.overflow = '';
   }
 
   if (navToggle) {
     navToggle.addEventListener('click', () => {
-      if (navLinks.classList.contains('open')) {
+      if (navLinks && navLinks.classList.contains('open')) {
         closeMenu();
       } else {
         openMenu();
@@ -137,100 +106,35 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileOverlay.addEventListener('click', closeMenu);
   }
 
-  // Close mobile menu on link click
   document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', closeMenu);
   });
 
-  // ============================================
-  // Active Navbar Link Highlight
-  // ============================================
+  // --------------------------------------------------------------------------
+  // 5. ACTIVE NAV LINK
+  // --------------------------------------------------------------------------
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav-links a').forEach(link => {
     const href = link.getAttribute('href');
     if (href === currentPage || (currentPage === '' && href === 'index.html')) {
       link.classList.add('active');
+    } else {
+      link.classList.remove('active');
     }
   });
 
-  // ============================================
-  // Page Transition Effect
-  // ============================================
-  const pageTransition = document.querySelector('.page-transition');
-  const transitionLinks = document.querySelectorAll('a[href$=".html"]');
-
-  transitionLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      const href = link.getAttribute('href');
-      // Only apply transition for local pages
-      if (href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('mailto:')) {
-        e.preventDefault();
-        if (pageTransition) {
-          pageTransition.classList.add('active');
-          setTimeout(() => {
-            window.location.href = href;
-          }, 300);
-        } else {
-          window.location.href = href;
-        }
-      }
-    });
-  });
-
-  // ============================================
-  // Scroll Reveal Animation
-  // ============================================
-  const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
-
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  }, {
-    threshold: 0.12,
-    rootMargin: '0px 0px -40px 0px'
-  });
-
-  revealElements.forEach(el => revealObserver.observe(el));
-
-  // ============================================
-  // Skill Bar Animation
-  // ============================================
-  const skillBars = document.querySelectorAll('.skill-bar-fill');
-
-  const skillObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const target = entry.target;
-        const width = target.getAttribute('data-width');
-        target.style.width = width + '%';
-        skillObserver.unobserve(target);
-      }
-    });
-  }, {
-    threshold: 0.3
-  });
-
-  skillBars.forEach(bar => skillObserver.observe(bar));
-
-
-
-  // ============================================
-  // Typing Effect (Hero Section)
-  // ============================================
+  // --------------------------------------------------------------------------
+  // 6. TYPING ANIMATION (HERO)
+  // --------------------------------------------------------------------------
   const typingEl = document.querySelector('.typing-text');
   if (typingEl) {
-    const phrases = JSON.parse(typingEl.getAttribute('data-phrases') || '[]');
+    const phrases = JSON.parse(typingEl.getAttribute('data-phrases') || '["Odoo Developer", "Python Backend", "Flutter Mobile Developer"]');
     let phraseIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
 
-    function typeEffect() {
+    function typeLoop() {
       const currentPhrase = phrases[phraseIndex];
-
       if (isDeleting) {
         typingEl.textContent = currentPhrase.substring(0, charIndex - 1);
         charIndex--;
@@ -239,53 +143,234 @@ document.addEventListener('DOMContentLoaded', () => {
         charIndex++;
       }
 
-      let delay = isDeleting ? 40 : 80;
+      let delay = isDeleting ? 30 : 65;
 
       if (!isDeleting && charIndex === currentPhrase.length) {
-        delay = 2000; // Wait before deleting
+        delay = 2000;
         isDeleting = true;
       } else if (isDeleting && charIndex === 0) {
         isDeleting = false;
         phraseIndex = (phraseIndex + 1) % phrases.length;
-        delay = 500;
+        delay = 350;
       }
 
-      setTimeout(typeEffect, delay);
+      setTimeout(typeLoop, delay);
     }
 
-    setTimeout(typeEffect, 1000);
+    setTimeout(typeLoop, 600);
   }
 
-  // ============================================
-  // Counter Animation
-  // ============================================
+  // --------------------------------------------------------------------------
+  // 7. COUNTER ANIMATION
+  // --------------------------------------------------------------------------
   const counters = document.querySelectorAll('[data-count]');
+  if (counters.length > 0) {
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseInt(el.getAttribute('data-count'), 10) || 0;
+          const suffix = el.getAttribute('data-suffix') || '';
+          let current = 0;
+          const steps = 35;
+          const increment = target / steps;
+          const intervalTime = 1000 / steps;
 
-  const counterObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const el = entry.target;
-        const target = parseInt(el.getAttribute('data-count'));
-        const suffix = el.getAttribute('data-suffix') || '';
-        let current = 0;
-        const increment = target / 60;
-        const duration = 1500;
-        const stepTime = duration / 60;
+          const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+              current = target;
+              clearInterval(timer);
+            }
+            el.textContent = Math.floor(current) + suffix;
+          }, intervalTime);
 
-        const counter = setInterval(() => {
-          current += increment;
-          if (current >= target) {
-            current = target;
-            clearInterval(counter);
-          }
-          el.textContent = Math.floor(current) + suffix;
-        }, stepTime);
+          counterObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.2 });
 
-        counterObserver.unobserve(el);
+    counters.forEach(c => counterObserver.observe(c));
+  }
+
+  // --------------------------------------------------------------------------
+  // 8. SMOOTH SCROLL REVEAL
+  // --------------------------------------------------------------------------
+  const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+  if (revealElements.length > 0) {
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.08,
+      rootMargin: '0px 0px -30px 0px'
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+  }
+
+  // --------------------------------------------------------------------------
+  // 9. SKILL PROGRESS BAR
+  // --------------------------------------------------------------------------
+  const skillBars = document.querySelectorAll('.skill-progress-fill');
+  if (skillBars.length > 0) {
+    const skillObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const target = entry.target;
+          const width = target.getAttribute('data-width') || '80';
+          target.style.width = width + '%';
+          skillObserver.unobserve(target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    skillBars.forEach(b => skillObserver.observe(b));
+  }
+
+  // --------------------------------------------------------------------------
+  // 10. PROJECT FILTERING & REAL-TIME SEARCH
+  // --------------------------------------------------------------------------
+  const filterPills = document.querySelectorAll('.filter-pill');
+  const searchInput = document.getElementById('projectSearch');
+  const projectCards = document.querySelectorAll('.project-card');
+
+  function applyProjectFilters() {
+    const activePill = document.querySelector('.filter-pill.active');
+    const selectedCategory = activePill ? activePill.getAttribute('data-category') : 'all';
+    const searchQuery = searchInput ? searchInput.value.toLowerCase().trim() : '';
+
+    projectCards.forEach(card => {
+      const cardCategory = card.getAttribute('data-category') || '';
+      const cardTitle = card.querySelector('.project-title')?.textContent.toLowerCase() || '';
+      const cardDesc = card.querySelector('.project-description')?.textContent.toLowerCase() || '';
+      const cardTech = card.querySelector('.project-tech-stack')?.textContent.toLowerCase() || '';
+
+      const matchCategory = (selectedCategory === 'all' || cardCategory.includes(selectedCategory));
+      const matchSearch = (cardTitle.includes(searchQuery) || cardDesc.includes(searchQuery) || cardTech.includes(searchQuery));
+
+      if (matchCategory && matchSearch) {
+        card.style.display = 'flex';
+        setTimeout(() => {
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        }, 10);
+      } else {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(6px)';
+        setTimeout(() => {
+          card.style.display = 'none';
+        }, 180);
       }
     });
-  }, { threshold: 0.5 });
+  }
 
-  counters.forEach(counter => counterObserver.observe(counter));
+  if (filterPills.length > 0) {
+    filterPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        filterPills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        applyProjectFilters();
+      });
+    });
+  }
+
+  if (searchInput) {
+    searchInput.addEventListener('input', applyProjectFilters);
+  }
+
+  // --------------------------------------------------------------------------
+  // 11. TOAST NOTIFICATION UTILITY
+  // --------------------------------------------------------------------------
+  let toastEl = document.querySelector('.toast-notification');
+  if (!toastEl) {
+    toastEl = document.createElement('div');
+    toastEl.className = 'toast-notification';
+    toastEl.innerHTML = '<span id="toastMsg">Tersalin!</span>';
+    document.body.appendChild(toastEl);
+  }
+
+  window.showToast = function(message) {
+    const msgSpan = document.getElementById('toastMsg');
+    if (msgSpan) msgSpan.textContent = message;
+    toastEl.classList.add('show');
+    setTimeout(() => {
+      toastEl.classList.remove('show');
+    }, 2400);
+  };
+
+  // --------------------------------------------------------------------------
+  // 12. COPY EMAIL TO CLIPBOARD
+  // --------------------------------------------------------------------------
+  document.querySelectorAll('.btn-copy-email').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const email = btn.getAttribute('data-email') || 'astdnn48@gmail.com';
+      navigator.clipboard.writeText(email).then(() => {
+        window.showToast(`Email ${email} berhasil disalin!`);
+      }).catch(() => {
+        window.showToast(`Email: ${email}`);
+      });
+    });
+  });
+
+  // --------------------------------------------------------------------------
+  // 13. PDF CV MODAL VIEWER
+  // --------------------------------------------------------------------------
+  window.openPdfModal = function(pdfUrl, title) {
+    const overlay = document.getElementById('pdfModalOverlay');
+    const iframe = document.getElementById('pdfIframe');
+    const titleEl = document.getElementById('pdfModalTitle');
+    const downloadBtn = document.getElementById('pdfDownloadBtn');
+
+    if (overlay && iframe) {
+      if (titleEl) titleEl.textContent = title || 'Curriculum Vitae';
+      iframe.src = pdfUrl || 'pdf/yoga_setyawan_cv.pdf';
+      if (downloadBtn) downloadBtn.href = pdfUrl || 'pdf/yoga_setyawan_cv.pdf';
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      if (window.lucide) window.lucide.createIcons();
+    }
+  };
+
+  window.closePdfModal = function() {
+    const overlay = document.getElementById('pdfModalOverlay');
+    const iframe = document.getElementById('pdfIframe');
+    if (overlay) {
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+      if (iframe) {
+        setTimeout(() => { iframe.src = ''; }, 250);
+      }
+    }
+  };
+
+  const pdfOverlay = document.getElementById('pdfModalOverlay');
+  const pdfCloseBtn = document.getElementById('pdfModalClose');
+  if (pdfOverlay) {
+    pdfOverlay.addEventListener('click', (e) => {
+      if (e.target === pdfOverlay) window.closePdfModal();
+    });
+  }
+  if (pdfCloseBtn) {
+    pdfCloseBtn.addEventListener('click', window.closePdfModal);
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      window.closePdfModal();
+    }
+  });
+
+  // --------------------------------------------------------------------------
+  // 14. INITIALIZE ICONS
+  // --------------------------------------------------------------------------
+  if (window.lucide) {
+    window.lucide.createIcons();
+  }
 
 });

@@ -328,7 +328,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const downloadBtn = document.getElementById('pdfDownloadBtn');
 
     if (overlay && iframe) {
-      if (titleEl) titleEl.textContent = title || 'Curriculum Vitae';
+      if (titleEl) titleEl.textContent = title || 'Curriculum Vitae — Yoga Setyawan Purwanto';
       iframe.src = pdfUrl || 'pdf/yoga_setyawan_cv.pdf';
       if (downloadBtn) downloadBtn.href = pdfUrl || 'pdf/yoga_setyawan_cv.pdf';
       overlay.classList.add('active');

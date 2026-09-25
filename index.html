@@ -1,64 +1,36 @@
 <!DOCTYPE html>
-<html lang="id" data-theme="dark">
-
+<html lang="id">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="images/favicon.png">
-  <meta name="description"
-    content="Yoga Setyawan Purwanto — Odoo Developer di PT Karyatama Solusindo. Portfolio yang menampilkan modul kustom, SIMRS, dan aplikasi mobile Flutter.">
-  <meta name="keywords"
-    content="Yoga Setyawan Purwanto, Odoo Developer, Python, SIMRS, ERP, Flutter, PostgreSQL, Docker">
+  <meta name="description" content="Yoga Setyawan Purwanto — Odoo Developer di PT Karyatama Solusindo. Modul kustom, SIMRS, dan aplikasi mobile Flutter.">
+  <meta name="keywords" content="Yoga Setyawan Purwanto, Odoo Developer, Python, SIMRS, ERP, Flutter, PostgreSQL, Docker">
   <meta name="author" content="Yoga Setyawan Purwanto">
-
   <title>Yoga Setyawan Purwanto — Odoo Developer</title>
 
-  <!-- Google Fonts: IBM Plex Sans + JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
-    rel="stylesheet">
-
-  <!-- Lucide Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
-
-  <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-  <!-- Ambient Grid Background -->
-  <div class="ambient-mesh">
-    <div class="mesh-orb orb-primary"></div>
-    <div class="mesh-orb orb-secondary"></div>
-    <div class="mesh-orb orb-cyan"></div>
-    <div class="grid-overlay"></div>
-  </div>
 
   <div class="mobile-overlay"></div>
 
-  <!-- NAVBAR -->
+  <!-- NAV -->
   <nav class="navbar" id="navbar">
     <div class="container">
-      <a href="index.html" class="nav-logo">
-        <span class="logo-badge">&lt;YP /&gt;</span>
-        <span>Yoga Setyawan<span class="dot">.</span></span>
-      </a>
-
+      <a href="index.html" class="nav-logo">yoga.dev</a>
       <div class="nav-links" id="navLinks">
-        <a href="index.html" class="active"><i data-lucide="home" style="width:14px;height:14px;"></i> Beranda</a>
-        <a href="about.html"><i data-lucide="user" style="width:14px;height:14px;"></i> Tentang</a>
-        <a href="skills.html"><i data-lucide="cpu" style="width:14px;height:14px;"></i> Keahlian</a>
-        <a href="projects.html"><i data-lucide="folder-git-2" style="width:14px;height:14px;"></i> Proyek</a>
-        <a href="contact.html"><i data-lucide="mail" style="width:14px;height:14px;"></i> Kontak</a>
+        <a href="index.html" class="active">Beranda</a>
+        <a href="about.html">Tentang</a>
+        <a href="skills.html">Keahlian</a>
+        <a href="projects.html">Proyek</a>
+        <a href="contact.html">Kontak</a>
       </div>
-
       <div class="nav-actions">
-        <button class="theme-toggle" id="themeToggle" aria-label="Ganti Tema">
-          <i data-lucide="sun" class="icon-sun" style="width:16px;height:16px;"></i>
-          <i data-lucide="moon" class="icon-moon" style="width:16px;height:16px;"></i>
-        </button>
         <button class="nav-toggle" id="navToggle" aria-label="Buka Menu Navigasi">
           <span></span><span></span><span></span>
         </button>
@@ -66,326 +38,211 @@
     </div>
   </nav>
 
-  <!-- HERO SECTION -->
+  <!-- HERO -->
   <section class="hero" id="hero">
     <div class="container">
       <div class="hero-grid">
-        <!-- Hero Text -->
-        <div class="hero-content reveal-left">
-          <div class="hero-badge">
+        <div class="reveal-l">
+          <div class="hero-label">
             <span class="status-dot"></span>
-            <span>Odoo Developer @ PT Karyatama Solusindo</span>
+            Odoo Developer @ PT Karyatama Solusindo
           </div>
-
           <h1 class="hero-title">
-            Halo, saya <span class="text-gradient">Yoga Setyawan Purwanto</span>
+            Yoga Setyawan<br>
+            <span>Purwanto</span>
           </h1>
-
-          <div class="hero-role-wrapper">
+          <div class="hero-role">
             <span>&gt;&nbsp;</span>
-            <span class="typing-text"
-              data-phrases='["Odoo Developer", "Python Backend", "Flutter Dev", "Problem Solver"]'></span>
+            <span class="typing-text" data-phrases='["Odoo Developer", "Python Backend", "Flutter Dev", "Problem Solver"]'></span>
             <span class="typing-cursor"></span>
           </div>
-
-          <p class="hero-description">
-            Developer yang berdedikasi membangun solusi ERP andal. Berfokus pada kustomisasi modul Odoo, integrasi basis data, serta sesekali merancang aplikasi mobile modern dengan Flutter.
+          <p class="hero-desc">
+            Developer yang berdedikasi membangun solusi ERP andal. Berfokus pada kustomisasi modul Odoo, integrasi basis data, dan sesekali merancang aplikasi mobile modern dengan Flutter.
           </p>
-
           <div class="hero-actions">
-            <a href="projects.html" class="btn btn-primary">
-              <i data-lucide="folder-open" style="width:15px;height:15px;"></i>
-              Lihat Proyek
-            </a>
-            <a href="about.html" class="btn btn-secondary">
-              <i data-lucide="user" style="width:15px;height:15px;"></i>
-              Tentang Saya
-            </a>
-            <button class="btn btn-outline" onclick="openPdfModal('pdf/yoga_setyawan_cv.pdf', 'Curriculum Vitae — Yoga Setyawan Purwanto')">
-              <i data-lucide="file-text" style="width:15px;height:15px;"></i>
-              Curriculum Vitae
-            </button>
+            <a href="projects.html" class="btn btn-primary">Lihat Proyek</a>
+            <button class="btn btn-secondary" onclick="openPdfModal('pdf/yoga_setyawan_cv.pdf','CV — Yoga Setyawan Purwanto')">Curriculum Vitae</button>
           </div>
-
-          <div class="hero-stats-strip">
-            <div class="hero-stat-card">
+          <div class="hero-stats">
+            <div class="stat-item">
               <h3 data-count="20" data-suffix="+">0</h3>
               <p>Proyek Selesai</p>
             </div>
-            <div class="hero-stat-card">
+            <div class="stat-item">
               <h3 data-count="6" data-suffix="+">0</h3>
               <p>Teknologi Utama</p>
             </div>
-            <div class="hero-stat-card">
+            <div class="stat-item">
               <h3 data-count="3" data-suffix="+ Thn">0</h3>
               <p>Pengalaman</p>
             </div>
           </div>
         </div>
 
-        <!-- Hero Visual Frame -->
-        <div class="hero-visual reveal-right">
-          <div class="hero-card-frame">
-            <div class="hero-avatar-wrapper">
-              <img src="images/profile.png" alt="Yoga Setyawan Purwanto" loading="eager">
-            </div>
+        <div class="hero-photo reveal-r">
+          <img src="images/profile.png" alt="Yoga Setyawan Purwanto" loading="eager">
+        </div>
+      </div>
+    </div>
+  </section>
 
-            <!-- Floating Status Badges -->
-            <div class="hero-float-pill top-right">
-              <div class="pill-icon">
-                <i data-lucide="terminal" style="width:16px;height:16px;"></i>
-              </div>
-              <div class="pill-text">
-                <strong>Odoo Expert</strong>
-                <span>v16 & v18</span>
-              </div>
-            </div>
+  <hr class="divider">
 
-            <div class="hero-float-pill bottom-left">
-              <div class="pill-icon" style="background:rgba(34,197,94,0.1);color:var(--primary);">
-                <i data-lucide="check-circle" style="width:16px;height:16px;"></i>
-              </div>
-              <div class="pill-text">
-                <strong>Active Dev</strong>
-                <span>Malang / Jakarta</span>
-              </div>
+  <!-- HIGHLIGHTS -->
+  <section class="section" id="highlights">
+    <div class="container">
+      <div class="sec-header reveal">
+        <div class="sec-label">Fokus &amp; Metode Kerja</div>
+        <h2 class="sec-title">Teknologi &amp; Alur Kerja</h2>
+        <p class="sec-sub">Bagaimana saya menggabungkan alat, kerangka kerja, dan prinsip arsitektur untuk menghasilkan modul yang tangguh.</p>
+      </div>
+
+      <div class="highlights-grid reveal d1">
+        <!-- Terminal snippet -->
+        <div class="code-block">
+          <div><span class="c-kw">class</span> <span class="c-fn">OdooDeveloper</span>:</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-kw">def</span> <span class="c-fn">__init__</span>(self):</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.nama = <span class="c-str">"Yoga Setyawan Purwanto"</span></div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.stack = [<span class="c-str">"Odoo"</span>, <span class="c-str">"Python"</span>, <span class="c-str">"PostgreSQL"</span>, <span class="c-str">"Flutter"</span>, <span class="c-str">"Docker"</span>]</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.lokasi = <span class="c-str">"Jakarta, Indonesia"</span></div>
+          <br>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-kw">def</span> <span class="c-fn">bangun_modul</span>(self, kebutuhan):</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-cm"># Manual → ERP otomatis</span></div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-kw">return</span> <span class="c-str">"Modul Odoo Siap Deploy"</span></div>
+        </div>
+
+        <!-- Pillar list -->
+        <div class="hl-card">
+          <div class="hl-card-label">Fokus Utama</div>
+          <div class="pillar-list">
+            <div class="pillar-row">
+              <i data-lucide="package" style="width:13px;height:13px;color:var(--text-3)"></i>
+              Odoo ERP (ORM Python &amp; XML View)
             </div>
+            <div class="pillar-row">
+              <i data-lucide="database" style="width:13px;height:13px;color:var(--text-3)"></i>
+              Python Backend &amp; PostgreSQL Query
+            </div>
+            <div class="pillar-row">
+              <i data-lucide="smartphone" style="width:13px;height:13px;color:var(--text-3)"></i>
+              Flutter Mobile App Development
+            </div>
+            <div class="pillar-row">
+              <i data-lucide="box" style="width:13px;height:13px;color:var(--text-3)"></i>
+              Docker Deployment &amp; Server
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 info cards -->
+      <div class="hl-row-3 reveal d2">
+        <div class="hl-card">
+          <div class="hl-card-label">Pengalaman Kerja</div>
+          <h3>PT Karyatama Solusindo</h3>
+          <p>Menangani kustomisasi alur bisnis, integrasi modul internal, dan perancangan sistem informasi medis (SIMRS).</p>
+        </div>
+        <div class="hl-card">
+          <div class="hl-card-label">Prinsip Koding</div>
+          <h3>Clean &amp; Maintainable</h3>
+          <p>Mengedepankan inheritance view Odoo untuk pemeliharaan jangka panjang, arsitektur data bersih, dan efisiensi query PostgreSQL.</p>
+        </div>
+        <div class="hl-card">
+          <div class="hl-card-label">Kontak Langsung</div>
+          <h3>Diskusi &amp; Kolaborasi</h3>
+          <p style="margin-bottom:12px">Terbuka untuk diskusi teknis seputar integrasi Odoo ERP atau proyek mobile.</p>
+          <div style="display:flex;gap:6px;">
+            <button class="btn btn-secondary btn-sm btn-copy-email" data-email="astdnn48@gmail.com">Copy Email</button>
+            <a href="https://wa.me/6282233457234" target="_blank" class="btn btn-primary btn-sm">WhatsApp</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- BENTO HIGHLIGHTS SECTION -->
-  <section class="section" id="highlights" style="border-top: 1px solid var(--border-subtle);">
+  <hr class="divider">
+
+  <!-- FEATURED PROJECTS -->
+  <section class="section" id="featured-projects">
     <div class="container">
-      <div class="section-header centered reveal">
-        <div class="section-tag">
-          <i data-lucide="sparkles"></i>
-          <span>Fokus & Metode Kerja</span>
-        </div>
-        <h2 class="section-title">Teknologi & Alur Kerja</h2>
-        <p class="section-subtitle">
-          Bagaimana saya menggabungkan alat, kerangka kerja, dan prinsip arsitektur untuk menghasilkan modul yang tangguh dan teruji.
-        </p>
-      </div>
-
-      <div class="bento-grid">
-        <!-- Interactive Terminal Card -->
-        <div class="bento-card col-span-7 terminal-card reveal delay-1">
-          <div class="terminal-header">
-            <div class="terminal-dots">
-              <span class="terminal-dot dot-red"></span>
-              <span class="terminal-dot dot-yellow"></span>
-              <span class="terminal-dot dot-green"></span>
-            </div>
-            <div class="terminal-title">yoga_setyawan.py</div>
-            <i data-lucide="terminal" style="width:14px;height:14px;color:var(--text-subtle);"></i>
-          </div>
-          <div class="terminal-body">
-            <div><span class="code-keyword">class</span> <span class="code-func">OdooDeveloper</span>:</div>
-            <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">def</span> <span class="code-func">__init__</span>(self):</div>
-            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.nama = <span class="code-str">"Yoga Setyawan Purwanto"</span></div>
-            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.kantor = <span class="code-str">"PT Karyatama Solusindo"</span></div>
-            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.stack = [<span class="code-str">"Odoo"</span>, <span class="code-str">"Python"</span>, <span class="code-str">"PostgreSQL"</span>, <span class="code-str">"Flutter"</span>, <span class="code-str">"Docker"</span>]</div>
-            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.lokasi = <span class="code-str">"Jakarta, Indonesia"</span></div>
-            <br>
-            <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">def</span> <span class="code-func">bangun_modul</span>(self, kebutuhan_bisnis):</div>
-            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-comment"># Mentranslasikan alur kerja manual menjadi sistem ERP otomatis</span></div>
-            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> <span class="code-str">"Modul Odoo Siap Dideploy"</span></div>
-          </div>
-        </div>
-
-        <!-- 4 Pilar Keahlian -->
-        <div class="bento-card col-span-5 reveal delay-2">
-          <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
-            <div class="pill-icon">
-              <i data-lucide="layers" style="width:16px;height:16px;"></i>
-            </div>
-            <div>
-              <h3 style="font-family:var(--font-display);font-size:1.05rem;font-weight:700;">Fokus Utama</h3>
-              <p style="font-size:11.5px;color:var(--text-muted);">Kompetensi utama saya</p>
-            </div>
-          </div>
-
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:12px;">
-            <div style="display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--bg-surface-elevated);border-radius:var(--r-xs);border:1px solid var(--border-subtle);">
-              <i data-lucide="package" style="width:15px;height:15px;color:var(--primary);"></i>
-              <span style="font-size:13px;font-weight:500;">Odoo ERP (ORM Python & XML View)</span>
-            </div>
-            <div style="display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--bg-surface-elevated);border-radius:var(--r-xs);border:1px solid var(--border-subtle);">
-              <i data-lucide="database" style="width:15px;height:15px;color:var(--secondary);"></i>
-              <span style="font-size:13px;font-weight:500;">Python Backend & PostgreSQL Query</span>
-            </div>
-            <div style="display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--bg-surface-elevated);border-radius:var(--r-xs);border:1px solid var(--border-subtle);">
-              <i data-lucide="smartphone" style="width:15px;height:15px;color:var(--accent-purple);"></i>
-              <span style="font-size:13px;font-weight:500;">Flutter Mobile App Development</span>
-            </div>
-            <div style="display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--bg-surface-elevated);border-radius:var(--r-xs);border:1px solid var(--border-subtle);">
-              <i data-lucide="box" style="width:15px;height:15px;color:var(--primary);"></i>
-              <span style="font-size:13px;font-weight:500;">Docker Deployment & Nginx Server</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Experience Snapshot -->
-        <div class="bento-card col-span-4 reveal delay-1">
-          <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
-            <i data-lucide="briefcase" style="color:var(--primary);width:16px;height:16px;"></i>
-            <h4 style="font-family:var(--font-display);font-size:0.95rem;font-weight:700;">Pengalaman Kerja</h4>
-          </div>
-          <p style="font-size:13px;color:var(--text-muted);line-height:1.6;">
-            Saat ini aktif di <strong>PT Karyatama Solusindo</strong>, menangani kustomisasi alur bisnis, integrasi modul internal, dan perancangan sistem informasi medis (SIMRS).
-          </p>
-        </div>
-
-        <!-- Problem Solving -->
-        <div class="bento-card col-span-4 reveal delay-2">
-          <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
-            <i data-lucide="code" style="color:var(--secondary);width:16px;height:16px;"></i>
-            <h4 style="font-family:var(--font-display);font-size:0.95rem;font-weight:700;">Prinsip Koding</h4>
-          </div>
-          <p style="font-size:13px;color:var(--text-muted);line-height:1.6;">
-            Mengedepankan inheritance view Odoo untuk pemeliharaan modul jangka panjang, arsitektur data bersih, dan efisiensi query PostgreSQL.
-          </p>
-        </div>
-
-        <!-- Fast Track Connect -->
-        <div class="bento-card col-span-4 reveal delay-3">
-          <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
-            <i data-lucide="mail" style="color:var(--primary);width:16px;height:16px;"></i>
-            <h4 style="font-family:var(--font-display);font-size:0.95rem;font-weight:700;">Kontak Langsung</h4>
-          </div>
-          <p style="font-size:13px;color:var(--text-muted);line-height:1.6;margin-bottom:14px;">
-            Hubungi saya untuk diskusi teknis seputar integrasi Odoo ERP atau proyek mobile:
-          </p>
-          <div style="display:flex;gap:8px;">
-            <button class="btn btn-secondary btn-sm btn-copy-email" data-email="astdnn48@gmail.com" style="flex: 1;">
-              <i data-lucide="copy" style="width:12px;height:12px;"></i> Copy Email
-            </button>
-            <a href="https://wa.me/6282233457234" target="_blank" class="btn btn-primary btn-sm" style="flex: 1;">
-              <i data-lucide="message-circle" style="width:12px;height:12px;"></i> WhatsApp
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FEATURED PROJECTS SHOWCASE (CLEAN TYPOGRAPHIC CARDS - NO IMAGES) -->
-  <section class="section" id="featured-projects" style="background:var(--bg-surface-subtle); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
-    <div class="container">
-      <div class="section-header centered reveal">
-        <div class="section-tag">
-          <i data-lucide="folder-git-2"></i>
-          <span>Portofolio Unggulan</span>
-        </div>
-        <h2 class="section-title">Proyek Pilihan</h2>
-        <p class="section-subtitle">
-          Beberapa proyek pilihan dari Odoo ERP enterprise, modul kustom sistem medis, hingga aplikasi mobile terintegrasi.
-        </p>
+      <div class="sec-header reveal">
+        <div class="sec-label">Portofolio Unggulan</div>
+        <h2 class="sec-title">Proyek Pilihan</h2>
+        <p class="sec-sub">Beberapa proyek pilihan dari Odoo ERP enterprise, modul kustom sistem medis, hingga aplikasi mobile terintegrasi.</p>
       </div>
 
       <div class="projects-grid">
-        <!-- Project 1: Finora App -->
-        <div class="project-card reveal delay-1" data-category="flutter">
-          <div class="project-card-header">
-            <div class="project-icon-box" style="color:var(--primary);background:var(--primary-light);">
-              <i data-lucide="wallet" style="width:16px;height:16px;"></i>
-            </div>
-            <span class="project-category-badge">Personal Finance</span>
+        <div class="project-card reveal d1">
+          <div class="project-head">
+            <div class="project-icon"><i data-lucide="wallet" style="width:14px;height:14px;"></i></div>
+            <span class="project-badge">Personal Finance</span>
           </div>
           <h3 class="project-title">Finora — Finance Tracker</h3>
-          <p class="project-description">
-            Aplikasi smart personal finance tracker berbasis Flutter dengan fitur Smart Dashboard, multi-account, alokasi budget, target tabungan, dan analisis laporan keuangan.
-          </p>
-          <div class="project-tech-stack">
-            <span class="tech-tag">Flutter</span>
-            <span class="tech-tag">Dart</span>
-            <span class="tech-tag">Clean Architecture</span>
-            <span class="tech-tag">SQLite</span>
+          <p class="project-desc">Aplikasi smart personal finance tracker berbasis Flutter dengan Smart Dashboard, multi-account, alokasi budget, target tabungan, dan analisis laporan keuangan.</p>
+          <div class="tech-tags">
+            <span class="tag">Flutter</span>
+            <span class="tag">Dart</span>
+            <span class="tag">Clean Architecture</span>
+            <span class="tag">SQLite</span>
           </div>
-          <div class="project-footer-actions">
-            <a href="https://github.com/grsll/finora" target="_blank" class="project-link">
-              <i data-lucide="github" style="width:14px;height:14px;"></i> Lihat Kode
-            </a>
-          </div>
+          <a href="https://github.com/grsll/finora" target="_blank" class="project-link">
+            <i data-lucide="github" style="width:13px;height:13px;"></i> Lihat Kode
+          </a>
         </div>
 
-        <!-- Project 2: Klinik App -->
-        <div class="project-card reveal delay-2" data-category="flutter">
-          <div class="project-card-header">
-            <div class="project-icon-box" style="color:var(--primary);background:var(--primary-light);">
-              <i data-lucide="activity" style="width:16px;height:16px;"></i>
-            </div>
-            <span class="project-category-badge">Sistem Klinik</span>
+        <div class="project-card reveal d2">
+          <div class="project-head">
+            <div class="project-icon"><i data-lucide="activity" style="width:14px;height:14px;"></i></div>
+            <span class="project-badge">Sistem Klinik</span>
           </div>
           <h3 class="project-title">Aplikasi Klinik</h3>
-          <p class="project-description">
-            Sistem rekam medis klinik berbasis mobile untuk pencatatan riwayat medis pasien, data obat, dan antrean resep obat dengan penyimpanan lokal terenkripsi.
-          </p>
-          <div class="project-tech-stack">
-            <span class="tech-tag">Flutter</span>
-            <span class="tech-tag">Dart</span>
-            <span class="tech-tag">SQLite</span>
+          <p class="project-desc">Sistem rekam medis klinik berbasis mobile untuk pencatatan riwayat medis pasien, data obat, dan antrean resep dengan penyimpanan lokal terenkripsi.</p>
+          <div class="tech-tags">
+            <span class="tag">Flutter</span>
+            <span class="tag">Dart</span>
+            <span class="tag">SQLite</span>
           </div>
-          <div class="project-footer-actions">
-            <a href="https://github.com/grsll/klinik_app.git" target="_blank" class="project-link">
-              <i data-lucide="github" style="width:14px;height:14px;"></i> Lihat Kode
-            </a>
-          </div>
+          <a href="https://github.com/grsll/klinik_app.git" target="_blank" class="project-link">
+            <i data-lucide="github" style="width:13px;height:13px;"></i> Lihat Kode
+          </a>
         </div>
 
-        <!-- Project 3: SIMRS Odoo -->
-        <div class="project-card reveal delay-3" data-category="odoo">
-          <div class="project-card-header">
-            <div class="project-icon-box" style="color:var(--secondary);background:var(--secondary-light);">
-              <i data-lucide="hospital" style="width:16px;height:16px;"></i>
-            </div>
-            <span class="project-category-badge">Odoo ERP</span>
+        <div class="project-card reveal d3">
+          <div class="project-head">
+            <div class="project-icon"><i data-lucide="hospital" style="width:14px;height:14px;"></i></div>
+            <span class="project-badge">Odoo ERP</span>
           </div>
           <h3 class="project-title">SIMRS Hospital ERP</h3>
-          <p class="project-description">
-            Sistem Informasi Manajemen Rumah Sakit terintegrasi Odoo Backend. Meliputi modul kustom rekam medis elektronik, antrean dokter, dan e-signature dokter.
-          </p>
-          <div class="project-tech-stack">
-            <span class="tech-tag">Odoo</span>
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">PostgreSQL</span>
-            <span class="tech-tag">XML</span>
+          <p class="project-desc">Sistem Informasi Manajemen Rumah Sakit terintegrasi Odoo. Meliputi modul rekam medis elektronik, antrean dokter, dan e-signature dokter.</p>
+          <div class="tech-tags">
+            <span class="tag">Odoo</span>
+            <span class="tag">Python</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">XML</span>
           </div>
-          <div class="project-footer-actions">
-            <a href="https://github.com/zunstudent/test_frontend.git" target="_blank" class="project-link">
-              <i data-lucide="github" style="width:14px;height:14px;"></i> Lihat Kode
-            </a>
-          </div>
+          <a href="https://github.com/zunstudent/test_frontend.git" target="_blank" class="project-link">
+            <i data-lucide="github" style="width:13px;height:13px;"></i> Lihat Kode
+          </a>
         </div>
       </div>
 
-      <div style="text-align:center;margin-top:40px;" class="reveal">
-        <a href="projects.html" class="btn btn-primary">
-          <i data-lucide="grid" style="width:16px;height:16px;"></i>
-          Lihat Semua Proyek
-        </a>
+      <div style="margin-top:20px;text-align:center;" class="reveal">
+        <a href="projects.html" class="btn btn-secondary">Lihat Semua Proyek</a>
       </div>
     </div>
   </section>
 
-  <!-- CTA BANNER -->
-  <section class="section" style="padding: var(--space-3xl) 0;">
+  <hr class="divider">
+
+  <!-- CTA -->
+  <section class="section">
     <div class="container">
-      <div class="cta-banner-card reveal">
-        <h2>Ingin berkolaborasi dalam proyek baru?</h2>
-        <p>
-          Terbuka untuk diskusi mengenai arsitektur modul Odoo ERP, integrasi pihak ketiga, atau pembuatan aplikasi lintas platform.
-        </p>
-        <div style="display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;">
-          <a href="contact.html" class="btn btn-primary">
-            <i data-lucide="mail" style="width:15px;height:15px;"></i> Kirim Pesan
-          </a>
-          <a href="https://wa.me/6282233457234" target="_blank" class="btn btn-secondary">
-            <i data-lucide="message-circle" style="width:15px;height:15px;color:#25d366;"></i> Chat WhatsApp
-          </a>
+      <div class="cta-strip reveal">
+        <h2>Ingin berkolaborasi?</h2>
+        <p>Terbuka untuk diskusi mengenai arsitektur modul Odoo ERP, integrasi pihak ketiga, atau pembuatan aplikasi lintas platform.</p>
+        <div class="cta-actions">
+          <a href="contact.html" class="btn btn-primary">Kirim Pesan</a>
+          <a href="https://wa.me/6282233457234" target="_blank" class="btn btn-secondary">Chat WhatsApp</a>
         </div>
       </div>
     </div>
@@ -396,18 +253,12 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="nav-logo">
-            <span class="logo-badge">&lt;YP /&gt;</span>
-            <span>Yoga Setyawan<span class="dot">.</span></span>
-          </a>
-          <p>
-            Odoo Developer di PT Karyatama Solusindo. Berfokus pada modul kustom, database PostgreSQL, dan aplikasi mobile Flutter.
-          </p>
+          <a href="index.html" class="footer-logo">yoga.dev</a>
+          <p>Odoo Developer di PT Karyatama Solusindo. Berfokus pada modul kustom, database PostgreSQL, dan aplikasi mobile Flutter.</p>
         </div>
-
         <div>
-          <h4 class="footer-col-title">Navigasi</h4>
-          <ul class="footer-links-list">
+          <div class="footer-col-title">Navigasi</div>
+          <ul class="footer-links">
             <li><a href="index.html">Beranda</a></li>
             <li><a href="about.html">Tentang</a></li>
             <li><a href="skills.html">Keahlian</a></li>
@@ -415,20 +266,18 @@
             <li><a href="contact.html">Kontak</a></li>
           </ul>
         </div>
-
         <div>
-          <h4 class="footer-col-title">Hubungi</h4>
-          <ul class="footer-links-list">
-            <li><a href="mailto:astdnn48@gmail.com"><i data-lucide="mail" style="width:13px;height:13px;vertical-align:middle;margin-right:8px;"></i> astdnn48@gmail.com</a></li>
-            <li><a href="https://wa.me/6282233457234" target="_blank"><i data-lucide="phone" style="width:13px;height:13px;vertical-align:middle;margin-right:8px;"></i> +62 822 3345 7234</a></li>
-            <li><span style="font-size:13.5px;color:var(--text-muted);"><i data-lucide="map-pin" style="width:13px;height:13px;vertical-align:middle;margin-right:8px;"></i> Jakarta, Indonesia</span></li>
+          <div class="footer-col-title">Hubungi</div>
+          <ul class="footer-links">
+            <li><a href="mailto:astdnn48@gmail.com">astdnn48@gmail.com</a></li>
+            <li><a href="https://wa.me/6282233457234" target="_blank">+62 822 3345 7234</a></li>
+            <li><span style="font-size:13.5px;color:var(--text-3)">Jakarta, Indonesia</span></li>
           </ul>
         </div>
       </div>
-
-      <div class="footer-bottom-bar">
+      <div class="footer-bottom">
         <p>&copy; 2026 Yoga Setyawan Purwanto. All rights reserved.</p>
-        <div class="footer-social-icons">
+        <div class="footer-socials">
           <a href="https://github.com/grsll" target="_blank" class="footer-social-btn" aria-label="GitHub">
             <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
           </a>
@@ -443,20 +292,18 @@
     </div>
   </footer>
 
-  <!-- PDF CV Modal -->
+  <!-- PDF MODAL -->
   <div class="modal-overlay" id="pdfModalOverlay">
     <div class="modal-window">
       <div class="modal-header">
         <div class="modal-title">
-          <i data-lucide="file-text" style="width:18px;height:18px;color:var(--primary);"></i>
+          <i data-lucide="file-text" style="width:14px;height:14px;color:var(--text-3)"></i>
           <h3 id="pdfModalTitle">Curriculum Vitae</h3>
         </div>
-        <div style="display:flex;align-items:center;gap:8px;">
-          <a href="pdf/yoga_setyawan_cv.pdf" id="pdfDownloadBtn" class="btn btn-primary btn-sm" download>
-            <i data-lucide="download" style="width:14px;height:14px;"></i> Download PDF
-          </a>
+        <div style="display:flex;gap:6px;align-items:center;">
+          <a href="pdf/yoga_setyawan_cv.pdf" id="pdfDownloadBtn" class="btn btn-secondary btn-sm" download>Download</a>
           <button class="modal-close-btn" id="pdfModalClose" aria-label="Tutup">
-            <i data-lucide="x" style="width:16px;height:16px;"></i>
+            <i data-lucide="x" style="width:14px;height:14px;"></i>
           </button>
         </div>
       </div>
@@ -466,23 +313,12 @@
     </div>
   </div>
 
-  <!-- Floating Actions Dock -->
-  <div class="floating-actions-dock">
-    <a href="https://wa.me/6282233457234" target="_blank" class="floating-btn floating-wa-btn" aria-label="WhatsApp">
-      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
-    </a>
-    <button class="floating-btn scroll-top-btn" id="scrollTop" aria-label="Kembali ke Atas">
-      <i data-lucide="arrow-up" style="width:18px;height:18px;"></i>
-    </button>
-  </div>
+  <!-- SCROLL TOP -->
+  <button class="scroll-top-btn" id="scrollTop" aria-label="Kembali ke Atas">
+    <i data-lucide="arrow-up" style="width:16px;height:16px;"></i>
+  </button>
 
-  <!-- JavaScript -->
   <script src="js/script.js"></script>
-  <script>
-    if (window.lucide) {
-      lucide.createIcons();
-    }
-  </script>
+  <script>if (window.lucide) lucide.createIcons();</script>
 </body>
-
 </html>

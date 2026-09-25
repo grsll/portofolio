@@ -19,23 +19,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { passive: true });
 
   // --------------------------------------------------------------------------
-  // 2. THEME TOGGLE (DARK / LIGHT MODE)
+  // 2. THEME SETUP (DARK MODE ONLY)
   // --------------------------------------------------------------------------
-  const themeToggle = document.getElementById('themeToggle');
-  const savedTheme = localStorage.getItem('theme') || 'dark';
-  document.documentElement.setAttribute('data-theme', savedTheme);
-
-  if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
-      const currentTheme = document.documentElement.getAttribute('data-theme');
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-      if (window.lucide) {
-        window.lucide.createIcons();
-      }
-    });
-  }
+  document.documentElement.setAttribute('data-theme', 'dark');
+  localStorage.setItem('theme', 'dark');
 
   // --------------------------------------------------------------------------
   // 3. NAVBAR SCROLL & SCROLL TO TOP
@@ -196,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // --------------------------------------------------------------------------
   // 8. SMOOTH SCROLL REVEAL
   // --------------------------------------------------------------------------
-  const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+  const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-l, .reveal-r');
   if (revealElements.length > 0) {
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -216,7 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // --------------------------------------------------------------------------
   // 9. SKILL PROGRESS BAR
   // --------------------------------------------------------------------------
-  const skillBars = document.querySelectorAll('.skill-progress-fill');
+  const skillBars = document.querySelectorAll('.skill-progress-fill, .skill-fill');
   if (skillBars.length > 0) {
     const skillObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -247,8 +234,8 @@ document.addEventListener('DOMContentLoaded', () => {
     projectCards.forEach(card => {
       const cardCategory = card.getAttribute('data-category') || '';
       const cardTitle = card.querySelector('.project-title')?.textContent.toLowerCase() || '';
-      const cardDesc = card.querySelector('.project-description')?.textContent.toLowerCase() || '';
-      const cardTech = card.querySelector('.project-tech-stack')?.textContent.toLowerCase() || '';
+      const cardDesc = card.querySelector('.project-description, .project-desc')?.textContent.toLowerCase() || '';
+      const cardTech = card.querySelector('.project-tech-stack, .tech-tags')?.textContent.toLowerCase() || '';
 
       const matchCategory = (selectedCategory === 'all' || cardCategory.includes(selectedCategory));
       const matchSearch = (cardTitle.includes(searchQuery) || cardDesc.includes(searchQuery) || cardTech.includes(searchQuery));

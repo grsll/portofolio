@@ -21,61 +21,62 @@
   </nav>
 
   <main class="wrapper">
-    <header class="block" style="padding-top: var(--space-3xl); margin-bottom: var(--space-4xl);">
-      <h1 class="text-huge">DOMAIN &amp;<br><span class="color-accent">KEAHLIAN</span></h1>
+    <header class="block page-header">
+      <h1 class="text-huge">TECH STACK &amp;<br><span class="color-accent">KEKAYAAN ALAT</span></h1>
     </header>
 
     <section class="block">
-      <div class="block-header">
-        <div class="text-mono">Kemampuan Teknis</div>
-      </div>
-
-      <div class="list-item">
-        <div class="list-title">Odoo ERP</div>
-        <div>
-          <p class="list-desc mb-md">Pengembangan modul kustom, manipulasi view XML, QWeb Reports, dan integrasi API eksternal.</p>
-          <div class="tag-cloud"><span class="tag">Odoo 14-17</span><span class="tag">XML</span><span class="tag">QWeb</span></div>
+      <div class="hallmark-grid">
+        <div class="col-left">
+          <h2 class="text-title mb-lg">Backend &amp; ERP</h2>
+          <p class="text-body mb-xl">Fokus utama saya adalah ekosistem Python dan basis data relasional. Menggunakan framework Odoo untuk mempercepat pembangunan arsitektur ERP enterprise yang kompleks.</p>
+          
+          <div class="list-item">
+            <div class="list-title">Odoo (v14 - v17)</div>
+            <div>
+              <p class="list-desc mb-xs">Pembuatan modul kustom, inheritance, QWeb Reports, XML views.</p>
+            </div>
+          </div>
+          <div class="list-item">
+            <div class="list-title">Python 3</div>
+            <div>
+              <p class="list-desc mb-xs">Odoo ORM, backend logic, scripting, API integrations.</p>
+            </div>
+          </div>
+          <div class="list-item">
+            <div class="list-title">PostgreSQL</div>
+            <div>
+              <p class="list-desc mb-xs">Desain skema, query optimization, relasi database.</p>
+            </div>
+          </div>
         </div>
-        <div class="list-meta">Advanced</div>
-      </div>
 
-      <div class="list-item">
-        <div class="list-title">Backend &amp; Database</div>
-        <div>
-          <p class="list-desc mb-md">Desain skema database relasional, optimasi query PostgreSQL, dan pembuatan REST API dengan Python.</p>
-          <div class="tag-cloud"><span class="tag">Python 3</span><span class="tag">PostgreSQL</span><span class="tag">JSON-RPC</span><span class="tag">REST API</span></div>
+        <div class="col-right">
+          <h2 class="text-title mb-lg">Frontend &amp; Mobile</h2>
+          <p class="text-body mb-xl">Kemampuan membangun antarmuka pengguna yang responsif, baik berbasis web (HTML/CSS/JS) maupun mobile (Flutter) untuk melengkapi sistem backend.</p>
+
+          <div class="list-item">
+            <div class="list-title">Flutter &amp; Dart</div>
+            <div>
+              <p class="list-desc mb-xs">Aplikasi mobile cross-platform, state management (Provider/Riverpod).</p>
+            </div>
+          </div>
+          <div class="list-item">
+            <div class="list-title">Web Dasar</div>
+            <div>
+              <p class="list-desc mb-xs">HTML5, CSS3, JavaScript murni, Owl JS (Odoo Frontend).</p>
+            </div>
+          </div>
+          <div class="list-item">
+            <div class="list-title">Tools Tambahan</div>
+            <div>
+              <p class="list-desc mb-xs">Git, Docker, Linux, Postman/Insomnia, Firebase.</p>
+            </div>
+          </div>
         </div>
-        <div class="list-meta">Advanced</div>
       </div>
-
-      <div class="list-item">
-        <div class="list-title">Flutter Mobile</div>
-        <div>
-          <p class="list-desc mb-md">Aplikasi mobile lintas platform, arsitektur Clean Architecture, state management, dan database lokal (SQLite).</p>
-          <div class="tag-cloud"><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">SQLite</span><span class="tag">Firebase</span></div>
-        </div>
-        <div class="list-meta">Intermediate</div>
-      </div>
-
-      <div class="list-item">
-        <div class="list-title">Docker &amp; Linux</div>
-        <div>
-          <p class="list-desc mb-md">Deployment, setup environment, containerization aplikasi Odoo, dan manajemen server Ubuntu.</p>
-          <div class="tag-cloud"><span class="tag">Docker</span><span class="tag">Ubuntu</span><span class="tag">Git</span></div>
-        </div>
-        <div class="list-meta">Proficient</div>
-      </div>
-
-      <div class="list-item">
-        <div class="list-title">Tools &amp; Desain</div>
-        <div>
-          <p class="list-desc mb-md">Dokumentasi teknis, analisis data spreadsheet, dan pembuatan prototipe desain antarmuka dasar.</p>
-          <div class="tag-cloud"><span class="tag">Figma</span><span class="tag">Excel</span><span class="tag">Word</span><span class="tag">Canva</span></div>
-        </div>
-        <div class="list-meta">Intermediate</div>
-      </div>
-
     </section>
+
   </main>
 
   <footer>
@@ -87,5 +88,7 @@
     </div>
   </footer>
 
+  <script src="js/script.js"></script>
+  <script>if (window.lucide) lucide.createIcons();</script>
 </body>
 </html>

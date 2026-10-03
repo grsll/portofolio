@@ -32,9 +32,9 @@
         <p class="text-subtitle mt-xl" style="max-width: 600px;">
           Yoga Setyawan Purwanto. Spesialis arsitektur sistem ERP tangguh dengan Odoo, Python, dan PostgreSQL.
         </p>
-        <div class="mt-4xl" style="display: flex; gap: var(--space-md);">
+        <div class="hero-actions">
           <a href="contact.html" class="btn-primary">Kirim Pesan</a>
-          <a href="pdf/yoga_setyawan_cv.pdf" class="btn-primary" style="background: transparent; color: var(--color-foreground); border: 2px solid var(--color-border);" download>Unduh CV</a>
+          <a href="pdf/yoga_setyawan_cv.pdf" class="btn-secondary" download>Unduh CV</a>
         </div>
       </div>
       <div class="hero-meta">
@@ -51,7 +51,7 @@
         <div class="text-mono">01 // Fokus & Metode Kerja</div>
       </div>
       <div class="hallmark-grid">
-        <div style="grid-column: 1 / 7;">
+        <div class="col-left">
           <h2 class="text-title mb-lg">Arsitektur Tangguh</h2>
           <p class="text-body mb-xl">Mengedepankan inheritance view Odoo untuk pemeliharaan jangka panjang, arsitektur data bersih, dan efisiensi query PostgreSQL. Terbuka untuk diskusi teknis seputar integrasi Odoo ERP atau proyek mobile.</p>
           
@@ -63,14 +63,14 @@
             <span class="tag">Docker</span>
           </div>
         </div>
-        <div style="grid-column: 8 / 13;">
-          <div style="padding: var(--space-lg); border: 1px solid var(--color-border); font-family: var(--font-mono); font-size: 0.875rem; color: var(--color-muted-foreground);">
-            <div style="margin-bottom: 8px;">class OdooDeveloper:</div>
-            <div style="margin-bottom: 8px; padding-left: 16px;">def __init__(self):</div>
-            <div style="margin-bottom: 8px; padding-left: 32px;">self.stack = ["Odoo", "Python", "PostgreSQL", "Flutter"]</div>
-            <div style="margin-bottom: 16px; padding-left: 32px;">self.lokasi = "Jakarta, Indonesia"</div>
-            <div style="margin-bottom: 8px; padding-left: 16px;">def bangun_modul(self, kebutuhan):</div>
-            <div style="padding-left: 32px; color: var(--color-accent);">return "Modul Odoo Siap Deploy"</div>
+        <div class="col-right">
+          <div class="code-block">
+            <div class="code-line">class OdooDeveloper:</div>
+            <div class="code-line code-indent-1">def __init__(self):</div>
+            <div class="code-line code-indent-2">self.stack = ["Odoo", "Python", "PostgreSQL", "Flutter"]</div>
+            <div class="code-line code-indent-2">self.lokasi = "Jakarta, Indonesia"</div>
+            <div class="code-line code-indent-1">def bangun_modul(self, kebutuhan):</div>
+            <div class="code-line code-indent-2 code-return">return "Modul Odoo Siap Deploy"</div>
           </div>
         </div>
       </div>
@@ -82,36 +82,36 @@
         <div class="text-mono">02 // Portofolio Unggulan</div>
       </div>
       
-      <div class="list-item">
+      <div class="list-item" onclick="window.open('https://github.com/grsll/finora', '_blank')">
         <div class="list-title">Finora</div>
         <div>
-          <p class="list-desc mb-md">Aplikasi smart personal finance tracker berbasis Flutter dengan Smart Dashboard, multi-account, alokasi budget, target tabungan, dan analisis laporan keuangan.</p>
+          <p class="list-desc">Aplikasi smart personal finance tracker berbasis Flutter dengan Smart Dashboard, multi-account, alokasi budget, target tabungan, dan analisis laporan keuangan.</p>
           <div class="tag-cloud"><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">Clean Architecture</span></div>
         </div>
         <div class="list-meta">
-          <a href="https://github.com/grsll/finora" target="_blank">Lihat Kode <i data-lucide="arrow-up-right" style="width: 16px; height: 16px; vertical-align: middle;"></i></a>
+          Lihat Kode <i data-lucide="arrow-up-right" style="width: 16px; height: 16px; vertical-align: middle;"></i>
         </div>
       </div>
       
-      <div class="list-item">
+      <div class="list-item" onclick="window.open('https://github.com/grsll/klinik_app.git', '_blank')">
         <div class="list-title">Aplikasi Klinik</div>
         <div>
-          <p class="list-desc mb-md">Sistem rekam medis klinik berbasis mobile untuk pencatatan riwayat medis pasien, data obat, dan antrean resep dengan penyimpanan lokal terenkripsi.</p>
+          <p class="list-desc">Sistem rekam medis klinik berbasis mobile untuk pencatatan riwayat medis pasien, data obat, dan antrean resep dengan penyimpanan lokal terenkripsi.</p>
           <div class="tag-cloud"><span class="tag">Flutter</span><span class="tag">SQLite</span></div>
         </div>
         <div class="list-meta">
-          <a href="https://github.com/grsll/klinik_app.git" target="_blank">Lihat Kode <i data-lucide="arrow-up-right" style="width: 16px; height: 16px; vertical-align: middle;"></i></a>
+          Lihat Kode <i data-lucide="arrow-up-right" style="width: 16px; height: 16px; vertical-align: middle;"></i>
         </div>
       </div>
 
-      <div class="list-item">
+      <div class="list-item" onclick="window.open('https://github.com/zunstudent/test_frontend.git', '_blank')">
         <div class="list-title">SIMRS Hospital ERP</div>
         <div>
-          <p class="list-desc mb-md">Sistem Informasi Manajemen Rumah Sakit terintegrasi Odoo. Meliputi modul rekam medis elektronik, antrean dokter, dan e-signature dokter.</p>
+          <p class="list-desc">Sistem Informasi Manajemen Rumah Sakit terintegrasi Odoo. Meliputi modul rekam medis elektronik, antrean dokter, dan e-signature dokter.</p>
           <div class="tag-cloud"><span class="tag">Odoo</span><span class="tag">Python</span><span class="tag">PostgreSQL</span></div>
         </div>
         <div class="list-meta">
-          <a href="https://github.com/zunstudent/test_frontend.git" target="_blank">Lihat Kode <i data-lucide="arrow-up-right" style="width: 16px; height: 16px; vertical-align: middle;"></i></a>
+          Lihat Kode <i data-lucide="arrow-up-right" style="width: 16px; height: 16px; vertical-align: middle;"></i>
         </div>
       </div>
       

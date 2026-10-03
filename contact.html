@@ -21,39 +21,42 @@
   </nav>
 
   <main class="wrapper">
-    <header class="block" style="padding-top: var(--space-3xl); margin-bottom: var(--space-4xl);">
+    <header class="block page-header">
       <h1 class="text-huge">MARI<br><span class="color-accent">BERKOLABORASI</span></h1>
     </header>
 
     <section class="contact-layout block">
       <div>
-        <p class="text-body mb-xl" style="font-size: 1.5rem; font-weight: 300;">Terbuka untuk peluang baru, diskusi arsitektur, dan ngopi santai (virtual atau langsung di Jakarta).</p>
+        <p class="text-body mb-xl" style="font-size: clamp(1.25rem, 2vw, 1.5rem); font-weight: 300;">Terbuka untuk peluang baru, diskusi arsitektur, dan ngopi santai (virtual atau langsung di Jakarta).</p>
         
-        <div class="mb-lg">
+        <div class="mb-xl">
           <div class="text-mono mb-sm">Email</div>
-          <a href="mailto:astdnn48@gmail.com" class="text-title" style="font-size: 2rem;">astdnn48@gmail.com</a>
+          <a href="mailto:astdnn48@gmail.com" class="text-title" style="font-size: clamp(1.5rem, 3vw, 2rem);">astdnn48@gmail.com</a>
         </div>
         
         <div class="mb-xl">
-          <div class="text-mono mb-sm">Telepon / WhatsApp</div>
-          <a href="https://wa.me/6282233457234" class="text-title" style="font-size: 2rem;">+62 822 3345 7234</a>
+          <div class="text-mono mb-sm">WhatsApp</div>
+          <a href="https://wa.me/6282233457234" class="text-title" style="font-size: clamp(1.5rem, 3vw, 2rem);">+62 822 3345 7234</a>
         </div>
       </div>
-      
+
       <div>
         <form action="https://formspree.io/f/xeepkowg" method="POST" style="display: flex; flex-direction: column; gap: var(--space-lg);">
           <div>
-            <input type="text" id="name" name="name" class="input" placeholder="NAMA LENGKAP" required>
+            <label for="name" class="text-mono mb-sm" style="display: block;">Nama Lengkap</label>
+            <input type="text" id="name" name="name" class="input" placeholder="John Doe" required>
           </div>
+          
           <div>
-            <input type="email" id="email" name="email" class="input" placeholder="ALAMAT EMAIL" required>
+            <label for="email" class="text-mono mb-sm" style="display: block;">Alamat Email</label>
+            <input type="email" id="email" name="email" class="input" placeholder="john@perusahaan.com" required>
           </div>
+
           <div>
-            <input type="text" id="subject" name="subject" class="input" placeholder="SUBJEK (OPSIONAL)">
+            <label for="message" class="text-mono mb-sm" style="display: block;">Pesan &amp; Kebutuhan</label>
+            <textarea id="message" name="message" class="input" placeholder="Jelaskan secara singkat apa yang ingin Anda diskusikan..." required></textarea>
           </div>
-          <div>
-            <textarea id="message" name="message" class="input" placeholder="PESAN ANDA..." required></textarea>
-          </div>
+
           <div style="text-align: right; margin-top: var(--space-md);">
             <button type="submit" class="btn-primary">
               Kirim Pesan <i data-lucide="arrow-right" style="width: 16px; height: 16px; margin-left: 8px;"></i>
@@ -74,5 +77,7 @@
     </div>
   </footer>
 
+  <script src="js/script.js"></script>
+  <script>if (window.lucide) lucide.createIcons();</script>
 </body>
 </html>

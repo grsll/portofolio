@@ -3,92 +3,210 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Keahlian — Yoga Setyawan</title>
+  <title>Keahlian Teknis &amp; Tech Stack — Yoga Setyawan</title>
+  <meta name="description" content="Kompetensi teknis Yoga Setyawan Purwanto: Odoo ERP (v14-v17), Python Backend, PostgreSQL, Flutter Mobile, dan infrastruktur sistem pendukung.">
+  <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="stylesheet" href="css/style.css">
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
 
+  <!-- Navigation -->
   <nav class="nav-bar">
-    <div class="nav-logo">YOGA.DEV</div>
-    <div class="nav-links">
-      <a href="index.html">Beranda</a>
-      <a href="about.html">Tentang</a>
-      <a href="skills.html" class="color-accent">Keahlian</a>
-      <a href="projects.html">Proyek</a>
-      <a href="contact.html">Kontak</a>
+    <div class="site-container nav-inner">
+      <a href="index.html" class="nav-logo">
+        YOGA.DEV
+        <span class="nav-logo-badge">ENGINEERING</span>
+      </a>
+      
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link">Beranda</a>
+        <a href="about.html" class="nav-link">Tentang</a>
+        <a href="skills.html" class="nav-link active">Keahlian</a>
+        <a href="projects.html" class="nav-link">Proyek</a>
+        <a href="contact.html" class="nav-link">Kontak</a>
+      </div>
+
+      <button type="button" class="nav-toggle" id="navToggle" aria-label="Buka navigasi menu" aria-expanded="false">
+        <i data-lucide="menu" style="width: 20px; height: 20px;"></i>
+      </button>
     </div>
   </nav>
 
-  <main class="wrapper">
-    <header class="block page-header">
-      <h1 class="text-huge">TECH STACK &amp;<br><span class="color-accent">KEKAYAAN ALAT</span></h1>
-    </header>
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="site-container">
 
-    <section class="block">
-      <div class="hallmark-grid">
-        <div class="col-left">
-          <h2 class="text-title mb-lg">Backend &amp; ERP</h2>
-          <p class="text-body mb-xl">Fokus utama saya adalah ekosistem Python dan basis data relasional. Menggunakan framework Odoo untuk mempercepat pembangunan arsitektur ERP enterprise yang kompleks.</p>
-          
-          <div class="list-item">
-            <div class="list-title">Odoo (v14 - v17)</div>
-            <div>
-              <p class="list-desc mb-xs">Pembuatan modul kustom, inheritance, QWeb Reports, XML views.</p>
+      <!-- Page Header -->
+      <header class="section-block" style="margin-bottom: var(--space-2xl);">
+        <span class="text-eyebrow">Kompetensi &amp; Ekosistem</span>
+        <h1 class="title-page">Keahlian &amp; Alat Rekayasa</h1>
+        <p class="text-lead">
+          Fokus mendalam pada ekosistem enterprise Odoo, arsitektur basis data relasional, dan aplikasi mobile handal. Seluruh kompetensi diukur berdasarkan kemampuan memecahkan persoalan teknis nyata.
+        </p>
+      </header>
+
+      <!-- Skills Domain Grid -->
+      <section class="section-block">
+        <div class="skills-domain-grid">
+
+          <!-- Domain 1: ERP & Odoo Ecosystem -->
+          <div class="domain-card">
+            <div class="domain-card-header">
+              <i data-lucide="layers" class="domain-icon"></i>
+              <h2 class="domain-title">Arsitektur Odoo &amp; ERP</h2>
+            </div>
+            <div class="skill-items-list">
+              <div class="skill-spec-item">
+                <span class="skill-name">Odoo Framework (v14 — v17)</span>
+                <span class="skill-desc">Pengembangan modul mandiri (custom addons), model inheritance, automated actions, dan view extension.</span>
+              </div>
+              <div class="skill-spec-item">
+                <span class="skill-name">XML Views &amp; QWeb Reports</span>
+                <span class="skill-desc">Desain form view, tree/list view, kanban view, search filters, serta pelaporan dokumen PDF dinamis via QWeb engine.</span>
+              </div>
+              <div class="skill-spec-item">
+                <span class="skill-name">Odoo ORM &amp; Business Logic</span>
+                <span class="skill-desc">Penerapan decorator (@api.depends, @api.constrains, @api.onchange), write/create overrides, dan optimasi recordset.</span>
+              </div>
+              <div class="skill-spec-item">
+                <span class="skill-name">Sistem Modul Spesifik</span>
+                <span class="skill-desc">Implementasi untuk modul SIMRS (Rumah Sakit), E-Tender, Document Management (DMS), dan Manajemen Inventaris Gudang.</span>
+              </div>
             </div>
           </div>
-          <div class="list-item">
-            <div class="list-title">Python 3</div>
-            <div>
-              <p class="list-desc mb-xs">Odoo ORM, backend logic, scripting, API integrations.</p>
+
+          <!-- Domain 2: Backend & Database -->
+          <div class="domain-card">
+            <div class="domain-card-header">
+              <i data-lucide="database" class="domain-icon"></i>
+              <h2 class="domain-title">Backend &amp; Basis Data</h2>
+            </div>
+            <div class="skill-items-list">
+              <div class="skill-spec-item">
+                <span class="skill-name">Python 3</span>
+                <span class="skill-desc">Pemrograman berorientasi objek, scripting automasi, data parsing, kalkulasi performa tinggi, dan struktur kode bersih (PEP 8).</span>
+              </div>
+              <div class="skill-spec-item">
+                <span class="skill-name">PostgreSQL</span>
+                <span class="skill-desc">Desain skema relasional, indeksasi tabel, foreign keys constraints, audit query, dan optimasi kueri kompleks untuk dataset besar.</span>
+              </div>
+              <div class="skill-spec-item">
+                <span class="skill-name">Integrasi API &amp; Gateway</span>
+                <span class="skill-desc">Pengembangan REST API controllers Odoo, integrasi XML-RPC / JSON-RPC, autentikasi berbasis token, dan middleware data bridge.</span>
+              </div>
+              <div class="skill-spec-item">
+                <span class="skill-name">Validasi &amp; Integritas Data</span>
+                <span class="skill-desc">Mekanisme rollback transaksi aman, validasi payload request, dan sanitasi input untuk mencegah inkonsistensi sistem.</span>
+              </div>
             </div>
           </div>
-          <div class="list-item">
-            <div class="list-title">PostgreSQL</div>
-            <div>
-              <p class="list-desc mb-xs">Desain skema, query optimization, relasi database.</p>
+
+          <!-- Domain 3: Mobile & Frontend -->
+          <div class="domain-card">
+            <div class="domain-card-header">
+              <i data-lucide="smartphone" class="domain-icon"></i>
+              <h2 class="domain-title">Aplikasi Mobile &amp; Web</h2>
             </div>
+            <div class="skill-items-list">
+              <div class="skill-spec-item">
+                <span class="skill-name">Flutter &amp; Dart</span>
+                <span class="skill-desc">Pembangunan aplikasi mobile multiplatform (Android/iOS) dengan performa native, animasi halus, dan arsitektur modular.</span>
+              </div>
+              <div class="skill-spec-item">
+                <span class="skill-name">Clean Architecture &amp; State Management</span>
+                <span class="skill-desc">Pemisahan data layer, domain usecase, dan presentation layer menggunakan Provider atau Riverpod secara konsisten.</span>
+              </div>
+              <div class="skill-spec-item">
+                <span class="skill-name">Penyimpanan Lokal &amp; Offline-First</span>
+                <span class="skill-desc">Pemanfaatan SQLite terenkripsi dan cache lokal untuk aplikasi yang dapat diandalkan tanpa koneksi jaringan stabil.</span>
+              </div>
+              <div class="skill-spec-item">
+                <span class="skill-name">Web Standards &amp; Owl JS</span>
+                <span class="skill-desc">HTML5 semantik, CSS modern responsif tanpa dependensi berat, JavaScript ES6+, dan komponen frontend Owl framework di Odoo.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Domain 4: DevOps, Tooling & Environment -->
+          <div class="domain-card">
+            <div class="domain-card-header">
+              <i data-lucide="cpu" class="domain-icon"></i>
+              <h2 class="domain-title">DevOps &amp; Lingkungan Kerja</h2>
+            </div>
+            <div class="skill-items-list">
+              <div class="skill-spec-item">
+                <span class="skill-name">Docker &amp; Containerization</span>
+                <span class="skill-desc">Manajemen container Odoo dan PostgreSQL dengan Docker Compose untuk isolasi environment development dan staging yang identik.</span>
+              </div>
+              <div class="skill-spec-item">
+                <span class="skill-name">Sistem Operasi Linux / Ubuntu Server</span>
+                <span class="skill-desc">Navigasi CLI Linux harian, konfigurasi permission service, reverse proxy Nginx, dan manajemen service systemd.</span>
+              </div>
+              <div class="skill-spec-item">
+                <span class="skill-name">Git &amp; Version Control</span>
+                <span class="skill-desc">Branching strategy, semantic commit messages, conflict resolution, dan kolaborasi terstruktur melalui GitHub.</span>
+              </div>
+              <div class="skill-spec-item">
+                <span class="skill-name">API Testing &amp; Debugging Tools</span>
+                <span class="skill-desc">Pengujian endpoint dengan Postman / Insomnia, profiling kueri database, serta debugging log runtime Odoo.</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Engineering Standards Section -->
+      <section class="section-block" style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-xl);">
+        <div class="section-header" style="margin-bottom: var(--space-md); border-bottom: none; padding-bottom: 0;">
+          <div>
+            <span class="text-eyebrow">Tolok Ukur Kualitas</span>
+            <h2 class="title-section" style="font-size: 1.35rem;">Bagaimana Saya Mengukur Kode yang Baik</h2>
           </div>
         </div>
-
-        <div class="col-right">
-          <h2 class="text-title mb-lg">Frontend &amp; Mobile</h2>
-          <p class="text-body mb-xl">Kemampuan membangun antarmuka pengguna yang responsif, baik berbasis web (HTML/CSS/JS) maupun mobile (Flutter) untuk melengkapi sistem backend.</p>
-
-          <div class="list-item">
-            <div class="list-title">Flutter &amp; Dart</div>
-            <div>
-              <p class="list-desc mb-xs">Aplikasi mobile cross-platform, state management (Provider/Riverpod).</p>
-            </div>
+        <p class="text-body" style="margin-bottom: var(--space-md); max-width: 80ch;">
+          Bagi seorang Odoo &amp; Backend Engineer, tolok ukur kualitas kode bukanlah seberapa cepat fitur selesai dibuat tanpa mempertimbangkan masa depan aplikasi. Saya berpegang pada standar berikut di setiap baris kode:
+        </p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--space-md);">
+          <div style="border-left: 2px solid var(--color-accent); padding-left: var(--space-md);">
+            <div style="font-weight: 600; font-size: 0.95rem; margin-bottom: 2px;">Kemudahan Upgrade (Upgradability)</div>
+            <div style="font-size: 0.875rem; color: var(--color-text-secondary);">Tidak pernah memodifikasi core Odoo secara langsung; selalu menggunakan modular extension.</div>
           </div>
-          <div class="list-item">
-            <div class="list-title">Web Dasar</div>
-            <div>
-              <p class="list-desc mb-xs">HTML5, CSS3, JavaScript murni, Owl JS (Odoo Frontend).</p>
-            </div>
+          <div style="border-left: 2px solid var(--color-accent); padding-left: var(--space-md);">
+            <div style="font-weight: 600; font-size: 0.95rem; margin-bottom: 2px;">Efisiensi Kueri N+1</div>
+            <div style="font-size: 0.875rem; color: var(--color-text-secondary);">Mencegah loop query berulang pada basis data relasional dengan prefetching data yang tepat.</div>
           </div>
-          <div class="list-item">
-            <div class="list-title">Tools Tambahan</div>
-            <div>
-              <p class="list-desc mb-xs">Git, Docker, Linux, Postman/Insomnia, Firebase.</p>
-            </div>
+          <div style="border-left: 2px solid var(--color-accent); padding-left: var(--space-md);">
+            <div style="font-weight: 600; font-size: 0.95rem; margin-bottom: 2px;">Kejelasan Dokumentasi Modul</div>
+            <div style="font-size: 0.875rem; color: var(--color-text-secondary);">Setiap field, dependensi manifes (__manifest__.py), dan model memiliki deskripsi fungsional yang eksplisit.</div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
+    </div>
   </main>
 
-  <footer>
-    <div>&copy; 2026 Yoga Setyawan Purwanto.</div>
-    <div class="footer-socials">
-      <a href="https://github.com/grsll" target="_blank">GitHub</a>
-      <a href="https://www.linkedin.com/in/yoga-setyawan-work/" target="_blank">LinkedIn</a>
-      <a href="https://www.instagram.com/yog_aaa4/" target="_blank">Instagram</a>
+  <!-- Scroll To Top Button -->
+  <button type="button" class="scroll-top-btn" id="scrollTop" aria-label="Kembali ke atas">
+    <i data-lucide="arrow-up" style="width: 18px; height: 18px;"></i>
+  </button>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="site-container footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo">YOGA.DEV</span>
+        <span class="footer-copy">&copy; 2026 Yoga Setyawan Purwanto. Seluruh hak cipta dilindungi.</span>
+      </div>
+      <div class="footer-socials">
+        <a href="https://github.com/grsll" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a>
+        <a href="https://www.linkedin.com/in/yoga-setyawan-work/" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a>
+        <a href="https://www.instagram.com/yog_aaa4/" target="_blank" rel="noopener noreferrer" class="footer-link">Instagram</a>
+      </div>
     </div>
   </footer>
 
   <script src="js/script.js"></script>
-  <script>if (window.lucide) lucide.createIcons();</script>
 </body>
 </html>

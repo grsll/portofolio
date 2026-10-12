@@ -1,39 +1,37 @@
 /* ==========================================================================
-   YOGA SETYAWAN PURWANTO — JAVASCRIPT (SMOOTH & CLEAN)
+   YOGA.DEV — JAVASCRIPT (CLEAN, ACCESSIBLE, ROBUST)
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
 
   // --------------------------------------------------------------------------
-  // 1. SCROLL PROGRESS BAR
+  // 1. SCROLL PROGRESS INDICATOR
   // --------------------------------------------------------------------------
   const progressBar = document.createElement('div');
   progressBar.className = 'scroll-progress';
+  progressBar.setAttribute('aria-hidden', 'true');
   document.body.prepend(progressBar);
 
-  window.addEventListener('scroll', () => {
-    const scrollTop = window.scrollY;
+  function updateProgress() {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
     const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-    progressBar.style.width = progress + '%';
-  }, { passive: true });
+    progressBar.style.width = Math.min(100, Math.max(0, progress)) + '%';
+  }
+
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  updateProgress();
 
   // --------------------------------------------------------------------------
-  // 2. THEME SETUP (DARK MODE ONLY)
+  // 2. NAVBAR SCROLL STATE & SCROLL-TO-TOP BUTTON
   // --------------------------------------------------------------------------
-  document.documentElement.setAttribute('data-theme', 'dark');
-  localStorage.setItem('theme', 'dark');
-
-  // --------------------------------------------------------------------------
-  // 3. NAVBAR SCROLL & SCROLL TO TOP
-  // --------------------------------------------------------------------------
-  const navbar = document.getElementById('navbar') || document.querySelector('.navbar');
+  const navbar = document.querySelector('.nav-bar');
   const scrollTopBtn = document.getElementById('scrollTop') || document.querySelector('.scroll-top-btn');
 
-  function handleScroll() {
-    const scrollY = window.scrollY;
+  function handleNavbarScroll() {
+    const scrollY = window.scrollY || document.documentElement.scrollTop;
     if (navbar) {
-      if (scrollY > 30) {
+      if (scrollY > 20) {
         navbar.classList.add('scrolled');
       } else {
         navbar.classList.remove('scrolled');
@@ -41,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (scrollTopBtn) {
-      if (scrollY > 300) {
+      if (scrollY > 350) {
         scrollTopBtn.classList.add('visible');
       } else {
         scrollTopBtn.classList.remove('visible');
@@ -49,8 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  window.addEventListener('scroll', handleScroll, { passive: true });
-  handleScroll();
+  window.addEventListener('scroll', handleNavbarScroll, { passive: true });
+  handleNavbarScroll();
 
   if (scrollTopBtn) {
     scrollTopBtn.addEventListener('click', () => {
@@ -59,254 +57,122 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --------------------------------------------------------------------------
-  // 4. MOBILE DRAWER MENU
+  // 3. RESPONSIVE MOBILE NAVIGATION DRAWER
   // --------------------------------------------------------------------------
-  const navToggle = document.getElementById('navToggle') || document.querySelector('.nav-toggle');
-  const navLinks = document.getElementById('navLinks') || document.querySelector('.nav-links');
-  const mobileOverlay = document.querySelector('.mobile-overlay');
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  let mobileOverlay = document.querySelector('.mobile-overlay');
 
-  function openMenu() {
-    if (navToggle) navToggle.classList.add('active');
+  if (!mobileOverlay) {
+    mobileOverlay = document.createElement('div');
+    mobileOverlay.className = 'mobile-overlay';
+    document.body.appendChild(mobileOverlay);
+  }
+
+  function openMobileMenu() {
+    if (navToggle) {
+      navToggle.setAttribute('aria-expanded', 'true');
+      navToggle.innerHTML = '<i data-lucide="x" style="width: 20px; height: 20px;"></i>';
+    }
     if (navLinks) navLinks.classList.add('open');
     if (mobileOverlay) mobileOverlay.classList.add('active');
     document.body.style.overflow = 'hidden';
+    if (window.lucide) window.lucide.createIcons();
   }
 
-  function closeMenu() {
-    if (navToggle) navToggle.classList.remove('active');
+  function closeMobileMenu() {
+    if (navToggle) {
+      navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.innerHTML = '<i data-lucide="menu" style="width: 20px; height: 20px;"></i>';
+    }
     if (navLinks) navLinks.classList.remove('open');
     if (mobileOverlay) mobileOverlay.classList.remove('active');
     document.body.style.overflow = '';
+    if (window.lucide) window.lucide.createIcons();
   }
 
   if (navToggle) {
     navToggle.addEventListener('click', () => {
-      if (navLinks && navLinks.classList.contains('open')) {
-        closeMenu();
+      const isOpen = navLinks && navLinks.classList.contains('open');
+      if (isOpen) {
+        closeMobileMenu();
       } else {
-        openMenu();
+        openMobileMenu();
       }
     });
   }
 
   if (mobileOverlay) {
-    mobileOverlay.addEventListener('click', closeMenu);
+    mobileOverlay.addEventListener('click', closeMobileMenu);
   }
 
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', closeMenu);
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', closeMobileMenu);
   });
 
   // --------------------------------------------------------------------------
-  // 5. ACTIVE NAV LINK
+  // 4. ACTIVE NAVIGATION LINK DETECTION
   // --------------------------------------------------------------------------
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav-links a').forEach(link => {
+  const pathParts = window.location.pathname.split('/');
+  const currentPage = pathParts[pathParts.length - 1] || 'index.html';
+
+  document.querySelectorAll('.nav-link').forEach(link => {
     const href = link.getAttribute('href');
     if (href === currentPage || (currentPage === '' && href === 'index.html')) {
       link.classList.add('active');
+      link.setAttribute('aria-current', 'page');
     } else {
       link.classList.remove('active');
+      link.removeAttribute('aria-current');
     }
   });
 
   // --------------------------------------------------------------------------
-  // 6. TYPING ANIMATION (HERO)
-  // --------------------------------------------------------------------------
-  const typingEl = document.querySelector('.typing-text');
-  if (typingEl) {
-    const phrases = JSON.parse(typingEl.getAttribute('data-phrases') || '["Odoo Developer", "Python Backend", "Flutter Dev", "Problem Solver"]');
-    let phraseIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-
-    function typeLoop() {
-      const currentPhrase = phrases[phraseIndex];
-      if (isDeleting) {
-        typingEl.textContent = currentPhrase.substring(0, charIndex - 1);
-        charIndex--;
-      } else {
-        typingEl.textContent = currentPhrase.substring(0, charIndex + 1);
-        charIndex++;
-      }
-
-      let delay = isDeleting ? 30 : 65;
-
-      if (!isDeleting && charIndex === currentPhrase.length) {
-        delay = 2000;
-        isDeleting = true;
-      } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        phraseIndex = (phraseIndex + 1) % phrases.length;
-        delay = 350;
-      }
-
-      setTimeout(typeLoop, delay);
-    }
-
-    setTimeout(typeLoop, 600);
-  }
-
-  // --------------------------------------------------------------------------
-  // 7. COUNTER ANIMATION
-  // --------------------------------------------------------------------------
-  const counters = document.querySelectorAll('[data-count]');
-  if (counters.length > 0) {
-    const counterObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const el = entry.target;
-          const target = parseInt(el.getAttribute('data-count'), 10) || 0;
-          const suffix = el.getAttribute('data-suffix') || '';
-          let current = 0;
-          const steps = 35;
-          const increment = target / steps;
-          const intervalTime = 1000 / steps;
-
-          const timer = setInterval(() => {
-            current += increment;
-            if (current >= target) {
-              current = target;
-              clearInterval(timer);
-            }
-            el.textContent = Math.floor(current) + suffix;
-          }, intervalTime);
-
-          counterObserver.unobserve(el);
-        }
-      });
-    }, { threshold: 0.2 });
-
-    counters.forEach(c => counterObserver.observe(c));
-  }
-
-  // --------------------------------------------------------------------------
-  // 8. SMOOTH SCROLL REVEAL
-  // --------------------------------------------------------------------------
-  const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-l, .reveal-r');
-  if (revealElements.length > 0) {
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, {
-      threshold: 0.08,
-      rootMargin: '0px 0px -30px 0px'
-    });
-
-    revealElements.forEach(el => revealObserver.observe(el));
-  }
-
-  // --------------------------------------------------------------------------
-  // 9. SKILL PROGRESS BAR
-  // --------------------------------------------------------------------------
-  const skillBars = document.querySelectorAll('.skill-progress-fill, .skill-fill');
-  if (skillBars.length > 0) {
-    const skillObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const target = entry.target;
-          const width = target.getAttribute('data-width') || '80';
-          target.style.width = width + '%';
-          skillObserver.unobserve(target);
-        }
-      });
-    }, { threshold: 0.2 });
-
-    skillBars.forEach(b => skillObserver.observe(b));
-  }
-
-  // --------------------------------------------------------------------------
-  // 10. PROJECT FILTERING & REAL-TIME SEARCH
-  // --------------------------------------------------------------------------
-  const filterPills = document.querySelectorAll('.filter-pill');
-  const searchInput = document.getElementById('projectSearch');
-  const projectCards = document.querySelectorAll('.project-card');
-
-  function applyProjectFilters() {
-    const activePill = document.querySelector('.filter-pill.active');
-    const selectedCategory = activePill ? activePill.getAttribute('data-category') : 'all';
-    const searchQuery = searchInput ? searchInput.value.toLowerCase().trim() : '';
-
-    projectCards.forEach(card => {
-      const cardCategory = card.getAttribute('data-category') || '';
-      const cardTitle = card.querySelector('.project-title')?.textContent.toLowerCase() || '';
-      const cardDesc = card.querySelector('.project-description, .project-desc')?.textContent.toLowerCase() || '';
-      const cardTech = card.querySelector('.project-tech-stack, .tech-tags')?.textContent.toLowerCase() || '';
-
-      const matchCategory = (selectedCategory === 'all' || cardCategory.includes(selectedCategory));
-      const matchSearch = (cardTitle.includes(searchQuery) || cardDesc.includes(searchQuery) || cardTech.includes(searchQuery));
-
-      if (matchCategory && matchSearch) {
-        card.style.display = 'flex';
-        setTimeout(() => {
-          card.style.opacity = '1';
-          card.style.transform = 'translateY(0)';
-        }, 10);
-      } else {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(6px)';
-        setTimeout(() => {
-          card.style.display = 'none';
-        }, 180);
-      }
-    });
-  }
-
-  if (filterPills.length > 0) {
-    filterPills.forEach(pill => {
-      pill.addEventListener('click', () => {
-        filterPills.forEach(p => p.classList.remove('active'));
-        pill.classList.add('active');
-        applyProjectFilters();
-      });
-    });
-  }
-
-  if (searchInput) {
-    searchInput.addEventListener('input', applyProjectFilters);
-  }
-
-  // --------------------------------------------------------------------------
-  // 11. TOAST NOTIFICATION UTILITY
+  // 5. TOAST NOTIFICATION UTILITY
   // --------------------------------------------------------------------------
   let toastEl = document.querySelector('.toast-notification');
   if (!toastEl) {
     toastEl = document.createElement('div');
     toastEl.className = 'toast-notification';
+    toastEl.setAttribute('role', 'status');
+    toastEl.setAttribute('aria-live', 'polite');
     toastEl.innerHTML = '<span id="toastMsg">Tersalin!</span>';
     document.body.appendChild(toastEl);
   }
 
+  let toastTimer = null;
   window.showToast = function(message) {
     const msgSpan = document.getElementById('toastMsg');
     if (msgSpan) msgSpan.textContent = message;
     toastEl.classList.add('show');
-    setTimeout(() => {
+
+    if (toastTimer) clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => {
       toastEl.classList.remove('show');
     }, 2400);
   };
 
   // --------------------------------------------------------------------------
-  // 12. COPY EMAIL TO CLIPBOARD
+  // 6. COPY EMAIL TO CLIPBOARD
   // --------------------------------------------------------------------------
   document.querySelectorAll('.btn-copy-email').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       const email = btn.getAttribute('data-email') || 'astdnn48@gmail.com';
-      navigator.clipboard.writeText(email).then(() => {
-        window.showToast(`Email ${email} berhasil disalin!`);
-      }).catch(() => {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email).then(() => {
+          window.showToast(`Email ${email} berhasil disalin!`);
+        }).catch(() => {
+          window.showToast(`Email: ${email}`);
+        });
+      } else {
         window.showToast(`Email: ${email}`);
-      });
+      }
     });
   });
 
   // --------------------------------------------------------------------------
-  // 13. PDF CV MODAL VIEWER
+  // 7. PDF CV MODAL VIEWER
   // --------------------------------------------------------------------------
   window.openPdfModal = function(pdfUrl, title) {
     const overlay = document.getElementById('pdfModalOverlay');
@@ -316,9 +182,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (overlay && iframe) {
       if (titleEl) titleEl.textContent = title || 'Curriculum Vitae — Yoga Setyawan Purwanto';
-      iframe.src = pdfUrl || 'pdf/yoga_setyawan_cv.pdf';
-      if (downloadBtn) downloadBtn.href = pdfUrl || 'pdf/yoga_setyawan_cv.pdf';
+      const targetUrl = pdfUrl || 'pdf/yoga_setyawan_cv.pdf';
+      iframe.src = targetUrl;
+      if (downloadBtn) downloadBtn.href = targetUrl;
       overlay.classList.add('active');
+      overlay.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
       if (window.lucide) window.lucide.createIcons();
     }
@@ -329,9 +197,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const iframe = document.getElementById('pdfIframe');
     if (overlay) {
       overlay.classList.remove('active');
+      overlay.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
       if (iframe) {
-        setTimeout(() => { iframe.src = ''; }, 250);
+        setTimeout(() => { iframe.src = ''; }, 200);
       }
     }
   };
@@ -350,11 +219,63 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       window.closePdfModal();
+      closeMobileMenu();
     }
   });
 
   // --------------------------------------------------------------------------
-  // 14. CONTACT FORM SUBMISSION & VALIDATION
+  // 8. PROJECT FILTERING & REAL-TIME SEARCH (PROJECTS PAGE)
+  // --------------------------------------------------------------------------
+  const filterPills = document.querySelectorAll('.filter-pill');
+  const searchInput = document.getElementById('projectSearch');
+  const filterableProjects = document.querySelectorAll('.project-featured-card, .project-archive-item');
+
+  function applyProjectFilters() {
+    const activePill = document.querySelector('.filter-pill.active');
+    const selectedCategory = activePill ? activePill.getAttribute('data-category') : 'all';
+    const searchQuery = searchInput ? searchInput.value.toLowerCase().trim() : '';
+
+    let visibleCount = 0;
+
+    filterableProjects.forEach(item => {
+      const itemCategory = (item.getAttribute('data-category') || '').toLowerCase();
+      const title = (item.querySelector('.project-title, .project-archive-title')?.textContent || '').toLowerCase();
+      const desc = (item.querySelector('.project-desc, .project-archive-desc')?.textContent || '').toLowerCase();
+      const tech = (item.querySelector('.tag-cloud, .project-archive-desc')?.textContent || '').toLowerCase();
+
+      const matchCategory = (selectedCategory === 'all' || itemCategory.includes(selectedCategory));
+      const matchSearch = (!searchQuery || title.includes(searchQuery) || desc.includes(searchQuery) || tech.includes(searchQuery));
+
+      if (matchCategory && matchSearch) {
+        item.style.display = '';
+        visibleCount++;
+      } else {
+        item.style.display = 'none';
+      }
+    });
+
+    const emptyNotice = document.getElementById('noProjectsNotice');
+    if (emptyNotice) {
+      emptyNotice.style.display = visibleCount === 0 ? 'block' : 'none';
+    }
+  }
+
+  if (filterPills.length > 0) {
+    filterPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        filterPills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        applyProjectFilters();
+      });
+    });
+  }
+
+  if (searchInput) {
+    searchInput.addEventListener('input', applyProjectFilters);
+  }
+
+  // --------------------------------------------------------------------------
+  // 9. CONTACT FORM SUBMISSION & CLIENT VALIDATION
   // --------------------------------------------------------------------------
   const contactForm = document.getElementById('contactForm');
   const formSuccess = document.getElementById('formSuccess');
@@ -368,7 +289,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const emailInput = document.getElementById('email');
       const messageInput = document.getElementById('message');
 
-      // Reset error states
+      // Reset errors
       contactForm.querySelectorAll('.form-group').forEach(group => group.classList.remove('invalid'));
 
       if (!nameInput || nameInput.value.trim().length < 2) {
@@ -382,7 +303,7 @@ document.addEventListener('DOMContentLoaded', () => {
         emailInput?.closest('.form-group')?.classList.add('invalid');
       }
 
-      if (!messageInput || messageInput.value.trim().length < 10) {
+      if (!messageInput || messageInput.value.trim().length < 8) {
         isValid = false;
         messageInput?.closest('.form-group')?.classList.add('invalid');
       }
@@ -390,7 +311,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!isValid) return;
 
       const submitBtn = contactForm.querySelector('button[type="submit"]');
-      const originalText = submitBtn ? submitBtn.innerHTML : '';
+      const originalBtnHtml = submitBtn ? submitBtn.innerHTML : '';
       if (submitBtn) {
         submitBtn.disabled = true;
         submitBtn.innerHTML = '<span>Mengirim Pesan...</span>';
@@ -405,18 +326,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         if (response.ok) {
-          if (formSuccess) formSuccess.classList.add('show');
+          if (formSuccess) {
+            formSuccess.classList.add('show');
+            formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
           contactForm.reset();
-          if (window.lucide) window.lucide.createIcons();
+          window.showToast('Pesan Anda berhasil dikirim!');
         } else {
-          window.showToast('Gagal mengirim pesan, silakan hubungi via WhatsApp.');
+          window.showToast('Gagal mengirim pesan. Silakan hubungi via WhatsApp.');
         }
-      } catch (error) {
-        window.showToast('Terjadi kesalahan jaringan.');
+      } catch (err) {
+        window.showToast('Terjadi gangguan koneksi. Silakan hubungi via WhatsApp.');
       } finally {
         if (submitBtn) {
           submitBtn.disabled = false;
-          submitBtn.innerHTML = originalText;
+          submitBtn.innerHTML = originalBtnHtml;
           if (window.lucide) window.lucide.createIcons();
         }
       }
@@ -424,7 +348,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --------------------------------------------------------------------------
-  // 15. INITIALIZE ICONS
+  // 10. LUCIDE ICONS INITIALIZATION
   // --------------------------------------------------------------------------
   if (window.lucide) {
     window.lucide.createIcons();

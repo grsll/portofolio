@@ -1,19 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
 
 /* ==========================================================================
-   YOGA.DEV — SUPER SIMPLE & MINIMALIST SOFTWARE ENGINEER PORTFOLIO
+   YOGA.DEV — MONOCHROME BLACK & WHITE MINIMALIST PORTFOLIO
    ========================================================================== */
 
 :root {
   --color-bg: #FFFFFF;
-  --color-surface: #FAFAF8;
-  --color-text: #171917;
-  --color-text-secondary: #525952;
-  --color-text-muted: #7A827A;
-  --color-border: #E8EAE6;
-  --color-border-subtle: #F0F2EE;
-  --color-accent: #2B5237;
-  --color-accent-subtle: #EEF3EF;
+  --color-surface: #F9F9F9;
+  --color-text: #111111;
+  --color-text-secondary: #555555;
+  --color-text-muted: #888888;
+  --color-border: #E5E5E5;
+  --color-border-subtle: #EEEEEE;
+  --color-accent: #111111;
+  --color-accent-subtle: #F0F0F0;
 
   --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', Menlo, Consolas, monospace;
@@ -27,8 +27,8 @@
   --space-xl: 3rem;
   --space-2xl: 4.5rem;
 
-  --radius: 6px;
-  --transition: 150ms ease;
+  --radius: 4px;
+  --transition: 120ms ease;
 }
 
 /* Reset & Base */
@@ -62,7 +62,7 @@ a {
 }
 
 a:hover {
-  color: var(--color-accent);
+  color: #000000;
 }
 
 button {
@@ -73,9 +73,9 @@ button {
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--color-text);
   outline-offset: 2px;
-  border-radius: 3px;
+  border-radius: 2px;
 }
 
 /* Scroll progress */
@@ -84,7 +84,7 @@ button {
   top: 0;
   left: 0;
   height: 2px;
-  background: var(--color-accent);
+  background: var(--color-text);
   z-index: 1000;
   width: 0%;
 }
@@ -131,7 +131,7 @@ main.main-content {
   left: 0;
   right: 0;
   height: 64px;
-  background: rgba(255, 255, 255, 0.94);
+  background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--color-border);
@@ -173,7 +173,7 @@ main.main-content {
 }
 
 .nav-link.active {
-  border-bottom: 2px solid var(--color-accent);
+  border-bottom: 2px solid var(--color-text);
 }
 
 .nav-toggle {
@@ -243,36 +243,40 @@ main.main-content {
 }
 
 .btn-primary {
-  background: var(--color-accent);
+  background: #111111;
   color: #FFFFFF;
+  border: 1px solid #111111;
 }
 
 .btn-primary:hover {
-  background: #203E29;
+  background: #333333;
+  border-color: #333333;
   color: #FFFFFF;
 }
 
 .btn-secondary {
-  background: var(--color-surface);
-  color: var(--color-text);
+  background: #FFFFFF;
+  color: #111111;
   border: 1px solid var(--color-border);
 }
 
 .btn-secondary:hover {
-  border-color: var(--color-text);
+  border-color: #111111;
 }
 
 .link-inline {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  color: var(--color-accent);
+  color: #111111;
   font-weight: 500;
   font-size: 0.875rem;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .link-inline:hover {
-  text-decoration: underline;
+  color: #555555;
 }
 
 /* Status Pill */
@@ -282,18 +286,19 @@ main.main-content {
   gap: 6px;
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  color: var(--color-accent);
-  background: var(--color-accent-subtle);
+  color: #333333;
+  background: #F0F0F0;
   padding: 3px 10px;
   border-radius: 999px;
   margin-bottom: var(--space-sm);
+  border: 1px solid var(--color-border);
 }
 
 .status-dot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--color-accent);
+  background: #111111;
 }
 
 /* Tech Tags */
@@ -308,13 +313,13 @@ main.main-content {
   font-family: var(--font-mono);
   font-size: 0.72rem;
   padding: 2px 7px;
-  border-radius: 4px;
-  background: var(--color-surface);
-  color: var(--color-text-secondary);
+  border-radius: 3px;
+  background: #F5F5F5;
+  color: #444444;
   border: 1px solid var(--color-border);
 }
 
-/* Hero (Super Simple) */
+/* Hero */
 .hero-simple {
   padding-bottom: var(--space-xl);
   border-bottom: 1px solid var(--color-border);
@@ -330,7 +335,7 @@ main.main-content {
 
 .hero-role {
   font-size: 1.15rem;
-  color: var(--color-accent);
+  color: var(--color-text-secondary);
   font-weight: 500;
   margin-bottom: var(--space-md);
 }
@@ -349,7 +354,7 @@ main.main-content {
   flex-wrap: wrap;
 }
 
-/* Project List (NO IMAGES, SUPER SIMPLE) */
+/* Project List (NO IMAGES, SUPER SIMPLE MONOCHROME) */
 .project-list {
   display: flex;
   flex-direction: column;
@@ -388,7 +393,8 @@ main.main-content {
 }
 
 .project-title a:hover {
-  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .project-desc {
@@ -424,7 +430,7 @@ main.main-content {
   font-size: 0.75rem;
   padding: 4px 10px;
   border-radius: var(--radius);
-  background: var(--color-surface);
+  background: #FFFFFF;
   border: 1px solid var(--color-border);
   color: var(--color-text-secondary);
   cursor: pointer;
@@ -432,13 +438,13 @@ main.main-content {
 }
 
 .filter-pill:hover {
-  border-color: var(--color-text);
-  color: var(--color-text);
+  border-color: #111111;
+  color: #111111;
 }
 
 .filter-pill.active {
-  background: var(--color-accent);
-  border-color: var(--color-accent);
+  background: #111111;
+  border-color: #111111;
   color: #FFFFFF;
 }
 
@@ -449,18 +455,17 @@ main.main-content {
   font-family: var(--font-sans);
   font-size: 0.85rem;
   color: var(--color-text);
-  background: var(--color-surface);
+  background: #FFFFFF;
   width: 100%;
   max-width: 240px;
 }
 
 .search-box:focus {
   outline: none;
-  border-color: var(--color-accent);
-  background: #FFFFFF;
+  border-color: #111111;
 }
 
-/* Timeline & Simple Experience */
+/* Timeline */
 .simple-timeline {
   display: flex;
   flex-direction: column;
@@ -494,7 +499,8 @@ main.main-content {
 
 .timeline-org {
   font-size: 0.875rem;
-  color: var(--color-accent);
+  color: var(--color-text);
+  font-weight: 500;
   margin-bottom: 4px;
 }
 
@@ -504,7 +510,7 @@ main.main-content {
   line-height: 1.6;
 }
 
-/* Simple Skills List */
+/* Skills List */
 .skills-simple-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -539,10 +545,10 @@ main.main-content {
 
 .skill-simple-item strong {
   color: var(--color-text);
-  font-weight: 500;
+  font-weight: 600;
 }
 
-/* Simple Contact Form */
+/* Contact */
 .contact-container {
   display: flex;
   flex-direction: column;
@@ -574,6 +580,10 @@ main.main-content {
 .channel-val {
   font-weight: 500;
   color: var(--color-text);
+}
+
+.channel-val:hover {
+  text-decoration: underline;
 }
 
 .form-simple {
@@ -608,7 +618,7 @@ main.main-content {
 
 .form-input:focus {
   outline: none;
-  border-color: var(--color-accent);
+  border-color: #111111;
 }
 
 textarea.form-input {
@@ -619,11 +629,12 @@ textarea.form-input {
 .form-error-msg {
   display: none;
   font-size: 0.75rem;
-  color: #B91C1C;
+  color: #111111;
+  font-weight: 500;
 }
 
 .form-group.invalid .form-input {
-  border-color: #B91C1C;
+  border-color: #111111;
 }
 
 .form-group.invalid .form-error-msg {
@@ -633,10 +644,10 @@ textarea.form-input {
 .form-success-banner {
   display: none;
   padding: 12px 16px;
-  background: var(--color-accent-subtle);
-  border: 1px solid rgba(43, 82, 55, 0.2);
+  background: #F5F5F5;
+  border: 1px solid #D4D4D4;
   border-radius: var(--radius);
-  color: var(--color-accent);
+  color: #111111;
   font-size: 0.9rem;
 }
 
@@ -649,13 +660,13 @@ textarea.form-input {
   position: fixed;
   bottom: 24px;
   right: 24px;
-  background: #171917;
+  background: #111111;
   color: #FFFFFF;
   padding: 8px 16px;
   border-radius: var(--radius);
   font-size: 0.8125rem;
   font-family: var(--font-mono);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   z-index: 1000;
   opacity: 0;
   transform: translateY(10px);
@@ -705,7 +716,7 @@ textarea.form-input {
 
 .modal-body {
   flex: 1;
-  background: #F3F4F1;
+  background: #F5F5F5;
 }
 
 .modal-body iframe {
@@ -714,7 +725,7 @@ textarea.form-input {
   border: none;
 }
 
-/* Footer (Super Simple) */
+/* Footer */
 .site-footer {
   border-top: 1px solid var(--color-border);
   padding: var(--space-xl) 0;
@@ -748,5 +759,6 @@ textarea.form-input {
 }
 
 .footer-links a:hover {
-  color: var(--color-accent);
+  color: #111111;
+  text-decoration: underline;
 }

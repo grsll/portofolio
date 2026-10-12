@@ -1,5 +1,5 @@
 /* ==========================================================================
-   YOGA.DEV — JAVASCRIPT (CLEAN, ACCESSIBLE, ROBUST)
+   YOGA — JAVASCRIPT (CLEAN, ACCESSIBLE, ROBUST)
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {

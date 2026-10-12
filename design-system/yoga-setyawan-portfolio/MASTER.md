@@ -1,6 +1,6 @@
-# Design System Master File — YOGA.DEV
+# Design System Master File — YOGA
 
-**Project:** Yoga Setyawan Portfolio (YOGA.DEV)  
+**Project:** Yoga Setyawan Portfolio (YOGA)  
 **Style:** Minimalist Monochrome (Black & White) Software Engineer Portfolio  
 **Focus:** Odoo ERP Engineering, Python Backend, Flutter Mobile  
 

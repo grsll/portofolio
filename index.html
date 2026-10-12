@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Yoga Setyawan | Odoo Engineer &amp; Backend Developer</title>
-  <meta name="description" content="Portofolio resmi Yoga Setyawan Purwanto — Odoo Engineer, Python Backend Developer, dan Flutter Mobile Developer berbasis di Jakarta.">
+  <meta name="description" content="Personal portfolio of Yoga Setyawan Purwanto — Odoo Engineer, Python Backend Developer, and Flutter Mobile Developer.">
   <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="stylesheet" href="css/style.css">
   <script src="https://unpkg.com/lucide@latest"></script>
@@ -14,11 +14,7 @@
   <!-- Navigation -->
   <nav class="nav-bar">
     <div class="site-container nav-inner">
-      <a href="index.html" class="nav-logo">
-        YOGA.DEV
-        <span class="nav-logo-badge">ENGINEERING</span>
-      </a>
-      
+      <a href="index.html" class="nav-logo">YOGA.DEV</a>
       <div class="nav-links" id="navLinks">
         <a href="index.html" class="nav-link active">Beranda</a>
         <a href="about.html" class="nav-link">Tentang</a>
@@ -26,8 +22,7 @@
         <a href="projects.html" class="nav-link">Proyek</a>
         <a href="contact.html" class="nav-link">Kontak</a>
       </div>
-
-      <button type="button" class="nav-toggle" id="navToggle" aria-label="Buka navigasi menu" aria-expanded="false">
+      <button type="button" class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
         <i data-lucide="menu" style="width: 20px; height: 20px;"></i>
       </button>
     </div>
@@ -37,294 +32,165 @@
   <main class="main-content">
     <div class="site-container">
 
-      <!-- Hero Section -->
-      <section class="hero-editorial">
-        <div class="hero-header-row">
-          <span class="text-eyebrow">Rekayasa Sistem &amp; Integrasi Bisnis</span>
-          <div class="status-pill">
-            <span class="status-dot"></span>
-            Tersedia untuk proyek &amp; kolaborasi
-          </div>
+      <!-- Hero (Super Simple) -->
+      <section class="hero-simple">
+        <div class="status-badge">
+          <span class="status-dot"></span>
+          Tersedia untuk proyek &amp; diskusi teknis
         </div>
-
-        <h1 class="hero-title">
-          Odoo Engineer &amp;<br>
-          <span class="accent-text">Backend Developer</span>
-        </h1>
-
-        <p class="hero-subtext">
-          Saya <strong>Yoga Setyawan Purwanto</strong>. Mengembangkan arsitektur ERP enterprise yang tangguh menggunakan Odoo, Python, dan PostgreSQL, dengan keahlian pelengkap dalam pengembangan aplikasi mobile Flutter.
+        <h1 class="hero-name">Yoga Setyawan Purwanto</h1>
+        <div class="hero-role">Odoo Engineer &amp; Backend Developer</div>
+        <p class="hero-bio">
+          Saya mengembangkan arsitektur sistem ERP enterprise yang modular dan andal menggunakan Odoo, Python, dan PostgreSQL, serta membangun aplikasi mobile berbasis Flutter. Berdomisili di Jakarta dan saat ini berkarya di PT Karyatama Solusindo.
         </p>
-
         <div class="hero-actions">
-          <a href="projects.html" class="btn btn-primary">
-            Lihat Karya &amp; Proyek <i data-lucide="arrow-right" class="btn-icon"></i>
-          </a>
-          <button type="button" class="btn btn-secondary" onclick="openPdfModal('pdf/yoga_setyawan_cv.pdf', 'Curriculum Vitae — Yoga Setyawan Purwanto')">
-            <i data-lucide="file-text" class="btn-icon"></i> Preview CV
-          </button>
-          <a href="contact.html" class="btn btn-secondary">
-            Kontak Langsung
-          </a>
-        </div>
-
-        <div class="hero-meta-grid">
-          <div class="meta-item">
-            <span class="meta-label">Posisi Saat Ini</span>
-            <span class="meta-value">Odoo Developer — PT Karyatama Solusindo</span>
-          </div>
-          <div class="meta-item">
-            <span class="meta-label">Lokasi Domisili</span>
-            <span class="meta-value">Jakarta, Indonesia</span>
-          </div>
-          <div class="meta-item">
-            <span class="meta-label">Fokus Teknologi</span>
-            <span class="meta-value">Odoo (v14–v17), Python, PostgreSQL, Flutter</span>
-          </div>
+          <a href="projects.html" class="btn btn-primary">Lihat Proyek</a>
+          <button type="button" class="btn btn-secondary" onclick="openPdfModal('pdf/yoga_setyawan_cv.pdf', 'CV — Yoga Setyawan Purwanto')">Preview CV</button>
+          <a href="contact.html" class="btn btn-secondary">Kontak</a>
         </div>
       </section>
 
-      <!-- Section 01: Engineering Approach -->
-      <section class="section-block">
+      <!-- Featured Projects (Super Simple List, NO IMAGES) -->
+      <section>
         <div class="section-header">
-          <div>
-            <span class="text-eyebrow">Prinsip Kerja</span>
-            <h2 class="title-section">Pendekatan Rekayasa Sistem</h2>
-          </div>
-          <span class="section-index">01 // PENDEKATAN</span>
+          <h2 class="section-title">Proyek Pilihan</h2>
+          <a href="projects.html" class="link-inline">Semua proyek <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i></a>
         </div>
 
-        <div class="pillars-grid">
-          <div class="pillar-card">
-            <span class="pillar-number">01</span>
-            <h3 class="pillar-title">Inheritance &amp; Modularitas</h3>
-            <p class="pillar-desc">
-              Mengutamakan view inheritance dan extension model Odoo yang bersih. Memastikan modifikasi modul tetap mudah di-upgrade saat migrasi versi tanpa merusak alur inti (core logic) sistem ERP.
-            </p>
-          </div>
+        <div class="project-list">
 
-          <div class="pillar-card">
-            <span class="pillar-number">02</span>
-            <h3 class="pillar-title">Integritas Data &amp; Kueri</h3>
-            <p class="pillar-desc">
-              Merancang skema relasional PostgreSQL yang ternormalisasi dengan baik, menerapkan query optimization, serta meminimalkan komputasi berulang melalui cache dan stored computed fields.
-            </p>
-          </div>
-
-          <div class="pillar-card">
-            <span class="pillar-number">03</span>
-            <h3 class="pillar-title">Integrasi Gateway Aman</h3>
-            <p class="pillar-desc">
-              Menghubungkan sistem backoffice ERP dengan aplikasi mobile (Flutter) atau layanan pihak ketiga melalui REST/RPC middleware yang dilengkapi autentikasi aman dan validasi data ketat.
-            </p>
-          </div>
-        </div>
-
-        <!-- Technical Code Architecture Snapshot -->
-        <div style="margin-top: var(--space-xl);">
-          <div class="code-container">
-            <div class="code-header">
-              <span>models/hospital_sync.py — Contoh Pola Inheritance &amp; Clean Logic</span>
-              <span>Python 3 / Odoo ORM</span>
-            </div>
-            <code>
-<span class="code-keyword">from</span> odoo <span class="code-keyword">import</span> models, fields, api
-
-<span class="code-keyword">class</span> <span class="code-fn">HospitalMedicalRecord</span>(models.Model):
-    <span class="code-comment"># Memperluas kapabilitas sistem rekam medis dengan integritas data ketat</span>
-    _name = <span class="code-str">'hospital.medical.record'</span>
-    _description = <span class="code-str">'Medical Record Transaction'</span>
-    _inherit = [<span class="code-str">'mail.thread'</span>, <span class="code-str">'mail.activity.mixin'</span>]
-
-    patient_id = fields.Many2one(<span class="code-str">'hospital.patient'</span>, string=<span class="code-str">'Pasien'</span>, required=True, index=True)
-    diagnosis_code = fields.Char(string=<span class="code-str">'Kode ICD-10'</span>, tracking=True)
-    state = fields.Selection([
-        (<span class="code-str">'draft'</span>, <span class="code-str">'Draft'</span>),
-        (<span class="code-str">'verified'</span>, <span class="code-str">'Terverifikasi'</span>),
-        (<span class="code-str">'done'</span>, <span class="code-str">'Selesai'</span>)
-    ], default=<span class="code-str">'draft'</span>, string=<span class="code-str">'Status Rekam'</span>)
-
-    <span class="code-keyword">@api.constrains</span>(<span class="code-str">'diagnosis_code'</span>)
-    <span class="code-keyword">def</span> <span class="code-fn">_check_diagnosis_validity</span>(self):
-        <span class="code-keyword">for</span> record <span class="code-keyword">in</span> self:
-            <span class="code-keyword">if</span> record.state == <span class="code-str">'verified'</span> <span class="code-keyword">and not</span> record.diagnosis_code:
-                <span class="code-keyword">raise</span> ValidationError(<span class="code-str">"Kode diagnosis wajib diverifikasi sebelum finalisasi."</span>)
-            </code>
-          </div>
-        </div>
-      </section>
-
-      <!-- Section 02: Featured Projects -->
-      <section class="section-block">
-        <div class="section-header">
-          <div>
-            <span class="text-eyebrow">Portofolio Terpilih</span>
-            <h2 class="title-section">Proyek Rekayasa Unggulan</h2>
-          </div>
-          <span class="section-index">02 // PROYEK</span>
-        </div>
-
-        <!-- Project 1: SIMRS -->
-        <article class="project-featured-card">
-          <div class="project-details">
-            <div class="project-heading-row">
-              <h3 class="project-title">SIMRS Hospital ERP</h3>
-              <span class="project-role-badge">Lead Developer &amp; Odoo Architect</span>
+          <!-- SIMRS -->
+          <article class="project-item">
+            <div class="project-header-row">
+              <h3 class="project-title">
+                <a href="https://github.com/zunstudent/test_frontend.git" target="_blank" rel="noopener noreferrer">
+                  SIMRS Hospital ERP <i data-lucide="arrow-up-right" style="width: 15px; height: 15px;"></i>
+                </a>
+              </h3>
+              <span class="text-meta">Odoo / Python / PostgreSQL</span>
             </div>
             <p class="project-desc">
-              Sistem Informasi Manajemen Rumah Sakit terintegrasi penuh dengan ekosistem Odoo. Mengakomodasi modul rekam medis elektronik (EMR), manajemen antrean poliklinik terpadu, serta sistem e-signature dokter untuk validasi tindakan medis.
+              Sistem Informasi Manajemen Rumah Sakit terintegrasi Odoo mencakup modul rekam medis elektronik (EMR), antrean poliklinik, e-signature dokter, dan pelaporan medis PDF dinamis via QWeb.
             </p>
-            <div class="project-technical-notes">
-              <div class="project-technical-label">Pendekatan Teknis</div>
-              Menggunakan Odoo custom models, workflow state transitions dengan validasi ketat, QWeb PDF medical reports, serta query PostgreSQL terindeks untuk penanganan ribuan data kunjungan pasien.
-            </div>
             <div class="tag-cloud">
               <span class="tag">Odoo ERP</span>
               <span class="tag">Python</span>
               <span class="tag">PostgreSQL</span>
-              <span class="tag">XML Views</span>
               <span class="tag">QWeb</span>
             </div>
-            <div class="project-links">
-              <a href="https://github.com/zunstudent/test_frontend.git" target="_blank" rel="noopener noreferrer" class="project-link">
-                Repository GitHub <i data-lucide="external-link" style="width: 14px; height: 14px;"></i>
-              </a>
-            </div>
-          </div>
-          <div>
-            <img src="images/projects/project-1.png" alt="Tampilan antarmuka sistem SIMRS Hospital ERP" class="about-photo" style="aspect-ratio: 16/10; object-fit: cover; width: 100%; border-radius: var(--radius-md);" onerror="this.style.display='none';">
-          </div>
-        </article>
+          </article>
 
-        <!-- Project 2: Finora -->
-        <article class="project-featured-card">
-          <div class="project-details">
-            <div class="project-heading-row">
-              <h3 class="project-title">Finora — Personal Finance Tracker</h3>
-              <span class="project-role-badge">Mobile Engineer &amp; UI Architecture</span>
+          <!-- Website Catalog -->
+          <article class="project-item">
+            <div class="project-header-row">
+              <h3 class="project-title">
+                <a href="https://github.com/grsll/Website_catalog" target="_blank" rel="noopener noreferrer">
+                  Website Catalog — Housing &amp; Sales CRM <i data-lucide="arrow-up-right" style="width: 15px; height: 15px;"></i>
+                </a>
+              </h3>
+              <span class="text-meta">Next.js / MSSQL / Prisma / Docker</span>
             </div>
             <p class="project-desc">
-              Aplikasi pelacak keuangan personal berbasis Flutter dengan prinsip Clean Architecture. Dilengkapi smart dashboard, multi-account ledger, alokasi budgeting otomatis, target tabungan terencana, dan pelaporan cashflow.
+              Platform katalog perumahan eksklusif dan sistem internal Sales CRM terhubung langsung ke Microsoft SQL Server 2022 di Docker. Fitur denah SVG interaktif, simulasi KPR anuitas, dan transaksi atomik anti double-booking.
             </p>
-            <div class="project-technical-notes">
-              <div class="project-technical-label">Pendekatan Teknis</div>
-              Pemisahan concern antara Data, Domain, dan Presentation layer. Penyimpanan lokal performa tinggi menggunakan SQLite terenkripsi dengan respon UI 60fps tanpa lagging.
+            <div class="tag-cloud">
+              <span class="tag">Next.js 16</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">MSSQL</span>
+              <span class="tag">Prisma ORM</span>
+              <span class="tag">Docker</span>
             </div>
+          </article>
+
+          <!-- Finora -->
+          <article class="project-item">
+            <div class="project-header-row">
+              <h3 class="project-title">
+                <a href="https://github.com/grsll/finora" target="_blank" rel="noopener noreferrer">
+                  Finora — Personal Finance Tracker <i data-lucide="arrow-up-right" style="width: 15px; height: 15px;"></i>
+                </a>
+              </h3>
+              <span class="text-meta">Flutter / Clean Architecture / SQLite</span>
+            </div>
+            <p class="project-desc">
+              Aplikasi mobile pelacak keuangan personal dengan arsitektur bersih terpisah (Data, Domain, Presentation). Mendukung multi-account, alokasi budgeting, dan penyimpanan lokal terenkripsi.
+            </p>
             <div class="tag-cloud">
               <span class="tag">Flutter</span>
               <span class="tag">Dart</span>
               <span class="tag">Clean Architecture</span>
               <span class="tag">SQLite</span>
-              <span class="tag">State Management</span>
             </div>
-            <div class="project-links">
-              <a href="https://github.com/grsll/finora" target="_blank" rel="noopener noreferrer" class="project-link">
-                Repository GitHub <i data-lucide="external-link" style="width: 14px; height: 14px;"></i>
-              </a>
-            </div>
-          </div>
-          <div>
-            <img src="images/projects/project-2.png" alt="Tampilan antarmuka aplikasi finansial Finora" class="about-photo" style="aspect-ratio: 16/10; object-fit: cover; width: 100%; border-radius: var(--radius-md);" onerror="this.style.display='none';">
-          </div>
-        </article>
+          </article>
 
-        <!-- Project 3: Website Catalog -->
-        <article class="project-featured-card">
-          <div class="project-details">
-            <div class="project-heading-row">
-              <h3 class="project-title">Website Catalog — Housing &amp; Sales CRM</h3>
-              <span class="project-role-badge">Fullstack &amp; Database Architect</span>
+          <!-- FlowNote -->
+          <article class="project-item">
+            <div class="project-header-row">
+              <h3 class="project-title">
+                <a href="https://github.com/grsll/flownote_app.git" target="_blank" rel="noopener noreferrer">
+                  FlowNote — Productivity &amp; Finance <i data-lucide="arrow-up-right" style="width: 15px; height: 15px;"></i>
+                </a>
+              </h3>
+              <span class="text-meta">Flutter / Riverpod / Firebase</span>
             </div>
             <p class="project-desc">
-              Platform katalog perumahan interaktif dan sistem internal Sales CRM yang terhubung langsung dengan Microsoft SQL Server di dalam kontainer Docker. Dilengkapi filter tipe unit, master site plan SVG interaktif, simulasi kalkulator KPR anuitas, dan manajemen leads prospek.
+              Aplikasi produktivitas dan pelacak finansial terpadu dengan pencatatan transaksi berkategori warna, visualisasi savings rate, dan analitik grafik interaktif berbasis Cloud Firestore.
             </p>
-            <div class="project-technical-notes">
-              <div class="project-technical-label">Pendekatan Teknis</div>
-              Dibangun dengan Next.js 16 (App Router) dan Prisma 7 dengan driver adapter MSSQL. Menerapkan transaksi database atomik untuk mencegah double-booking pada kavling yang sama, serta sistem RBAC (Role-Based Access Control) terisolasi.
-            </div>
             <div class="tag-cloud">
-              <span class="tag">Next.js 16</span>
-              <span class="tag">TypeScript</span>
-              <span class="tag">Microsoft SQL Server</span>
-              <span class="tag">Prisma ORM</span>
-              <span class="tag">Docker</span>
-              <span class="tag">Tailwind CSS</span>
+              <span class="tag">Flutter</span>
+              <span class="tag">Dart</span>
+              <span class="tag">Riverpod</span>
+              <span class="tag">Firebase</span>
             </div>
-            <div class="project-links">
-              <a href="https://github.com/grsll/Website_catalog" target="_blank" rel="noopener noreferrer" class="project-link">
-                Repository GitHub <i data-lucide="external-link" style="width: 14px; height: 14px;"></i>
-              </a>
-            </div>
-          </div>
-          <div>
-            <img src="images/projects/project-3.png" alt="Tampilan antarmuka Website Catalog perumahan dan CRM" class="about-photo" style="aspect-ratio: 16/10; object-fit: cover; width: 100%; border-radius: var(--radius-md);" onerror="this.style.display='none';">
-          </div>
-        </article>
+          </article>
 
-        <div style="text-align: right; margin-top: var(--space-lg);">
-          <a href="projects.html" class="btn btn-secondary">
-            Lihat Seluruh Arsip Proyek <i data-lucide="arrow-right" class="btn-icon"></i>
-          </a>
         </div>
       </section>
 
-      <!-- Section 03: Professional Snapshot -->
-      <section class="section-block">
+      <!-- Experience Snapshot (Super Simple) -->
+      <section>
         <div class="section-header">
-          <div>
-            <span class="text-eyebrow">Rekam Jejak</span>
-            <h2 class="title-section">Pengalaman &amp; Kredibilitas</h2>
-          </div>
-          <span class="section-index">03 // PENGALAMAN</span>
+          <h2 class="section-title">Pengalaman Kerja</h2>
+          <a href="about.html" class="link-inline">Detail profil <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i></a>
         </div>
 
-        <div class="timeline-block">
-          <div class="timeline-item">
-            <div class="timeline-date">2025 — Sekarang</div>
-            <div class="timeline-content">
-              <h3 class="timeline-role">Odoo Developer</h3>
-              <div class="timeline-company">PT Karyatama Solusindo · Jakarta</div>
-              <p class="timeline-desc">
-                Bertanggung jawab atas rekayasa modul kustom Odoo, penyesuaian alur kerja operasional klien skala menengah hingga enterprise, integrasi sistem rumah sakit (SIMRS), CRM, dan manajemen inventaris.
+        <div class="simple-timeline">
+          <div class="timeline-row">
+            <span class="timeline-year">2025 — Sekarang</span>
+            <div>
+              <div class="timeline-role-title">Odoo Developer</div>
+              <div class="timeline-org">PT Karyatama Solusindo · Jakarta</div>
+              <p class="timeline-text">
+                Mengembangkan modul kustom Odoo ERP untuk berbagai klien skala menengah hingga enterprise (SIMRS rumah sakit, CRM, E-Tender, dan manajemen pergudangan).
               </p>
             </div>
           </div>
-
-          <div class="timeline-item">
-            <div class="timeline-date">2024 — 2025</div>
-            <div class="timeline-content">
-              <h3 class="timeline-role">Spesialisasi Mandiri Odoo &amp; Backend</h3>
-              <div class="timeline-company">Eksplorasi Rekayasa Perangkat Lunak</div>
-              <p class="timeline-desc">
-                Mendalami secara komprehensif arsitektur Odoo ORM, mekanisme inheritance, query tuning PostgreSQL, pembuatan modul kustom mandiri, serta integrasi endpoint API.
+          <div class="timeline-row">
+            <span class="timeline-year">2024 — 2025</span>
+            <div>
+              <div class="timeline-role-title">Eksplorasi Odoo &amp; Backend</div>
+              <div class="timeline-org">Praktik Mandiri</div>
+              <p class="timeline-text">
+                Mendalami arsitektur Odoo ORM, model inheritance, query tuning PostgreSQL, dan pembuatan modul mandiri berbasis dokumentasi resmi.
               </p>
             </div>
           </div>
-        </div>
-
-        <div style="margin-top: var(--space-xl);">
-          <a href="about.html" class="btn btn-secondary">
-            Baca Selengkapnya Tentang Profil &amp; Latar Belakang <i data-lucide="arrow-right" class="btn-icon"></i>
-          </a>
         </div>
       </section>
 
-      <!-- Section 04: Closing CTA -->
-      <section class="section-block" style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: clamp(2rem, 5vw, 3.5rem);">
-        <div style="max-width: 650px;">
-          <span class="text-eyebrow">Langkah Berikutnya</span>
-          <h2 class="title-section" style="margin-bottom: var(--space-sm);">Siap Membangun Solusi ERP atau Sistem Terintegrasi?</h2>
-          <p class="text-body" style="margin-bottom: var(--space-xl);">
-            Baik untuk kebutuhan kustomisasi modul Odoo, optimasi database bisnis, maupun integrasi aplikasi mobile, saya terbuka untuk diskusi teknis dan kolaborasi terstruktur.
-          </p>
-          <div style="display: flex; gap: var(--space-md); flex-wrap: wrap;">
-            <a href="contact.html" class="btn btn-primary">
-              Mulai Diskusi <i data-lucide="mail" class="btn-icon"></i>
-            </a>
-            <a href="https://wa.me/6282233457234" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-              <i data-lucide="message-circle" class="btn-icon"></i> WhatsApp
-            </a>
-          </div>
+      <!-- Simple Contact CTA -->
+      <section style="margin-top: var(--space-2xl); padding-top: var(--space-lg); border-top: 1px solid var(--color-border);">
+        <h2 style="font-size: 1.15rem; margin-bottom: 6px;">Mari Berdiskusi</h2>
+        <p class="text-lead" style="font-size: 0.95rem; margin-bottom: var(--space-md);">
+          Punya kebutuhan kustomisasi modul Odoo, integrasi basis data, atau aplikasi mobile? Hubungi saya kapan saja.
+        </p>
+        <div style="display: flex; gap: var(--space-md); flex-wrap: wrap;">
+          <a href="mailto:astdnn48@gmail.com" class="link-inline">
+            <i data-lucide="mail" style="width: 15px; height: 15px;"></i> astdnn48@gmail.com
+          </a>
+          <a href="https://wa.me/6282233457234" target="_blank" rel="noopener noreferrer" class="link-inline">
+            <i data-lucide="message-circle" style="width: 15px; height: 15px;"></i> +62 822 3345 7234
+          </a>
         </div>
       </section>
 
@@ -332,16 +198,16 @@
   </main>
 
   <!-- PDF CV Modal Viewer -->
-  <div class="modal-overlay" id="pdfModalOverlay" aria-hidden="true" role="dialog" aria-labelledby="pdfModalTitle">
+  <div class="modal-overlay" id="pdfModalOverlay" aria-hidden="true" role="dialog">
     <div class="modal-container">
       <div class="modal-header">
-        <h3 class="modal-title" id="pdfModalTitle">Curriculum Vitae — Yoga Setyawan Purwanto</h3>
-        <div class="modal-actions">
-          <a href="pdf/yoga_setyawan_cv.pdf" class="btn btn-secondary btn-sm" id="pdfDownloadBtn" download>
-            <i data-lucide="download" style="width: 14px; height: 14px;"></i> Unduh PDF
+        <div style="font-weight: 600; font-size: 0.95rem;" id="pdfModalTitle">Curriculum Vitae — Yoga Setyawan Purwanto</div>
+        <div style="display: flex; gap: 8px;">
+          <a href="pdf/yoga_setyawan_cv.pdf" class="btn btn-secondary" id="pdfDownloadBtn" download style="padding: 4px 10px; font-size: 0.8rem;">
+            <i data-lucide="download" style="width: 13px; height: 13px;"></i> Unduh
           </a>
-          <button type="button" class="btn btn-secondary btn-sm" id="pdfModalClose" aria-label="Tutup jendela modal">
-            <i data-lucide="x" style="width: 14px; height: 14px;"></i>
+          <button type="button" class="btn btn-secondary" id="pdfModalClose" style="padding: 4px 10px; font-size: 0.8rem;">
+            <i data-lucide="x" style="width: 13px; height: 13px;"></i>
           </button>
         </div>
       </div>
@@ -351,22 +217,14 @@
     </div>
   </div>
 
-  <!-- Scroll To Top Button -->
-  <button type="button" class="scroll-top-btn" id="scrollTop" aria-label="Kembali ke atas">
-    <i data-lucide="arrow-up" style="width: 18px; height: 18px;"></i>
-  </button>
-
   <!-- Footer -->
   <footer class="site-footer">
     <div class="site-container footer-inner">
-      <div class="footer-brand">
-        <span class="footer-logo">YOGA.DEV</span>
-        <span class="footer-copy">&copy; 2026 Yoga Setyawan Purwanto. Seluruh hak cipta dilindungi.</span>
-      </div>
-      <div class="footer-socials">
-        <a href="https://github.com/grsll" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a>
-        <a href="https://www.linkedin.com/in/yoga-setyawan-work/" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a>
-        <a href="https://www.instagram.com/yog_aaa4/" target="_blank" rel="noopener noreferrer" class="footer-link">Instagram</a>
+      <span>&copy; 2026 Yoga Setyawan Purwanto. YOGA.DEV</span>
+      <div class="footer-links">
+        <a href="https://github.com/grsll" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/yoga-setyawan-work/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://www.instagram.com/yog_aaa4/" target="_blank" rel="noopener noreferrer">Instagram</a>
       </div>
     </div>
   </footer>

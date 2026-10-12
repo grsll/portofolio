@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tentang &amp; Latar Belakang — Yoga Setyawan</title>
-  <meta name="description" content="Profil profesional, perjalanan karier, pengalaman teknis, dan latar belakang akademis Yoga Setyawan Purwanto — Odoo Engineer & Backend Developer.">
+  <title>Tentang — Yoga Setyawan</title>
+  <meta name="description" content="Profil profesional dan latar belakang karier Yoga Setyawan Purwanto — Odoo Engineer & Backend Developer.">
   <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="stylesheet" href="css/style.css">
   <script src="https://unpkg.com/lucide@latest"></script>
@@ -14,11 +14,7 @@
   <!-- Navigation -->
   <nav class="nav-bar">
     <div class="site-container nav-inner">
-      <a href="index.html" class="nav-logo">
-        YOGA.DEV
-        <span class="nav-logo-badge">ENGINEERING</span>
-      </a>
-      
+      <a href="index.html" class="nav-logo">YOGA.DEV</a>
       <div class="nav-links" id="navLinks">
         <a href="index.html" class="nav-link">Beranda</a>
         <a href="about.html" class="nav-link active">Tentang</a>
@@ -26,8 +22,7 @@
         <a href="projects.html" class="nav-link">Proyek</a>
         <a href="contact.html" class="nav-link">Kontak</a>
       </div>
-
-      <button type="button" class="nav-toggle" id="navToggle" aria-label="Buka navigasi menu" aria-expanded="false">
+      <button type="button" class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
         <i data-lucide="menu" style="width: 20px; height: 20px;"></i>
       </button>
     </div>
@@ -37,154 +32,113 @@
   <main class="main-content">
     <div class="site-container">
 
-      <!-- Page Header -->
-      <header class="section-block" style="margin-bottom: var(--space-2xl);">
-        <span class="text-eyebrow">Profil &amp; Dedikasi</span>
-        <h1 class="title-page">Tentang Saya</h1>
-        <p class="text-lead">
-          Menggabungkan logika rekayasa perangkat lunak, pemahaman alur proses bisnis, dan ketelitian implementasi untuk menghadirkan solusi ERP yang andal.
+      <!-- Header -->
+      <section style="margin-bottom: var(--space-xl);">
+        <h1 style="font-size: clamp(1.75rem, 3.5vw, 2.25rem); margin-bottom: 6px;">Tentang Saya</h1>
+        <p class="text-lead" style="font-size: 1rem;">
+          Yoga Setyawan Purwanto · Odoo Engineer &amp; Developer berdomisili di Jakarta.
         </p>
-      </header>
+      </section>
 
-      <!-- Profile Bio Section -->
-      <section class="about-intro-grid">
-        <div class="about-photo-wrapper">
-          <img src="images/profile.png" alt="Foto Profil Yoga Setyawan Purwanto" class="about-photo" onerror="this.src='https://via.placeholder.com/800x1000/F0F2ED/2E563B?text=YOGA+SETYAWAN';">
-          <div class="about-caption">
-            Yoga Setyawan Purwanto · Odoo Engineer &amp; Developer
-          </div>
-          <div style="margin-top: var(--space-md); display: flex; flex-direction: column; gap: var(--space-xs);">
-            <button type="button" class="btn btn-secondary btn-sm" onclick="openPdfModal('pdf/yoga_setyawan_cv.pdf', 'Curriculum Vitae — Yoga Setyawan Purwanto')">
-              <i data-lucide="file-text" style="width: 14px; height: 14px;"></i> Preview Dokumen CV
-            </button>
-            <a href="pdf/yoga_setyawan_cv.pdf" class="btn btn-ghost btn-sm" download style="justify-content: flex-start;">
-              <i data-lucide="download" style="width: 14px; height: 14px; margin-right: 6px;"></i> Unduh File PDF
-            </a>
-          </div>
-        </div>
-
-        <div class="about-bio">
-          <p>
-            Nama lengkap saya <strong>Yoga Setyawan Purwanto</strong>. Saat ini saya berfokus sebagai <strong>Odoo Developer di PT Karyatama Solusindo</strong> di Jakarta, dengan spesialisasi pengembangan modul kustom, penyesuaian alur kerja operasional, dan integrasi sistem enterprise.
-          </p>
-          <p>
-            Perjalanan saya di dunia pemrograman berakar dari rasa ingin tahu yang mendalam dan komitmen belajar terarah. Bermula dari penguasaan dasar-dasar web dan algoritma komputasi, saya kemudian mendalami bahasa Python, basis data PostgreSQL, dan kontainerisasi Docker, hingga akhirnya memilih spesialisasi pada ekosistem <strong>Odoo ERP</strong>.
-          </p>
-          <p>
-            Bagi saya, sistem ERP yang sukses bukan dinilai dari seberapa rumit tampilan antarmukanya, melainkan dari <strong>stabilitas data, kemudahan pemeliharaan (maintainability), dan kemampuannya menyelesaikan hambatan nyata operasional bisnis</strong>. Karena itulah, saya selalu berpegang pada prinsip penulisan kode modular, pemanfaatan inheritance model secara tepat, serta struktur kueri yang efisien.
-          </p>
-          <p>
-            Di samping ekosistem Odoo, saya juga aktif mengembangkan aplikasi mobile berbasis <strong>Flutter</strong>. Kemampuan ini memungkinkan saya menjembatani kebutuhan sistem core ERP di backoffice dengan kebutuhan mobilitas operasional pengguna di lapangan secara harmonis.
-          </p>
+      <!-- Biography (Clean Prose) -->
+      <section style="display: flex; flex-direction: column; gap: var(--space-md); font-size: 1rem; color: var(--color-text-secondary); line-height: 1.75; margin-bottom: var(--space-2xl);">
+        <p>
+          Saya bekerja sebagai <strong>Odoo Developer di PT Karyatama Solusindo</strong> di Jakarta, berfokus pada kustomisasi modul ERP, penyelarasan proses bisnis, serta integrasi sistem relasional berskala enterprise.
+        </p>
+        <p>
+          Memulai perjalanan dari belajar mandiri—dari fondasi logika komputasi, bahasa Python, basis data PostgreSQL, hingga arsitektur Odoo ERP. Saya percaya bahwa sistem yang baik adalah sistem yang stabil, mudah dirawat saat migrasi versi, dan menyelesaikan masalah operasional bisnis di lapangan secara konkret.
+        </p>
+        <p>
+          Di samping ekosistem Odoo, saya juga aktif membangun aplikasi mobile menggunakan <strong>Flutter</strong>, menghubungkan kebutuhan sistem backoffice dengan mobilitas pengguna di lapangan secara mulus.
+        </p>
+        <div style="display: flex; gap: var(--space-sm); margin-top: var(--space-xs);">
+          <button type="button" class="btn btn-secondary" onclick="openPdfModal('pdf/yoga_setyawan_cv.pdf', 'CV — Yoga Setyawan Purwanto')">
+            <i data-lucide="file-text" style="width: 14px; height: 14px;"></i> Preview CV
+          </button>
+          <a href="pdf/yoga_setyawan_cv.pdf" class="btn btn-secondary" download>
+            <i data-lucide="download" style="width: 14px; height: 14px;"></i> Unduh PDF
+          </a>
         </div>
       </section>
 
-      <!-- Section: Professional Experience -->
-      <section class="section-block">
-        <div class="section-header">
-          <div>
-            <span class="text-eyebrow">Pengalaman Kerja</span>
-            <h2 class="title-section">Linimasa Profesional</h2>
-          </div>
-          <span class="section-index">PENGALAMAN</span>
+      <!-- Professional Timeline -->
+      <section style="margin-bottom: var(--space-2xl);">
+        <div class="section-header" style="margin-top: 0;">
+          <h2 class="section-title">Linimasa Karier</h2>
         </div>
 
-        <div class="timeline-block">
-          <div class="timeline-item">
-            <div class="timeline-date">2025 — Sekarang</div>
-            <div class="timeline-content">
-              <h3 class="timeline-role">Odoo Developer</h3>
-              <div class="timeline-company">PT Karyatama Solusindo · Jakarta, Indonesia</div>
-              <p class="timeline-desc">
-                Merancang dan mengimplementasikan modul kustom Odoo ERP untuk berbagai sektor industri klien. Terlibat langsung dalam pengembangan modul rekam medis rumah sakit (SIMRS), automasi alur tender digital (E-Tender), integrasi dokumen (DMS), dan sinkronisasi data antar sistem berbasis REST API.
+        <div class="simple-timeline">
+          <div class="timeline-row">
+            <span class="timeline-year">2025 — Sekarang</span>
+            <div>
+              <div class="timeline-role-title">Odoo Developer</div>
+              <div class="timeline-org">PT Karyatama Solusindo · Jakarta</div>
+              <p class="timeline-text">
+                Mengembangkan modul kustom Odoo untuk berbagai sektor industri klien (SIMRS rumah sakit, sistem E-Tender, Document Management, dan integrasi API REST/JSON-RPC).
               </p>
-              <div class="tag-cloud" style="margin-top: var(--space-xs);">
-                <span class="tag">Odoo v14-v17</span>
-                <span class="tag">Python</span>
-                <span class="tag">PostgreSQL</span>
-                <span class="tag">XML Views</span>
-                <span class="tag">QWeb</span>
-              </div>
             </div>
           </div>
 
-          <div class="timeline-item">
-            <div class="timeline-date">2024 — 2025</div>
-            <div class="timeline-content">
-              <h3 class="timeline-role">Eksplorasi &amp; Praktik Mandiri Odoo ERP</h3>
-              <div class="timeline-company">Pengembangan Kompetensi Mandiri</div>
-              <p class="timeline-desc">
-                Mempelajari struktur arsitektur Odoo secara intensif melalui dokumentasi resmi dan bedah kode sumber framework. Membangun berbagai prototipe modul bisnis kustom, mempraktikkan model inheritance dan view overriding, serta mengoptimalkan kueri basis data relasional.
+          <div class="timeline-row">
+            <span class="timeline-year">2024 — 2025</span>
+            <div>
+              <div class="timeline-role-title">Eksplorasi Odoo Mandiri</div>
+              <div class="timeline-org">Pengembangan Mandiri</div>
+              <p class="timeline-text">
+                Mempelajari struktur framework Odoo, model inheritance, XML view extensions, dan query optimization PostgreSQL secara mendalam.
               </p>
-              <div class="tag-cloud" style="margin-top: var(--space-xs);">
-                <span class="tag">Odoo ORM</span>
-                <span class="tag">Python 3</span>
-                <span class="tag">Linux/Ubuntu</span>
-                <span class="tag">PostgreSQL</span>
-              </div>
             </div>
           </div>
 
-          <div class="timeline-item">
-            <div class="timeline-date">2023</div>
-            <div class="timeline-content">
-              <h3 class="timeline-role">Mobile Application Engineering</h3>
-              <div class="timeline-company">Pengembangan Aplikasi Mobile (Flutter &amp; Dart)</div>
-              <p class="timeline-desc">
-                Membangun aplikasi mobile multiplatform dengan fokus pada Clean Architecture dan manajemen state terstruktur. Menghasilkan aplikasi personal finance tracker (Finora) dan sistem pencatatan klinik terenkripsi lokal dengan performa optimal.
+          <div class="timeline-row">
+            <span class="timeline-year">2023</span>
+            <div>
+              <div class="timeline-role-title">Mobile Engineering (Flutter)</div>
+              <div class="timeline-org">Pengembangan Aplikasi Mobile</div>
+              <p class="timeline-text">
+                Membangun aplikasi mobile multiplatform dengan Clean Architecture, manajemen state Riverpod, dan penyimpanan basis data lokal SQLite terenkripsi.
               </p>
-              <div class="tag-cloud" style="margin-top: var(--space-xs);">
-                <span class="tag">Flutter</span>
-                <span class="tag">Dart</span>
-                <span class="tag">SQLite</span>
-                <span class="tag">Provider/Riverpod</span>
-                <span class="tag">Git</span>
-              </div>
             </div>
           </div>
 
-          <div class="timeline-item">
-            <div class="timeline-date">2022</div>
-            <div class="timeline-content">
-              <h3 class="timeline-role">Fondasi Rekayasa Perangkat Lunak</h3>
-              <div class="timeline-company">Langkah Pertama Pemrograman</div>
-              <p class="timeline-desc">
-                Memulai langkah di dunia komputasi dengan mempelajari algoritma pemrograman terstruktur, manipulasi struktur data fundamental, logika basis data, dan standar web semantik.
+          <div class="timeline-row">
+            <span class="timeline-year">2022</span>
+            <div>
+              <div class="timeline-role-title">Awal Eksplorasi Kode</div>
+              <div class="timeline-org">Fondasi Perangkat Lunak</div>
+              <p class="timeline-text">
+                Mempelajari algoritma terstruktur, manipulasi data dasar, dan standar web fundamental.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Section: Academic Background -->
-      <section class="section-block">
-        <div class="section-header">
-          <div>
-            <span class="text-eyebrow">Pendidikan</span>
-            <h2 class="title-section">Latar Belakang Akademis</h2>
-          </div>
-          <span class="section-index">PENDIDIKAN</span>
+      <!-- Education Timeline -->
+      <section>
+        <div class="section-header" style="margin-top: 0;">
+          <h2 class="section-title">Pendidikan</h2>
         </div>
 
-        <div class="timeline-block">
-          <div class="timeline-item">
-            <div class="timeline-date">2023 — 2026</div>
-            <div class="timeline-content">
-              <h3 class="timeline-role">SMKN 12 Malang</h3>
-              <div class="timeline-company">Pengembangan Perangkat Lunak &amp; Gim (PPLG) · Malang, Jawa Timur</div>
-              <p class="timeline-desc">
-                Pendidikan kejuruan terfokus pada rekayasa perangkat lunak, perancangan basis data relasional, pengujian kode, arsitektur client-server, serta kolaborasi tim pengembang.
+        <div class="simple-timeline">
+          <div class="timeline-row">
+            <span class="timeline-year">2023 — 2026</span>
+            <div>
+              <div class="timeline-role-title">SMKN 12 Malang</div>
+              <div class="timeline-org">Pengembangan Perangkat Lunak &amp; Gim (PPLG)</div>
+              <p class="timeline-text">
+                Pendidikan kejuruan terfokus pada rekayasa perangkat lunak, database relasional, dan pengembangan aplikasi.
               </p>
             </div>
           </div>
 
-          <div class="timeline-item">
-            <div class="timeline-date">2020 — 2023</div>
-            <div class="timeline-content">
-              <h3 class="timeline-role">SMP Kartika IV-9 Malang</h3>
-              <div class="timeline-company">Pendidikan Sekolah Menengah Pertama · Malang, Jawa Timur</div>
-              <p class="timeline-desc">
-                Membangun fondasi logika matematika, pemikiran analitis, dan awal mula ketertarikan mendalam terhadap teknologi informasi.
+          <div class="timeline-row">
+            <span class="timeline-year">2020 — 2023</span>
+            <div>
+              <div class="timeline-role-title">SMP Kartika IV-9 Malang</div>
+              <div class="timeline-org">Sekolah Menengah Pertama</div>
+              <p class="timeline-text">
+                Fondasi logika matematika dan pemikiran komputasi dasar.
               </p>
             </div>
           </div>
@@ -195,16 +149,16 @@
   </main>
 
   <!-- PDF CV Modal Viewer -->
-  <div class="modal-overlay" id="pdfModalOverlay" aria-hidden="true" role="dialog" aria-labelledby="pdfModalTitle">
+  <div class="modal-overlay" id="pdfModalOverlay" aria-hidden="true" role="dialog">
     <div class="modal-container">
       <div class="modal-header">
-        <h3 class="modal-title" id="pdfModalTitle">Curriculum Vitae — Yoga Setyawan Purwanto</h3>
-        <div class="modal-actions">
-          <a href="pdf/yoga_setyawan_cv.pdf" class="btn btn-secondary btn-sm" id="pdfDownloadBtn" download>
-            <i data-lucide="download" style="width: 14px; height: 14px;"></i> Unduh PDF
+        <div style="font-weight: 600; font-size: 0.95rem;" id="pdfModalTitle">Curriculum Vitae — Yoga Setyawan Purwanto</div>
+        <div style="display: flex; gap: 8px;">
+          <a href="pdf/yoga_setyawan_cv.pdf" class="btn btn-secondary" id="pdfDownloadBtn" download style="padding: 4px 10px; font-size: 0.8rem;">
+            <i data-lucide="download" style="width: 13px; height: 13px;"></i> Unduh
           </a>
-          <button type="button" class="btn btn-secondary btn-sm" id="pdfModalClose" aria-label="Tutup jendela modal">
-            <i data-lucide="x" style="width: 14px; height: 14px;"></i>
+          <button type="button" class="btn btn-secondary" id="pdfModalClose" style="padding: 4px 10px; font-size: 0.8rem;">
+            <i data-lucide="x" style="width: 13px; height: 13px;"></i>
           </button>
         </div>
       </div>
@@ -214,22 +168,14 @@
     </div>
   </div>
 
-  <!-- Scroll To Top Button -->
-  <button type="button" class="scroll-top-btn" id="scrollTop" aria-label="Kembali ke atas">
-    <i data-lucide="arrow-up" style="width: 18px; height: 18px;"></i>
-  </button>
-
   <!-- Footer -->
   <footer class="site-footer">
     <div class="site-container footer-inner">
-      <div class="footer-brand">
-        <span class="footer-logo">YOGA.DEV</span>
-        <span class="footer-copy">&copy; 2026 Yoga Setyawan Purwanto. Seluruh hak cipta dilindungi.</span>
-      </div>
-      <div class="footer-socials">
-        <a href="https://github.com/grsll" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a>
-        <a href="https://www.linkedin.com/in/yoga-setyawan-work/" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a>
-        <a href="https://www.instagram.com/yog_aaa4/" target="_blank" rel="noopener noreferrer" class="footer-link">Instagram</a>
+      <span>&copy; 2026 Yoga Setyawan Purwanto. YOGA.DEV</span>
+      <div class="footer-links">
+        <a href="https://github.com/grsll" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/yoga-setyawan-work/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://www.instagram.com/yog_aaa4/" target="_blank" rel="noopener noreferrer">Instagram</a>
       </div>
     </div>
   </footer>

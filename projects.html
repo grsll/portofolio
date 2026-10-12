@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Karya &amp; Portofolio Proyek — Yoga Setyawan</title>
-  <meta name="description" content="Arsip implementasi proyek rekayasa perangkat lunak Yoga Setyawan: Odoo ERP kustomisasi enterprise, sistem SIMRS, aplikasi Flutter Finora, dan integrasi backend API.">
+  <title>Proyek — Yoga Setyawan</title>
+  <meta name="description" content="Karya dan proyek rekayasa perangkat lunak Yoga Setyawan: Odoo ERP, Website Catalog, Flutter Apps, dan backend systems.">
   <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="stylesheet" href="css/style.css">
   <script src="https://unpkg.com/lucide@latest"></script>
@@ -14,11 +14,7 @@
   <!-- Navigation -->
   <nav class="nav-bar">
     <div class="site-container nav-inner">
-      <a href="index.html" class="nav-logo">
-        YOGA.DEV
-        <span class="nav-logo-badge">ENGINEERING</span>
-      </a>
-      
+      <a href="index.html" class="nav-logo">YOGA.DEV</a>
       <div class="nav-links" id="navLinks">
         <a href="index.html" class="nav-link">Beranda</a>
         <a href="about.html" class="nav-link">Tentang</a>
@@ -26,8 +22,7 @@
         <a href="projects.html" class="nav-link active">Proyek</a>
         <a href="contact.html" class="nav-link">Kontak</a>
       </div>
-
-      <button type="button" class="nav-toggle" id="navToggle" aria-label="Buka navigasi menu" aria-expanded="false">
+      <button type="button" class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
         <i data-lucide="menu" style="width: 20px; height: 20px;"></i>
       </button>
     </div>
@@ -37,332 +32,235 @@
   <main class="main-content">
     <div class="site-container">
 
-      <!-- Page Header -->
-      <header class="section-block" style="margin-bottom: var(--space-xl);">
-        <span class="text-eyebrow">Implementasi &amp; Hasil Nyata</span>
-        <h1 class="title-page">Karya &amp; Rekayasa Proyek</h1>
-        <p class="text-lead">
-          Kumpulan sistem yang dibangun dengan penekanan pada ketahanan logika bisnis, arsitektur data bersih, dan kepatuhan standar perangkat lunak.
+      <!-- Header -->
+      <section style="margin-bottom: var(--space-xl);">
+        <h1 style="font-size: clamp(1.75rem, 3.5vw, 2.25rem); margin-bottom: 6px;">Arsip Proyek</h1>
+        <p class="text-lead" style="font-size: 1rem;">
+          Daftar sistem, modul ERP, dan aplikasi mobile yang pernah saya bangun dengan fokus pada fungsionalitas dan arsitektur kode bersih.
         </p>
-      </header>
+      </section>
 
-      <!-- Project Filters & Search Controls -->
-      <div class="project-controls">
-        <div class="filter-pills" role="tablist" aria-label="Filter kategori proyek">
-          <button type="button" class="filter-pill active" data-category="all">Semua Proyek</button>
+      <!-- Filter & Search Bar -->
+      <div class="filter-bar">
+        <div class="filter-pills" role="tablist">
+          <button type="button" class="filter-pill active" data-category="all">Semua</button>
           <button type="button" class="filter-pill" data-category="odoo">Odoo &amp; ERP</button>
           <button type="button" class="filter-pill" data-category="mobile">Aplikasi Mobile</button>
-          <button type="button" class="filter-pill" data-category="backend">Backend &amp; API</button>
+          <button type="button" class="filter-pill" data-category="backend">Backend &amp; Web</button>
         </div>
-
-        <div class="search-input-wrapper">
-          <i data-lucide="search" class="search-icon"></i>
-          <input type="text" id="projectSearch" class="search-input" placeholder="Cari nama, teknologi, topik..." aria-label="Cari proyek">
-        </div>
+        <input type="text" id="projectSearch" class="search-box" placeholder="Cari nama atau teknologi..." aria-label="Cari proyek">
       </div>
 
-      <!-- Notice when search results are empty -->
-      <div id="noProjectsNotice" style="display: none; padding: var(--space-2xl) 0; text-align: center; color: var(--color-text-muted);">
-        <p>Tidak ada proyek yang sesuai dengan kriteria filter atau pencarian Anda.</p>
+      <div id="noProjectsNotice" style="display: none; padding: var(--space-xl) 0; text-align: center; color: var(--color-text-muted);">
+        Tidak ada proyek yang sesuai dengan pencarian Anda.
       </div>
 
-      <!-- Featured Deep-Dive Projects -->
-      <section class="section-block">
-        <div class="section-header">
-          <div>
-            <span class="text-eyebrow">Sorotan Utama</span>
-            <h2 class="title-section">Proyek Pilihan Berarsitektur Khusus</h2>
-          </div>
-          <span class="section-index">SOROTAN</span>
-        </div>
+      <!-- Project List (NO IMAGES, SUPER CLEAN & MINIMAL) -->
+      <div class="project-list">
 
-        <!-- Featured 1: SIMRS Hospital ERP -->
-        <article class="project-featured-card" data-category="odoo backend">
-          <div class="project-details">
-            <div class="project-heading-row">
-              <h3 class="project-title">SIMRS Hospital ERP</h3>
-              <span class="project-role-badge">Lead Developer &amp; ERP Modeler</span>
-            </div>
-            <p class="project-desc">
-              <strong>Masalah &amp; Kebutuhan:</strong> Rumah sakit membutuhkan digitalisasi alur pelayanan medis yang saling terhubung mulai dari pendaftaran, poli rawat jalan, rekam medis elektronik (EMR), hingga validasi legal tindakan dokter tanpa kertas.
-            </p>
-            <p class="project-desc">
-              <strong>Peran &amp; Kontribusi:</strong> Merancang skema modul kustom Odoo, mengintegrasikan alur antrean poli dengan status rekam pasien, membangun fitur tanda tangan digital dokter (e-signature), serta mencetak resume medis terstandarisasi.
-            </p>
-            <div class="project-technical-notes">
-              <div class="project-technical-label">Pendekatan &amp; Tantangan Teknis</div>
-              Mencegah konflik konkurensi data rekam medis dengan atomic transactions pada PostgreSQL, inheritance view Odoo XML yang modular agar tidak mengganggu modul accounting/invoicing bawaan, serta QWeb PDF reporting untuk dokumen rekam medis resmi.
-            </div>
-            <div class="tag-cloud">
-              <span class="tag">Odoo ERP</span>
-              <span class="tag">Python</span>
-              <span class="tag">PostgreSQL</span>
-              <span class="tag">XML Views</span>
-              <span class="tag">QWeb Engine</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/zunstudent/test_frontend.git" target="_blank" rel="noopener noreferrer" class="project-link">
-                Lihat Kode Sumber di GitHub <i data-lucide="external-link" style="width: 14px; height: 14px;"></i>
+        <!-- 1. SIMRS -->
+        <article class="project-item" data-category="odoo backend">
+          <div class="project-header-row">
+            <h2 class="project-title">
+              <a href="https://github.com/zunstudent/test_frontend.git" target="_blank" rel="noopener noreferrer">
+                SIMRS Hospital ERP <i data-lucide="arrow-up-right" style="width: 15px; height: 15px;"></i>
               </a>
-            </div>
+            </h2>
+            <span class="text-meta">2025 · Odoo ERP</span>
           </div>
-          <div>
-            <img src="images/projects/project-1.png" alt="Preview antarmuka sistem SIMRS Hospital ERP Odoo" class="about-photo" style="aspect-ratio: 16/10; object-fit: cover; width: 100%; border-radius: var(--radius-md);" onerror="this.style.display='none';">
+          <p class="project-desc">
+            Sistem Informasi Manajemen Rumah Sakit terintegrasi Odoo. Meliputi modul rekam medis elektronik (EMR), alur antrean poliklinik terpadu, e-signature dokter, serta cetak laporan medis PDF dinamis menggunakan QWeb engine.
+          </p>
+          <div class="tag-cloud">
+            <span class="tag">Odoo ERP</span>
+            <span class="tag">Python</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">QWeb</span>
+            <span class="tag">XML Views</span>
           </div>
         </article>
 
-        <!-- Featured 2: Finora Personal Finance Tracker -->
-        <article class="project-featured-card" data-category="mobile">
-          <div class="project-details">
-            <div class="project-heading-row">
-              <h3 class="project-title">Finora — Smart Personal Finance Tracker</h3>
-              <span class="project-role-badge">Mobile Software Engineer</span>
-            </div>
-            <p class="project-desc">
-              <strong>Masalah &amp; Kebutuhan:</strong> Pengguna memerlukan aplikasi manajemen finansial personal yang responsif, privat, dan offline-first tanpa bergantung pada koneksi internet untuk mencatat transaksi harian, target tabungan, dan alokasi budget.
-            </p>
-            <p class="project-desc">
-              <strong>Peran &amp; Kontribusi:</strong> Merancang seluruh arsitektur aplikasi mobile berbasis Clean Architecture (Data, Domain, Presentation), mengembangkan algoritma pembagian budget multi-kategori, serta membuat visualisasi grafik cashflow.
-            </p>
-            <div class="project-technical-notes">
-              <div class="project-technical-label">Pendekatan &amp; Tantangan Teknis</div>
-              Penyimpanan basis data lokal performa tinggi memanfaatkan SQLite dengan skema relasi akun-transaksi yang ketat, enkripsi penyimpanan kredensial, dan manajemen state deterministik untuk kalkulasi saldo instan.
-            </div>
-            <div class="tag-cloud">
-              <span class="tag">Flutter</span>
-              <span class="tag">Dart</span>
-              <span class="tag">Clean Architecture</span>
-              <span class="tag">SQLite</span>
-              <span class="tag">Provider State</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/grsll/finora" target="_blank" rel="noopener noreferrer" class="project-link">
-                Lihat Kode Sumber di GitHub <i data-lucide="external-link" style="width: 14px; height: 14px;"></i>
+        <!-- 2. Website Catalog -->
+        <article class="project-item" data-category="backend">
+          <div class="project-header-row">
+            <h2 class="project-title">
+              <a href="https://github.com/grsll/Website_catalog" target="_blank" rel="noopener noreferrer">
+                Website Catalog — Housing Catalog &amp; Sales CRM <i data-lucide="arrow-up-right" style="width: 15px; height: 15px;"></i>
               </a>
-            </div>
+            </h2>
+            <span class="text-meta">2025 · Next.js &amp; MSSQL</span>
           </div>
-          <div>
-            <img src="images/projects/project-2.png" alt="Preview antarmuka aplikasi finansial Finora" class="about-photo" style="aspect-ratio: 16/10; object-fit: cover; width: 100%; border-radius: var(--radius-md);" onerror="this.style.display='none';">
+          <p class="project-desc">
+            Platform katalog perumahan interaktif dan internal Sales CRM terhubung langsung ke Microsoft SQL Server 2022 di Docker. Fitur denah kavling SVG 2D, kalkulator simulasi KPR anuitas, transaksi atomik anti double-booking, dan RBAC admin/sales.
+          </p>
+          <div class="tag-cloud">
+            <span class="tag">Next.js 16</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">MSSQL (Docker)</span>
+            <span class="tag">Prisma ORM</span>
+            <span class="tag">Tailwind CSS</span>
           </div>
         </article>
 
-        <!-- Featured 3: Website Catalog -->
-        <article class="project-featured-card" data-category="backend">
-          <div class="project-details">
-            <div class="project-heading-row">
-              <h3 class="project-title">Website Catalog — Housing Catalog &amp; Sales CRM</h3>
-              <span class="project-role-badge">Fullstack &amp; Database Architect</span>
-            </div>
-            <p class="project-desc">
-              <strong>Masalah &amp; Kebutuhan:</strong> Bisnis perumahan membutuhkan katalog publik interaktif yang terhubung langsung ke sistem administrasi internal dan Sales CRM terpusat untuk memantau status ketersediaan kavling tanpa risiko double-booking.
-            </p>
-            <p class="project-desc">
-              <strong>Peran &amp; Kontribusi:</strong> Membangun arsitektur fullstack dengan Next.js 16 (App Router) dan Prisma 7, master site plan SVG 2D interaktif, simulasi kalkulator KPR anuitas, sistem auth berbasis cookie HTTP-only dengan RBAC (Admin/Sales), serta ekspor prospek leads CRM.
-            </p>
-            <div class="project-technical-notes">
-              <div class="project-technical-label">Pendekatan &amp; Tantangan Teknis</div>
-              Integrasi langsung ke Microsoft SQL Server 2022 di dalam kontainer Docker menggunakan driver adapter resmi `@prisma/adapter-mssql`. Menerapkan transaksi database atomik tingkat isolasi tinggi untuk mencegah race condition pada kavling yang diperebutkan simultan.
-            </div>
-            <div class="tag-cloud">
-              <span class="tag">Next.js 16</span>
-              <span class="tag">TypeScript</span>
-              <span class="tag">Microsoft SQL Server</span>
-              <span class="tag">Prisma ORM</span>
-              <span class="tag">Docker</span>
-              <span class="tag">Tailwind CSS</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/grsll/Website_catalog" target="_blank" rel="noopener noreferrer" class="project-link">
-                Lihat Kode Sumber di GitHub <i data-lucide="external-link" style="width: 14px; height: 14px;"></i>
+        <!-- 3. Finora -->
+        <article class="project-item" data-category="mobile">
+          <div class="project-header-row">
+            <h2 class="project-title">
+              <a href="https://github.com/grsll/finora" target="_blank" rel="noopener noreferrer">
+                Finora — Personal Finance Tracker <i data-lucide="arrow-up-right" style="width: 15px; height: 15px;"></i>
               </a>
-            </div>
+            </h2>
+            <span class="text-meta">2024 · Flutter</span>
           </div>
-          <div>
-            <img src="images/projects/project-3.png" alt="Preview antarmuka Website Catalog perumahan dan Sales CRM" class="about-photo" style="aspect-ratio: 16/10; object-fit: cover; width: 100%; border-radius: var(--radius-md);" onerror="this.style.display='none';">
+          <p class="project-desc">
+            Aplikasi pelacak keuangan personal berbasis Flutter dengan Clean Architecture. Mendukung multi-akun keuangan, alokasi anggaran bulanan, target tabungan, dan penyimpanan lokal SQLite terenkripsi.
+          </p>
+          <div class="tag-cloud">
+            <span class="tag">Flutter</span>
+            <span class="tag">Dart</span>
+            <span class="tag">Clean Architecture</span>
+            <span class="tag">SQLite</span>
           </div>
         </article>
-      </section>
 
-      <!-- Archive of Other Selected Engineering Works -->
-      <section class="section-block">
-        <div class="section-header">
-          <div>
-            <span class="text-eyebrow">Arsip Tambahan</span>
-            <h2 class="title-section">Implementasi Sistem Lainnya</h2>
-          </div>
-          <span class="section-index">ARSIP</span>
-        </div>
-
-        <div class="project-archive-list">
-
-          <!-- Archive: FlowNote -->
-          <div class="project-archive-item" data-category="mobile">
-            <div>
-              <div class="project-archive-title">FlowNote — Productivity &amp; Finance</div>
-              <div class="text-meta">Aplikasi Mobile All-in-One</div>
-            </div>
-            <div>
-              <p class="project-archive-desc">
-                Aplikasi manajemen produktivitas dan finansial terintegrasi. Menampilkan pencatatan transaksi dengan kategori warna, pelacakan tingkat tabungan (savings rate), dashboard analitik grafik FlChart, dan sinkronisasi cloud real-time Firebase Firestore.
-              </p>
-              <div class="tag-cloud" style="margin-top: 6px;">
-                <span class="tag">Flutter</span>
-                <span class="tag">Dart</span>
-                <span class="tag">Riverpod</span>
-                <span class="tag">Firebase</span>
-                <span class="tag">Cloud Firestore</span>
-              </div>
-            </div>
-            <div>
-              <a href="https://github.com/grsll/flownote_app.git" target="_blank" rel="noopener noreferrer" class="project-link">
-                Repositori <i data-lucide="arrow-up-right" style="width: 14px; height: 14px;"></i>
+        <!-- 4. FlowNote -->
+        <article class="project-item" data-category="mobile">
+          <div class="project-header-row">
+            <h2 class="project-title">
+              <a href="https://github.com/grsll/flownote_app.git" target="_blank" rel="noopener noreferrer">
+                FlowNote — Productivity &amp; Finance <i data-lucide="arrow-up-right" style="width: 15px; height: 15px;"></i>
               </a>
-            </div>
+            </h2>
+            <span class="text-meta">2024 · Flutter &amp; Firebase</span>
           </div>
+          <p class="project-desc">
+            Aplikasi produktivitas dan pelacak finansial terpadu. Fitur pencatatan transaksi berpenanda warna, pemantauan savings rate visual, grafik tren pengeluaran FlChart, dan sinkronisasi cloud real-time Firebase Firestore.
+          </p>
+          <div class="tag-cloud">
+            <span class="tag">Flutter</span>
+            <span class="tag">Dart</span>
+            <span class="tag">Riverpod</span>
+            <span class="tag">Firebase Auth</span>
+            <span class="tag">Cloud Firestore</span>
+          </div>
+        </article>
 
-          <!-- Archive: Liquid Weather -->
-          <div class="project-archive-item" data-category="mobile">
-            <div>
-              <div class="project-archive-title">Liquid Weather — Weather Forecast</div>
-              <div class="text-meta">Aplikasi Cuaca &amp; Widget Native</div>
-            </div>
-            <div>
-              <p class="project-archive-desc">
-                Aplikasi pemantau cuaca modern berbasis Flutter dengan estetika Liquid Glassmorphism, widget native Android (XML/Kotlin) untuk home screen, grafik tren temperatur 24 jam kurva bezier, manajemen multi-kota, dan integrasi Open-Meteo API.
-              </p>
-              <div class="tag-cloud" style="margin-top: 6px;">
-                <span class="tag">Flutter</span>
-                <span class="tag">Dart</span>
-                <span class="tag">Riverpod</span>
-                <span class="tag">Android Widget</span>
-                <span class="tag">Open-Meteo API</span>
-              </div>
-            </div>
-            <div>
-              <a href="https://github.com/grsll/weather-apps.git" target="_blank" rel="noopener noreferrer" class="project-link">
-                Repositori <i data-lucide="arrow-up-right" style="width: 14px; height: 14px;"></i>
+        <!-- 5. Liquid Weather -->
+        <article class="project-item" data-category="mobile">
+          <div class="project-header-row">
+            <h2 class="project-title">
+              <a href="https://github.com/grsll/weather-apps.git" target="_blank" rel="noopener noreferrer">
+                Liquid Weather — Modern Weather App <i data-lucide="arrow-up-right" style="width: 15px; height: 15px;"></i>
               </a>
-            </div>
+            </h2>
+            <span class="text-meta">2024 · Flutter</span>
           </div>
+          <p class="project-desc">
+            Aplikasi pemantau cuaca modern berbasis Flutter dengan estetika Liquid Glassmorphism, widget native Android (XML/Kotlin) untuk home screen, grafik tren temperatur 24 jam kurva bezier, dan integrasi Open-Meteo API.
+          </p>
+          <div class="tag-cloud">
+            <span class="tag">Flutter</span>
+            <span class="tag">Dart</span>
+            <span class="tag">Riverpod</span>
+            <span class="tag">Android Widget</span>
+            <span class="tag">Open-Meteo API</span>
+          </div>
+        </article>
 
-          <!-- Archive 1: API Server Gateway -->
-          <div class="project-archive-item" data-category="backend odoo mobile">
-            <div>
-              <div class="project-archive-title">API Server Gateway</div>
-              <div class="text-meta">Backend Middleware &amp; Proxy</div>
-            </div>
-            <div>
-              <p class="project-archive-desc">
-                Backend gateway perantara aman antara aplikasi mobile eksternal dan core ERP Odoo internal. Menangani rate limiting, verifikasi JWT auth token, sanitasi payload request, dan mapping data model relasional.
-              </p>
-              <div class="tag-cloud" style="margin-top: 6px;">
-                <span class="tag">Odoo API</span>
-                <span class="tag">Python</span>
-                <span class="tag">JSON-RPC</span>
-                <span class="tag">PostgreSQL</span>
-              </div>
-            </div>
-            <div>
-              <a href="https://github.com/zunstudent/test_frontend.git" target="_blank" rel="noopener noreferrer" class="project-link">
-                Repositori <i data-lucide="arrow-up-right" style="width: 14px; height: 14px;"></i>
+        <!-- 6. API Server Gateway -->
+        <article class="project-item" data-category="backend odoo mobile">
+          <div class="project-header-row">
+            <h2 class="project-title">
+              <a href="https://github.com/zunstudent/test_frontend.git" target="_blank" rel="noopener noreferrer">
+                API Server Gateway <i data-lucide="arrow-up-right" style="width: 15px; height: 15px;"></i>
               </a>
-            </div>
+            </h2>
+            <span class="text-meta">2024 · Python Backend</span>
           </div>
+          <p class="project-desc">
+            Middleware gateway perantara aman antara aplikasi mobile eksternal dan core ERP Odoo internal. Menangani rate limiting, verifikasi token autentikasi JWT, sanitasi payload, dan mapping model relasional.
+          </p>
+          <div class="tag-cloud">
+            <span class="tag">Python</span>
+            <span class="tag">Odoo API</span>
+            <span class="tag">JSON-RPC</span>
+            <span class="tag">PostgreSQL</span>
+          </div>
+        </article>
 
-          <!-- Archive 2: Aplikasi Klinik Mobile -->
-          <div class="project-archive-item" data-category="mobile">
-            <div>
-              <div class="project-archive-title">Aplikasi Klinik Mobile</div>
-              <div class="text-meta">Sistem Rekam Medis Lokal</div>
-            </div>
-            <div>
-              <p class="project-archive-desc">
-                Aplikasi mobile operasional klinik untuk pencatatan riwayat medis pasien, data obat apotek, dan antrean penebusan resep dengan basis data lokal terenkripsi aman.
-              </p>
-              <div class="tag-cloud" style="margin-top: 6px;">
-                <span class="tag">Flutter</span>
-                <span class="tag">Dart</span>
-                <span class="tag">SQLite Enkripsi</span>
-                <span class="tag">Offline-First</span>
-              </div>
-            </div>
-            <div>
-              <a href="https://github.com/grsll/klinik_app.git" target="_blank" rel="noopener noreferrer" class="project-link">
-                Repositori <i data-lucide="arrow-up-right" style="width: 14px; height: 14px;"></i>
+        <!-- 7. Aplikasi Klinik -->
+        <article class="project-item" data-category="mobile">
+          <div class="project-header-row">
+            <h2 class="project-title">
+              <a href="https://github.com/grsll/klinik_app.git" target="_blank" rel="noopener noreferrer">
+                Aplikasi Klinik Mobile <i data-lucide="arrow-up-right" style="width: 15px; height: 15px;"></i>
               </a>
-            </div>
+            </h2>
+            <span class="text-meta">2023 · Flutter</span>
           </div>
+          <p class="project-desc">
+            Sistem rekam medis klinik berbasis mobile untuk pencatatan riwayat medis pasien, data obat apotek, dan antrean resep dengan penyimpanan lokal terenkripsi offline-first.
+          </p>
+          <div class="tag-cloud">
+            <span class="tag">Flutter</span>
+            <span class="tag">Dart</span>
+            <span class="tag">SQLite Enkripsi</span>
+          </div>
+        </article>
 
-          <!-- Archive 3: Odoo AJG -->
-          <div class="project-archive-item" data-category="odoo backend">
-            <div>
-              <div class="project-archive-title">Odoo AJG — E-Tender &amp; DMS</div>
-              <div class="text-meta">ERP Customization Enterprise</div>
-            </div>
-            <div>
-              <p class="project-archive-desc">
-                Kustomisasi sistem ERP untuk PT AJG mencakup modul lelang pengadaan (E-Tender), pengarsipan dokumen legal (DMS), dan alur approval berjenjang dengan audit trail lengkap.
-              </p>
-              <div class="tag-cloud" style="margin-top: 6px;">
-                <span class="tag">Odoo ERP</span>
-                <span class="tag">Python</span>
-                <span class="tag">XML Views</span>
-                <span class="tag">Approval Workflow</span>
-              </div>
-            </div>
-            <div>
-              <a href="https://github.com/grsll" target="_blank" rel="noopener noreferrer" class="project-link">
-                Repositori <i data-lucide="arrow-up-right" style="width: 14px; height: 14px;"></i>
+        <!-- 8. Odoo AJG -->
+        <article class="project-item" data-category="odoo backend">
+          <div class="project-header-row">
+            <h2 class="project-title">
+              <a href="https://github.com/grsll" target="_blank" rel="noopener noreferrer">
+                Odoo AJG — E-Tender &amp; DMS <i data-lucide="arrow-up-right" style="width: 15px; height: 15px;"></i>
               </a>
-            </div>
+            </h2>
+            <span class="text-meta">2024 · Odoo ERP</span>
           </div>
+          <p class="project-desc">
+            Kustomisasi ERP untuk PT AJG meliputi modul lelang tender pengadaan (E-Tender), pengarsipan dokumen legal (DMS), dan alur persetujuan bertingkat dengan riwayat audit lengkap.
+          </p>
+          <div class="tag-cloud">
+            <span class="tag">Odoo ERP</span>
+            <span class="tag">Python</span>
+            <span class="tag">XML Views</span>
+          </div>
+        </article>
 
-          <!-- Archive 4: Alhamra Apps -->
-          <div class="project-archive-item" data-category="mobile">
-            <div>
-              <div class="project-archive-title">Alhamra Apps</div>
-              <div class="text-meta">Aplikasi Manajemen Akademik Siswa</div>
-            </div>
-            <div>
-              <p class="project-archive-desc">
-                Aplikasi mobile terintegrasi untuk pemantauan nilai akademik, absensi siswa, dan media komunikasi terstruktur dengan wali murid berbasis REST API.
-              </p>
-              <div class="tag-cloud" style="margin-top: 6px;">
-                <span class="tag">Flutter</span>
-                <span class="tag">REST API</span>
-                <span class="tag">SQLite</span>
-                <span class="tag">Mobile UI</span>
-              </div>
-            </div>
-            <div>
-              <a href="https://github.com/grsll" target="_blank" rel="noopener noreferrer" class="project-link">
-                Repositori <i data-lucide="arrow-up-right" style="width: 14px; height: 14px;"></i>
+        <!-- 9. Alhamra Apps -->
+        <article class="project-item" data-category="mobile">
+          <div class="project-header-row">
+            <h2 class="project-title">
+              <a href="https://github.com/grsll" target="_blank" rel="noopener noreferrer">
+                Alhamra Apps <i data-lucide="arrow-up-right" style="width: 15px; height: 15px;"></i>
               </a>
-            </div>
+            </h2>
+            <span class="text-meta">2023 · Flutter</span>
           </div>
+          <p class="project-desc">
+            Aplikasi mobile untuk pengelolaan data akademik siswa, pemantauan nilai, absensi, dan komunikasi terstruktur dengan wali murid berbasis REST API.
+          </p>
+          <div class="tag-cloud">
+            <span class="tag">Flutter</span>
+            <span class="tag">REST API</span>
+            <span class="tag">SQLite</span>
+          </div>
+        </article>
 
-        </div>
-      </section>
+      </div>
 
     </div>
   </main>
 
-  <!-- Scroll To Top Button -->
-  <button type="button" class="scroll-top-btn" id="scrollTop" aria-label="Kembali ke atas">
-    <i data-lucide="arrow-up" style="width: 18px; height: 18px;"></i>
-  </button>
-
   <!-- Footer -->
   <footer class="site-footer">
     <div class="site-container footer-inner">
-      <div class="footer-brand">
-        <span class="footer-logo">YOGA.DEV</span>
-        <span class="footer-copy">&copy; 2026 Yoga Setyawan Purwanto. Seluruh hak cipta dilindungi.</span>
-      </div>
-      <div class="footer-socials">
-        <a href="https://github.com/grsll" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a>
-        <a href="https://www.linkedin.com/in/yoga-setyawan-work/" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a>
-        <a href="https://www.instagram.com/yog_aaa4/" target="_blank" rel="noopener noreferrer" class="footer-link">Instagram</a>
+      <span>&copy; 2026 Yoga Setyawan Purwanto. YOGA.DEV</span>
+      <div class="footer-links">
+        <a href="https://github.com/grsll" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/yoga-setyawan-work/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://www.instagram.com/yog_aaa4/" target="_blank" rel="noopener noreferrer">Instagram</a>
       </div>
     </div>
   </footer>

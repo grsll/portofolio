@@ -228,7 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // --------------------------------------------------------------------------
   const filterPills = document.querySelectorAll('.filter-pill');
   const searchInput = document.getElementById('projectSearch');
-  const filterableProjects = document.querySelectorAll('.project-featured-card, .project-archive-item');
+  const filterableProjects = document.querySelectorAll('.project-item, .project-featured-card, .project-archive-item');
 
   function applyProjectFilters() {
     const activePill = document.querySelector('.filter-pill.active');

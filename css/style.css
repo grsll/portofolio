@@ -403,6 +403,21 @@ main.main-content {
   line-height: 1.6;
 }
 
+.projects-more-box {
+  margin-top: var(--space-xl);
+  padding: var(--space-md) var(--space-lg);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  font-size: 0.9375rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.projects-more-box p {
+  margin: 0;
+}
+
 /* Project Filter & Search Bar */
 .filter-bar {
   display: flex;

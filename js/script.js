@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (overlay && iframe) {
       if (titleEl) titleEl.textContent = title || 'Curriculum Vitae — Yoga Setyawan Purwanto';
-      const targetUrl = pdfUrl || 'pdf/yoga_setyawan_cv.pdf';
+      const targetUrl = pdfUrl || 'https://drive.google.com/file/d/1Rk5Mdu3G75TwLHxBnJttavgqscBvGUX7/preview';
       iframe.src = targetUrl;
       if (downloadBtn) downloadBtn.href = targetUrl;
       overlay.classList.add('active');

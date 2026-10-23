@@ -174,17 +174,28 @@ document.addEventListener('DOMContentLoaded', () => {
   // --------------------------------------------------------------------------
   // 7. PDF CV MODAL VIEWER
   // --------------------------------------------------------------------------
-  window.openPdfModal = function (pdfUrl, title) {
+  const DEFAULT_CV_PREVIEW = 'https://drive.google.com/file/d/1Rk5Mdu3G75TwLHxBnJttavgqscBvGUX7/preview';
+  const DEFAULT_CV_DOWNLOAD = 'pdf/yoga_setyawan_cv.pdf';
+  const DEFAULT_CV_DRIVE_VIEW = 'https://drive.google.com/file/d/1Rk5Mdu3G75TwLHxBnJttavgqscBvGUX7/view?usp=sharing';
+
+  window.openPdfModal = function (pdfUrl, title, downloadUrl) {
     const overlay = document.getElementById('pdfModalOverlay');
     const iframe = document.getElementById('pdfIframe');
     const titleEl = document.getElementById('pdfModalTitle');
     const downloadBtn = document.getElementById('pdfDownloadBtn');
+    const externalBtn = document.getElementById('pdfExternalBtn');
 
     if (overlay && iframe) {
       if (titleEl) titleEl.textContent = title || 'Curriculum Vitae — Yoga Setyawan Purwanto';
-      const targetUrl = pdfUrl || 'https://https://drive.google.com/file/d/1Rk5Mdu3G75TwLHxBnJttavgqscBvGUX7/view.google.com/file/d/1Rk5Mdu3G75TwLHxBnJttavgqscBvGUX7/preview';
+      const targetUrl = pdfUrl || DEFAULT_CV_PREVIEW;
       iframe.src = targetUrl;
-      if (downloadBtn) downloadBtn.href = targetUrl;
+      if (downloadBtn) {
+        downloadBtn.href = downloadUrl || DEFAULT_CV_DOWNLOAD;
+        downloadBtn.setAttribute('download', 'CV_Yoga_Setyawan_Purwanto.pdf');
+      }
+      if (externalBtn) {
+        externalBtn.href = DEFAULT_CV_DRIVE_VIEW;
+      }
       overlay.classList.add('active');
       overlay.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';

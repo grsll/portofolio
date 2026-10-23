@@ -56,10 +56,10 @@
         </p>
         <div style="display: flex; gap: var(--space-sm); margin-top: var(--space-xs);">
           <button type="button" class="btn btn-secondary"
-            onclick="openPdfModal('https://https://drive.google.com/file/d/1Rk5Mdu3G75TwLHxBnJttavgqscBvGUX7/view.google.com/file/d/1Rk5Mdu3G75TwLHxBnJttavgqscBvGUX7/view?usp=sharing', 'CV — Yoga Setyawan Purwanto')">
+            onclick="openPdfModal('https://drive.google.com/file/d/1Rk5Mdu3G75TwLHxBnJttavgqscBvGUX7/preview', 'CV — Yoga Setyawan Purwanto')">
             <i data-lucide="file-text" style="width: 14px; height: 14px;"></i> Preview CV
           </button>
-          <a href="https://https://drive.google.com/file/d/1Rk5Mdu3G75TwLHxBnJttavgqscBvGUX7/view.google.com/file/d/1Rk5Mdu3G75TwLHxBnJttavgqscBvGUX7/view?usp=sharing"
+          <a href="pdf/yoga_setyawan_cv.pdf" download="CV_Yoga_Setyawan_Purwanto.pdf"
             class="btn btn-secondary" target="_blank" rel="noopener">
             <i data-lucide="download" style="width: 14px; height: 14px;"></i> Unduh PDF
           </a>
@@ -160,12 +160,17 @@
       <div class="modal-header">
         <div style="font-weight: 600; font-size: 0.95rem;" id="pdfModalTitle">CV — Yoga Setyawan Purwanto</div>
         <div style="display: flex; gap: 8px;">
-          <a href="https://https://drive.google.com/file/d/1Rk5Mdu3G75TwLHxBnJttavgqscBvGUX7/view.google.com/file/d/1Rk5Mdu3G75TwLHxBnJttavgqscBvGUX7/view?usp=sharing"
+          <a href="https://drive.google.com/file/d/1Rk5Mdu3G75TwLHxBnJttavgqscBvGUX7/view?usp=sharing"
+            class="btn btn-secondary" id="pdfExternalBtn" target="_blank" rel="noopener noreferrer"
+            title="Buka di Google Drive" style="padding: 4px 10px; font-size: 0.8rem;">
+            <i data-lucide="external-link" style="width: 13px; height: 13px;"></i>
+          </a>
+          <a href="pdf/yoga_setyawan_cv.pdf" download="CV_Yoga_Setyawan_Purwanto.pdf"
             class="btn btn-secondary" id="pdfDownloadBtn" target="_blank" rel="noopener"
             style="padding: 4px 10px; font-size: 0.8rem;">
             <i data-lucide="download" style="width: 13px; height: 13px;"></i> Unduh
           </a>
-          <button type="button" class="btn btn-secondary" id="pdfModalClose"
+          <button type="button" class="btn btn-secondary" id="pdfModalClose" aria-label="Tutup"
             style="padding: 4px 10px; font-size: 0.8rem;">
             <i data-lucide="x" style="width: 13px; height: 13px;"></i>
           </button>
@@ -184,7 +189,7 @@
       <div class="footer-links">
         <a href="https://github.com/grsll" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a href="https://www.linkedin.com/in/yoga-setyawan-work/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="https://www.instagram.com/yog_aaa4/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.instagram.com/yoga__setyawan/" target="_blank" rel="noopener noreferrer">Instagram</a>
       </div>
     </div>
   </footer>

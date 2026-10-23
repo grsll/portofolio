@@ -94,7 +94,10 @@
             Pesan berhasil terkirim. Terima kasih, saya akan merespons sesegera mungkin.
           </div>
 
-          <form id="contactForm" action="https://formspree.io/f/xeepkowg" method="POST" class="form-simple">
+          <form id="contactForm" action="/api/contact" method="POST" class="form-simple">
+            <!-- Honeypot anti-spam -->
+            <input type="text" name="_gotcha" style="display:none !important;" tabindex="-1" autocomplete="off">
+
             <div class="form-group">
               <label for="name" class="form-label">Nama Lengkap *</label>
               <input type="text" id="name" name="name" class="form-input" placeholder="Nama Anda" required>

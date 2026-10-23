@@ -329,22 +329,35 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       try {
-        const formData = new FormData(contactForm);
-        const response = await fetch(contactForm.action, {
+        const payload = {
+          name: nameInput.value.trim(),
+          email: emailInput.value.trim(),
+          message: messageInput.value.trim(),
+          _gotcha: contactForm.querySelector('input[name="_gotcha"]')?.value || ''
+        };
+
+        const response = await fetch(contactForm.action || '/api/contact', {
           method: 'POST',
-          body: formData,
-          headers: { 'Accept': 'application/json' }
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(payload)
         });
 
-        if (response.ok) {
+        const data = await response.json().catch(() => ({}));
+
+        if (response.ok && data.success !== false) {
           if (formSuccess) {
+            formSuccess.textContent = data.message || 'Pesan berhasil terkirim. Terima kasih, saya akan merespons sesegera mungkin.';
             formSuccess.classList.add('show');
             formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
           }
           contactForm.reset();
           window.showToast('Pesan Anda berhasil dikirim!');
         } else {
-          window.showToast('Gagal mengirim pesan. Silakan hubungi via WhatsApp.');
+          const errMsg = data.message || 'Gagal mengirim pesan. Silakan hubungi via WhatsApp.';
+          window.showToast(errMsg);
         }
       } catch (err) {
         window.showToast('Terjadi gangguan koneksi. Silakan hubungi via WhatsApp.');

@@ -15,13 +15,25 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Simple in-memory rate limiter: max 5 requests per 10 minutes per IP
+// Helper to resolve client IP accurately behind Cloudflare and Nginx
+function getClientIp(req) {
+  return (
+    req.headers['cf-connecting-ip'] ||
+    req.headers['x-real-ip'] ||
+    req.headers['x-forwarded-for']?.split(',')[0].trim() ||
+    req.ip ||
+    req.socket.remoteAddress ||
+    'unknown'
+  );
+}
+
+// In-memory rate limiter: max 20 requests per 10 minutes per IP
 const rateLimitMap = new Map();
 const RATE_LIMIT_WINDOW = 10 * 60 * 1000; // 10 minutes
-const RATE_LIMIT_MAX = 5;
+const RATE_LIMIT_MAX = 20;
 
 function rateLimit(req, res, next) {
-  const ip = req.headers['x-forwarded-for']?.split(',')[0].trim() || req.socket.remoteAddress || 'unknown';
+  const ip = getClientIp(req);
   const now = Date.now();
   const clientData = rateLimitMap.get(ip) || { count: 0, resetAt: now + RATE_LIMIT_WINDOW };
 
@@ -41,7 +53,10 @@ function rateLimit(req, res, next) {
     }
   }
 
-  if (clientData.count > RATE_LIMIT_MAX) {
+  // Allow higher headroom for localhost loopback in case reverse proxy doesn't forward client IP
+  const maxAllowed = (ip === '127.0.0.1' || ip === '::1' || ip === '::ffff:127.0.0.1') ? 50 : RATE_LIMIT_MAX;
+
+  if (clientData.count > maxAllowed) {
     return res.status(429).json({
       success: false,
       message: 'Terlalu banyak permintaan kirim pesan. Silakan coba beberapa saat lagi atau kontak langsung via WhatsApp.'
@@ -57,10 +72,22 @@ function getTransporter() {
   const port = parseInt(process.env.SMTP_PORT, 10) || 465;
   const secure = process.env.SMTP_SECURE === 'false' ? false : (port === 465);
   const user = process.env.SMTP_USER;
-  const pass = process.env.SMTP_PASS;
+  // Automatically strip any spaces that Google App Passwords often have
+  const pass = (process.env.SMTP_PASS || '').replace(/\s+/g, '');
 
   if (!user || !pass) {
-    console.warn('[SMTP WARNING] SMTP_USER or SMTP_PASS is not configured in .env');
+    console.warn('[SMTP WARNING] SMTP_USER atau SMTP_PASS belum disetel di .env');
+  }
+
+  // For Gmail accounts, nodemailer service: 'gmail' handles auth and optimal port negotiation
+  if (host === 'smtp.gmail.com' || (user && user.endsWith('@gmail.com'))) {
+    return nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user,
+        pass
+      }
+    });
   }
 
   return nodemailer.createTransport({
@@ -79,8 +106,43 @@ app.get('/api/health', (req, res) => {
   res.json({
     status: 'ok',
     service: 'portofolio-contact-api',
+    ip: getClientIp(req),
     timestamp: new Date().toISOString()
   });
+});
+
+// Diagnostic endpoint to verify SMTP connection & credentials
+app.get('/api/verify-smtp', async (req, res) => {
+  const user = process.env.SMTP_USER;
+  const pass = (process.env.SMTP_PASS || '').replace(/\s+/g, '');
+
+  if (!user || !pass) {
+    return res.status(503).json({
+      success: false,
+      message: 'SMTP_USER atau SMTP_PASS belum disetel di file .env server.'
+    });
+  }
+
+  try {
+    const transporter = getTransporter();
+    await transporter.verify();
+    return res.json({
+      success: true,
+      message: `Koneksi dan autentikasi SMTP untuk ${user} berhasil diverifikasi!`
+    });
+  } catch (err) {
+    let detail = err.message;
+    if (err.code === 'EAUTH' || (err.response && err.response.includes('535'))) {
+      detail = 'Autentikasi gagal (535 5.7.8). Pastikan menggunakan 16 karakter Google App Password (Sandi Aplikasi), bukan sandi akun Gmail biasa.';
+    } else if (err.code === 'ESOCKET' || err.code === 'ETIMEDOUT') {
+      detail = 'Timeout menghubungi server SMTP. Port kemungkinan diblokir oleh firewall VPS hosting.';
+    }
+    return res.status(500).json({
+      success: false,
+      message: detail,
+      code: err.code
+    });
+  }
 });
 
 // Contact endpoint
@@ -186,9 +248,19 @@ app.post('/api/contact', rateLimit, async (req, res) => {
 
   } catch (error) {
     console.error('[EMAIL ERROR]', error);
+    let userMsg = 'Gagal mengirim pesan melalui server email.';
+    if (error.code === 'EAUTH' || (error.response && error.response.includes('535'))) {
+      userMsg = 'Autentikasi SMTP gagal: Pastikan Google App Password (Sandi Aplikasi) di file .env server sudah benar.';
+    } else if (error.code === 'ESOCKET' || error.code === 'ETIMEDOUT' || error.code === 'ECONNREFUSED') {
+      userMsg = 'Koneksi ke server email timeout/terblokir oleh firewall hosting. Silakan kontak langsung via WhatsApp.';
+    } else if (error.message) {
+      userMsg = `Gagal mengirim email: ${error.message}`;
+    }
+
     return res.status(500).json({
       success: false,
-      message: 'Gagal mengirim pesan melalui server email. Silakan hubungi via WhatsApp.'
+      message: userMsg,
+      code: error.code || 'EMAIL_FAILED'
     });
   }
 });

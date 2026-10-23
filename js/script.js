@@ -106,18 +106,16 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileOverlay.addEventListener('click', closeMobileMenu);
   }
 
-  document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', closeMobileMenu);
-  });
-
   // --------------------------------------------------------------------------
-  // 4. ACTIVE NAVIGATION LINK DETECTION
+  // 4. ACTIVE NAVIGATION LINK DETECTION & SAFE MOBILE NAVIGATION
   // --------------------------------------------------------------------------
   const pathParts = window.location.pathname.split('/');
   const currentPage = pathParts[pathParts.length - 1] || 'index.html';
 
   document.querySelectorAll('.nav-link').forEach(link => {
-    const href = link.getAttribute('href');
+    const href = link.getAttribute('href') || '';
+
+    // Active state detection
     if (href === currentPage || (currentPage === '' && href === 'index.html')) {
       link.classList.add('active');
       link.setAttribute('aria-current', 'page');
@@ -125,6 +123,15 @@ document.addEventListener('DOMContentLoaded', () => {
       link.classList.remove('active');
       link.removeAttribute('aria-current');
     }
+
+    // Only close mobile drawer on hash links or clicking the current page.
+    // For navigation to other pages, DO NOT hide the menu synchronously so mobile browsers don't abort navigation!
+    link.addEventListener('click', (e) => {
+      const isCurrentPage = href === currentPage || (currentPage === 'index.html' && (href === '/' || href === 'index.html'));
+      if (href.startsWith('#') || isCurrentPage) {
+        closeMobileMenu();
+      }
+    });
   });
 
   // --------------------------------------------------------------------------

@@ -189,16 +189,7 @@ main.main-content {
 }
 
 .mobile-overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.35);
-  z-index: 450;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.mobile-overlay.active {
-  display: block;
+  display: none !important;
 }
 
 @media (max-width: 640px) {
@@ -207,6 +198,14 @@ main.main-content {
     cursor: pointer;
     background: transparent;
     border: none;
+    padding: 6px;
+    color: var(--color-text);
+    min-width: 44px;
+    min-height: 44px;
+    justify-content: center;
+    align-items: center;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
   }
 
   .nav-links {
@@ -218,11 +217,11 @@ main.main-content {
     border-bottom: 1px solid var(--color-border);
     flex-direction: column;
     align-items: stretch;
-    padding: var(--space-xs) clamp(1.25rem, 5vw, 2rem) var(--space-sm);
+    padding: 6px 0 10px;
     gap: 0;
     display: none;
     z-index: 1000;
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
   }
 
   .nav-links.open {
@@ -234,14 +233,15 @@ main.main-content {
     align-items: center;
     width: 100%;
     min-height: 48px;
-    padding: 12px 0;
+    padding: 12px clamp(1.25rem, 5vw, 2rem);
     font-size: 1.05rem;
     font-weight: 500;
     color: var(--color-text);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
     touch-action: manipulation;
-    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.04);
     cursor: pointer;
+    text-decoration: none;
   }
 
   .nav-link:last-child {
@@ -250,6 +250,11 @@ main.main-content {
 
   .nav-link:active {
     background: rgba(0, 0, 0, 0.03);
+  }
+
+  .nav-link.active {
+    font-weight: 600;
+    color: var(--color-text);
   }
 }
 

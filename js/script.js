@@ -61,13 +61,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // --------------------------------------------------------------------------
   const navToggle = document.getElementById('navToggle');
   const navLinks = document.getElementById('navLinks');
-  let mobileOverlay = document.querySelector('.mobile-overlay');
-
-  if (!mobileOverlay) {
-    mobileOverlay = document.createElement('div');
-    mobileOverlay.className = 'mobile-overlay';
-    document.body.appendChild(mobileOverlay);
-  }
 
   function openMobileMenu() {
     if (navToggle) {
@@ -75,8 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
       navToggle.innerHTML = '<i data-lucide="x" style="width: 20px; height: 20px;"></i>';
     }
     if (navLinks) navLinks.classList.add('open');
-    if (mobileOverlay) mobileOverlay.classList.add('active');
-    document.body.style.overflow = 'hidden';
     if (window.lucide) window.lucide.createIcons();
   }
 
@@ -86,13 +77,12 @@ document.addEventListener('DOMContentLoaded', () => {
       navToggle.innerHTML = '<i data-lucide="menu" style="width: 20px; height: 20px;"></i>';
     }
     if (navLinks) navLinks.classList.remove('open');
-    if (mobileOverlay) mobileOverlay.classList.remove('active');
-    document.body.style.overflow = '';
     if (window.lucide) window.lucide.createIcons();
   }
 
   if (navToggle) {
-    navToggle.addEventListener('click', () => {
+    navToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
       const isOpen = navLinks && navLinks.classList.contains('open');
       if (isOpen) {
         closeMobileMenu();
@@ -102,9 +92,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  if (mobileOverlay) {
-    mobileOverlay.addEventListener('click', closeMobileMenu);
-  }
+  // Close menu when clicking/tapping outside
+  document.addEventListener('click', (e) => {
+    if (navLinks && navLinks.classList.contains('open')) {
+      const isInside = navLinks.contains(e.target) || (navToggle && navToggle.contains(e.target));
+      if (!isInside) {
+        closeMobileMenu();
+      }
+    }
+  });
 
   // --------------------------------------------------------------------------
   // 4. ACTIVE NAVIGATION LINK DETECTION & SAFE MOBILE NAVIGATION

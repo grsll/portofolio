@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   let toastTimer = null;
-  window.showToast = function(message) {
+  window.showToast = function (message) {
     const msgSpan = document.getElementById('toastMsg');
     if (msgSpan) msgSpan.textContent = message;
     toastEl.classList.add('show');
@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // --------------------------------------------------------------------------
   // 7. PDF CV MODAL VIEWER
   // --------------------------------------------------------------------------
-  window.openPdfModal = function(pdfUrl, title) {
+  window.openPdfModal = function (pdfUrl, title) {
     const overlay = document.getElementById('pdfModalOverlay');
     const iframe = document.getElementById('pdfIframe');
     const titleEl = document.getElementById('pdfModalTitle');
@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (overlay && iframe) {
       if (titleEl) titleEl.textContent = title || 'Curriculum Vitae — Yoga Setyawan Purwanto';
-      const targetUrl = pdfUrl || 'https://drive.google.com/file/d/1Rk5Mdu3G75TwLHxBnJttavgqscBvGUX7/preview';
+      const targetUrl = pdfUrl || 'https://https://drive.google.com/file/d/1Rk5Mdu3G75TwLHxBnJttavgqscBvGUX7/view.google.com/file/d/1Rk5Mdu3G75TwLHxBnJttavgqscBvGUX7/preview';
       iframe.src = targetUrl;
       if (downloadBtn) downloadBtn.href = targetUrl;
       overlay.classList.add('active');
@@ -192,7 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  window.closePdfModal = function() {
+  window.closePdfModal = function () {
     const overlay = document.getElementById('pdfModalOverlay');
     const iframe = document.getElementById('pdfIframe');
     if (overlay) {

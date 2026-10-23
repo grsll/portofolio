@@ -180,6 +180,12 @@ main.main-content {
   display: none;
   padding: 6px;
   color: var(--color-text);
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  min-width: 44px;
+  min-height: 44px;
+  justify-content: center;
+  align-items: center;
 }
 
 .mobile-overlay {
@@ -187,7 +193,7 @@ main.main-content {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.25);
-  z-index: 600;
+  z-index: 400;
 }
 
 .mobile-overlay.active {
